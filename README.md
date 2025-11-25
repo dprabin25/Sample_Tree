@@ -1,9 +1,34 @@
 # Sample_Tree
 
+## Description
 The **SampleBioShift** pipeline runs the **SampleTree** workflow and **BioShift** simultaneously.  
 `SampleBioShift.py` is a small orchestration script that runs the full analysis pipeline for a given patient/sample set, keeping the project directory clean and reproducible.
 
 Make sure you have both **R** and **Python** installed, with the necessary packages. Please check `requirements.txt` for installation details.
+
+## Dependencies
+
+### 1a. Anaconda
+Please install Anaconda: https://www.anaconda.com/distribution/
+
+Open Anaconda terminal and then create conda environment for Bioshift. 
+Please install Anaconda: https://www.anaconda.com/distribution/
+Note: We tested in 3.12.1 and 3.12.2 
+
+- Make sure you have these packages installed:
+`argparse, pandas, shutil, fnmatch, re, subprocess, sys, itertools, datetime`
+
+
+### 1b. R
+Please install R from https://posit.co/download/rstudio-desktop/
+
+Note: We tested in 4.5.0
+
+- Make sure you have these packages installed:
+  
+`optparse, ape, vegan, picante, phyloseq, phangorn, progress, ggplot2, ggtree, treeio, dplyr, readr, stringr, tibble, tools, reshape2, limma`
+
+
 
 ---
 
