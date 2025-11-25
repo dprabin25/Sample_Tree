@@ -164,3 +164,15 @@ Note: The number of CSV files used in each combination depends on the user's inp
 
 ## BioShiftOutputs
 Contains data interpretation for disease and healthy for each specific combinations of the clades. 
+
+--------
+### Reference
+[1] Sayaka Miura, Prabin Dawadi, Ryan M Tobin, Jorge Frias-Lopez, Alpdogan Kantarci, Flavia Teles.  Uncovering Periodontal Ecosystem Complexity with Sample Trees. (2025) Under Review
+
+--------
+### Copyright 2025, Authors and University of Mississippi
+BSD 3-Clause "New" or "Revised" License, which is a permissive license similar to the BSD 2-Clause License except that that it prohibits others from using the name of the project or its contributors to promote derived products without written consent. 
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
