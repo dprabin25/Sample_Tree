@@ -64,17 +64,21 @@ Your working directory should contain the following files:
 
 ## File Descriptions
 
-1. **sampletree_simple.R**  
+1. **sampletree_simple.R**
+   
    For clustering samples based on phylogenetic and/or non-phylogenetic methods.
 
-2. **ObservedShifts.py**  
+2. **ObservedShifts.py**
+   
    Merges outputs from **BioShift.py**.
 
-3. **BioShift.py**  
+3. **BioShift.py**
+   
    Data curation and calling large language models for interpretation.  
    For details: [BioShift on GitHub](https://github.com/dprabin25/BioShift).
 
-4. **methods.txt**  
+4. **methods.txt**
+   
    Contains four columns: `File`, `Method`, `Boot`, `Library`, `Tree`.  
    Users can enter the scaled input file name with the `.csv` extension that they want to run with the phylogenetic method.  
    - Note: You need to provide count data to run the Bray-Curtis dissimilarity method.  
@@ -89,7 +93,8 @@ Cell_with_ID.csv Bray 0 MaAsLin2 NA
 BacLog10Freq_with_ID.csv UniFrac 100 MaAsLin2 eHOMD_Ribosomal_Protein_Tree_1_pruneReName.nwk
 
 
-5. **sampletree_control.txt**  
+5. **sampletree_control.txt**
+   
 Configure the clade assignment with `min_targeted`, `max_other_samples`, `max_total_samples`, and `assign_policy`.  
 `assign_policy` options:
 - `best`: (default) Ranks clades by most targeted → fewer others → smaller total tips.
@@ -97,11 +102,13 @@ Configure the clade assignment with `min_targeted`, `max_other_samples`, `max_to
 - `largest`: Prefers clades with more total tips.
 - `smallest`: Prefers clades with fewer total tips.
 
-6. **target.txt**  
+6. **target.txt**
+   
 This file should contain `Sample` and `Target` columns.  
 Assign `Y` for the samples of interest.
 
-7. **config.txt**  
+7. **config.txt**
+   
 This needs to be updated with your API key and the version of the large language model you want to use.
 
 ---
