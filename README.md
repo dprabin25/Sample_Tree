@@ -132,6 +132,7 @@ The folder will contain
 The output is saved inside the FolderName you assigned. It contains:
 
 ### SampleTree Outputs:
+
 Outputs for each input file, with the suffix of the method used.
 
 Example:
@@ -141,9 +142,11 @@ Example:
 -Pro1log10_with_ID_Bray
 
 ### Observed_Shifts_by_group:
+
 Contains elements increasing or decreasing in different clades from input files.
 
 ### Observed_Shifts:
+
 The output consists of combined results where one clade is selected at a time from each applicable input CSV file (CSV1, CSV2, CSV3, etc.) and then merged.
 
 #### Process:
@@ -163,14 +166,17 @@ Observed Shift
 Note: The number of CSV files used in each combination depends on the user's input. Some combinations may involve just two or one file, based on statistically significant features.
 
 ### BioShiftOutputs
+
 Contains data interpretation for disease and healthy for each specific combinations of the clades. 
 
 --------
 ## Reference
+
 [1] Sayaka Miura, Prabin Dawadi, Ryan M Tobin, Jorge Frias-Lopez, Alpdogan Kantarci, Flavia Teles.  Uncovering Periodontal Ecosystem Complexity with Sample Trees. (2025) Under Review
 
 --------
 ## Copyright 2025, Authors and University of Mississippi
+
 BSD 3-Clause "New" or "Revised" License, which is a permissive license similar to the BSD 2-Clause License except that that it prohibits others from using the name of the project or its contributors to promote derived products without written consent. 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
