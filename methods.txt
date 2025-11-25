@@ -1,0 +1,5 @@
+File                     Method   Boot  Library	Tree
+Pro1log10_with_ID.csv          Bray     0     limma	NA
+Cell_with_ID.csv    Bray     0     MaAsLin2	NA
+BacLog10Freq_with_ID.csv UniFrac  100   MaAsLin2	eHOMD_Ribosomal_Protein_Tree_1_pruneReName.nwk
+

@@ -1,0 +1,4 @@
+min_targeted   = 3
+max_clade_size = 21
+max_others     = 3
+assign_policy  = best
