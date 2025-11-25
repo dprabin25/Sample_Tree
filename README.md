@@ -2,7 +2,7 @@
 
 ## Description
 The **SampleBioShift** pipeline runs the **SampleTree** workflow and **BioShift** simultaneously.  
-`SampleBioShift.py` is a small orchestration script that runs the full analysis pipeline for a given patient/sample set. 
+`SampleBioShift.py` is a small orchestration script that runs the full analysis pipeline for a targeted sample set. 
 
 
 
