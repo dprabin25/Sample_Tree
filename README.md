@@ -11,16 +11,27 @@ Make sure you have both **R** and **Python** installed, with the necessary packa
 
 Your working directory should contain the following files:
 ├── File1.csv ## input CSV file
+
 ├── File2.csv ## input CSV file
+
 ├── File3.csv ## input CSV file
+
 ├── FileX.csv ## input CSV file (select based on your data types)
+
 ├── sampletree_simple.R
+
 ├── BioShift.py
+
 ├── ObservedShifts.py
+
 ├── SampleBioShift.py
+
 ├── target.txt
+
 ├── config.txt
+
 ├── methods.txt
+
 ├── graphviz/
 
 
