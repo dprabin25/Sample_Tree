@@ -126,11 +126,11 @@ This needs to be updated with your API key and the version of the large language
 
 The folder will contain
 
--All output files
+- All output files
 
--target.txt you used
+- target.txt you used
 
--log.txt with details about the run in Run1 inside FolderName.
+- log.txt with details about the run in Run1 inside FolderName.
 
 3. If you use the same FolderName for subsequent runs, it will create sequential run folders: Run1, Run2, Run3, etc.
 
