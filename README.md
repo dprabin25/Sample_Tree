@@ -33,7 +33,7 @@ Note: We tested in 4.5.0
 
 ---
 
-### Files Required
+## Files Required
 
 Your working directory should contain the following files:
 
@@ -62,7 +62,7 @@ Your working directory should contain the following files:
 ├── graphviz/
 
 
-### File Descriptions
+## File Descriptions
 
 1. **sampletree_simple.R**  
    For clustering samples based on phylogenetic and/or non-phylogenetic methods.
@@ -106,7 +106,7 @@ This needs to be updated with your API key and the version of the large language
 
 ---
 
-### Running the Script
+## Running the Script
 
 1. Go to the working directory containing all the required files from the command terminal.
 
@@ -166,11 +166,11 @@ Note: The number of CSV files used in each combination depends on the user's inp
 Contains data interpretation for disease and healthy for each specific combinations of the clades. 
 
 --------
-### Reference
+## Reference
 [1] Sayaka Miura, Prabin Dawadi, Ryan M Tobin, Jorge Frias-Lopez, Alpdogan Kantarci, Flavia Teles.  Uncovering Periodontal Ecosystem Complexity with Sample Trees. (2025) Under Review
 
 --------
-### Copyright 2025, Authors and University of Mississippi
+## Copyright 2025, Authors and University of Mississippi
 BSD 3-Clause "New" or "Revised" License, which is a permissive license similar to the BSD 2-Clause License except that that it prohibits others from using the name of the project or its contributors to promote derived products without written consent. 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
