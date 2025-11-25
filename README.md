@@ -89,41 +89,44 @@ This needs to be updated with your API key and the version of the large language
 `python SampleBioShift.py FolderName`
 
 
-You can assign any name to FolderName. This folder will contain:
+- You can assign any name to FolderName. This folder will contain:
 
-All output files
+The folder will contain
 
-target.txt you used
+-All output files
 
-log.txt with details about the run in Run1 inside FolderName.
+-target.txt you used
+
+-log.txt with details about the run in Run1 inside FolderName.
 
 3. If you use the same FolderName for subsequent runs, it will create sequential run folders: Run1, Run2, Run3, etc.
 
-Output Structure
+# Output Structure
 
 The output is saved inside the FolderName you assigned. It contains:
 
-SampleTree Outputs:
+## SampleTree Outputs:
 Outputs for each input file, with the suffix of the method used.
+
 Example:
 
-BacLog10Freq_with_ID_UniFrac
+-BacLog10Freq_with_ID_UniFrac
 
-Pro1log10_with_ID_Bray
+-Pro1log10_with_ID_Bray
 
-Observed_Shifts_by_group:
+## Observed_Shifts_by_group:
 Contains elements increasing or decreasing in different clades from input files.
 
-Observed_Shifts:
+## Observed_Shifts:
 The output consists of combined results where one clade is selected at a time from each applicable input CSV file (CSV1, CSV2, CSV3, etc.) and then merged.
 
-Process:
+### Process:
 
 One clade is selected from each CSV file individually, as applicable.
 
 These selected clades are merged to create various combinations.
 
-Folder Structure:
+### Folder Structure:
 
 Each combination of selected clades is stored as a separate CSV file, containing the merged results for:
 
@@ -132,3 +135,6 @@ Element
 Observed Shift
 
 Note: The number of CSV files used in each combination depends on the user's input. Some combinations may involve just two or one file, based on statistically significant features.
+
+## BioShiftOutputs
+Contains data interpretation for disease and healthy for each specific combinations of the clades. 
