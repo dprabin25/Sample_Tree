@@ -170,7 +170,7 @@ Element
 
 Observed Shift
 
-Note: The number of CSV files used in each combination depends on the user's input. Some combinations may involve just two or one file, based on statistically significant features.
+Note: The number of CSV files used in each combination depends on the user's input. Some combinations may involve just two or one file, based on statistically significant features. 
 
 ### BioShiftOutputs
 
