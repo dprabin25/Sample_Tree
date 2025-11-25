@@ -7,24 +7,18 @@ Make sure you have both R and python installed with necessary packages (Please c
 ## Files required
 
 WorkingDirectory/
-
-├── File1.csv/
-├
-├── File2.csv/
-
--------------
-├── File2.csv/
-├── ProLog10freq_with_ID_Bray/
+├── File1.csv/  ## input csv file
+├── File2.csv/  ## input csv file
+├── File3.csv/  ## input csv file
+├── FileX.csv/  ## input csv file (Select the number of csv files based on your data types)
+├── sampletree_simple.R 
 ├── BioShift.py
 ├── ObservedShifts.py
-├── RunAllFinal.py
-├── sampletree_simple.R
+├── SampleBioShift.py
 ├── target.txt
 ├── config.txt
 ├── methods.txt
 ├── graphviz/
-├── inputs/
-└── (other permanent files)
 
 Your working directory should contain these files
 1. sampletree_simple.R
@@ -40,7 +34,7 @@ Your working directory should contain these files
 
 Users can enter scaled input file name with csv extension that they want to run with phylogenetic and run phylogenetic method. Note: Users need to provide count data to run Bray-Curtis dissimilarity method while they need count data and tree file for running other methods (MPD, MPDw, MNTD, MNTDw, UniFrac, UniFracW).
 
-Users also can choose the package they want to work with "limma" or "MaAslin2" that they want to run aganist their csv file. 
+Users also can choose the package they want to work with "limma" or "MaAslin2" aganist their csv file (input csv files) based on their data type. 
 
 ### Example, 
 
@@ -85,6 +79,29 @@ If you use the same FolderName, inside that folder it creates sequential run fol
 
 ## Output Structure
 
+Output files are saved inside "FolderName" that you assigned. It contains
+1. SampleTree Outputs per input files with suffix of methods used
+   e.g. BacLog10Freq_with_ID_UniFrac, Pro1log10_with_ID_Bray
 
+2. Observed_Shifts_by_group
+   Contains elements decreasing or increasing in different clades from input files
+   
+3. Observed_Shifts
+   The output consists of combined results where one clade is selected at a time from each applicable input CSV file (CSV1, CSV2, CSV3, etc.) and then merged. Multiple clades can be selected, but only one is chosen at a time for each combination.
 
+Process:
 
+One clade is selected from each CSV file (CSV1, CSV2, CSV3, etc.) individually, as applicable.
+
+These selected clades are merged to create various combinations.
+
+Folder Structure:
+
+Each combination of selected clades is stored as a separate CSV file, containing the merged results for:
+
+Element
+
+Observed Shift
+
+Note: The number of CSV files used in each combination depends on the user's input, and not all files are necessarily used in every combination. Some combinations may involve just two files, one file, or more based on statistical significant features.
+   
