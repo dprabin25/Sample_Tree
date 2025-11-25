@@ -144,9 +144,9 @@ Outputs for each input file, with the suffix of the method used.
 
 Example:
 
--BacLog10Freq_with_ID_UniFrac
+- BacLog10Freq_with_ID_UniFrac
 
--Pro1log10_with_ID_Bray
+- Pro1log10_with_ID_Bray
 
 ### Observed_Shifts_by_group:
 
