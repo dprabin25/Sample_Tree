@@ -4,7 +4,7 @@
 The **SampleBioShift** pipeline runs the **SampleTree** workflow and **BioShift** simultaneously.  
 `SampleBioShift.py` is a small orchestration script that runs the full analysis pipeline for a targeted sample set. 
 
-SampleTree groups samples into clusters based on their similarity, using a similarity matrix to identify which samples are most alike. BioShift, on the other hand, focuses on identifying and defining the changes (or shifts) within these sample clusters. Essentially, SampleTree organizes the samples, while BioShift analyzes the shifts that occur within those groups.
+SampleTree groups samples into clusters based on their similarity, using similarity matrices to identify which samples are most alike. BioShift, on the other hand, focuses on identifying and defining the changes (or shifts) within these sample clusters. Essentially, SampleTree organizes the samples, while BioShift analyzes the shifts that occur within those groups.
 
 ## Dependencies
 
