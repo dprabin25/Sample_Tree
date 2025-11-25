@@ -6,13 +6,16 @@ Make sure you have both R and python installed with necessary packages (Please c
 
 ## How do you run
 Your working directory should contain these files
-1. sampletree_simple.R    ## For clustering samples based on phylogenetic and/or non-phylogenetic methods
-2. ObservedShifts.py      ## For merging outputs for BioShift.py
-3. BioShift.py            ## Data curation and calling large language model for interpretation (For details: https://github.com/dprabin25/BioShift)
-4. methods.txt
-5. sampletree_control.txt
-6. target.txt
-7. config.txt
+1. sampletree_simple.R
+- For clustering samples based on phylogenetic and/or non-phylogenetic methods
+2. ObservedShifts.py
+- For merging outputs for BioShift.py
+3. BioShift.py
+- Data curation and calling large language model for interpretation (For details: https://github.com/dprabin25/BioShift)
+5. methods.txt
+6. sampletree_control.txt
+7. target.txt
+8. config.txt
 
 ## What it does
 
