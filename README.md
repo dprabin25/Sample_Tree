@@ -166,9 +166,9 @@ These selected clades are merged to create various combinations.
 
 Each combination of selected clades is stored as a separate CSV file, containing the merged results for:
 
-Element
+- Element
 
-Observed Shift
+- Observed Shift
 
 Note: The number of CSV files used in each combination depends on the user's input. Some combinations may involve just two or one file, based on statistically significant features. 
 
