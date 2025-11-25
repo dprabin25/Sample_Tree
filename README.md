@@ -85,8 +85,8 @@ This needs to be updated with your API key and the version of the large language
 1. Go to the working directory containing all the required files from the command terminal.
 
 2. Run the script with your chosen folder name:
-```bash
-python SampleBioShift.py FolderName
+
+`python SampleBioShift.py FolderName`
 
 
 You can assign any name to FolderName. This folder will contain:
