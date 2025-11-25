@@ -136,7 +136,9 @@ The folder will contain
 
 ## Output Structure
 
-The output is saved inside the FolderName you assigned. It contains:
+The output is saved inside the FolderName you assigned. 
+
+The folder contains:
 
 ### SampleTree Outputs:
 
