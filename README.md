@@ -16,6 +16,7 @@ Please install Anaconda: https://www.anaconda.com/distribution/
 Note: We tested in 3.12.1 and 3.12.2 
 
 - Make sure you have these packages installed:
+  
 `argparse, pandas, shutil, fnmatch, re, subprocess, sys, itertools, datetime`
 
 
