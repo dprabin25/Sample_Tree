@@ -44,90 +44,81 @@ def create_run_folder(base_output_dir):
     os.makedirs(base_output_dir, exist_ok=True)
     runs = [
         d for d in os.listdir(base_output_dir)
-        if os.path.isdir(os.path.join(base_output_dir, d)) and d.startswith("Run")
+        if d.startswith("Run") and d[3:].isdigit()
     ]
-    nums = [int(d[3:]) for d in runs if d[3:].isdigit()]
-    run_id = max(nums, default=0) + 1
+    run_id = max([int(d[3:]) for d in runs], default=0) + 1
     run_folder = os.path.join(base_output_dir, f"Run{run_id}")
     os.makedirs(run_folder, exist_ok=True)
     return run_folder
 
 
 # ------------------------------------------------------------------
-# SNAPSHOT LOGIC (FIXED)
+# SNAPSHOT LOGIC
 # ------------------------------------------------------------------
 
-def snapshot_files(root, exclude_prefixes=()):
-    """Track files by size + mtime"""
-    exts = {
-        ".csv", ".tsv", ".txt", ".log",
-        ".dot", ".gv", ".gml",
-        ".json", ".yaml", ".yml",
-        ".pdf", ".png", ".svg",
-        ".xlsx", ".xls", ".html",
-        ".nwk"
-    }
-    snap = {}
-    for dp, _, files in os.walk(root):
-        if any(os.path.commonpath([dp, ex]) == ex for ex in exclude_prefixes):
-            continue
+def snapshot_state(base_dir):
+    """
+    Snapshot ALL filesystem paths (files + folders) recursively.
+    """
+    paths = set()
+    for root, dirs, files in os.walk(base_dir):
+        for d in dirs:
+            paths.add(os.path.join(root, d))
         for f in files:
-            if os.path.splitext(f)[1].lower() not in exts:
-                continue
-            full = os.path.join(dp, f)
-            try:
-                st = os.stat(full)
-                snap[full] = (st.st_size, st.st_mtime)
-            except OSError:
-                pass
-    return snap
+            paths.add(os.path.join(root, f))
+    return paths
 
 
-def move_and_delete(src, dst, log_fh):
-    os.makedirs(os.path.dirname(dst), exist_ok=True)
-    if os.path.isdir(src):
-        shutil.copytree(src, dst)
-        shutil.rmtree(src)
-    else:
-        shutil.copy2(src, dst)
-        os.remove(src)
-    msg = f"Moved: {src} -> {dst}\n"
-    print(msg)
-    log_fh.write(msg)
+def move_only_new_outputs(base_dir, run_folder, log_fh, before_snapshot):
+    """
+    Move ALL newly generated outputs (files AND folders) created during the run,
+    while preserving workspace integrity.
+    """
 
+    after_snapshot = snapshot_state(base_dir)
+    new_paths = after_snapshot - before_snapshot
 
-def move_new_outputs(base_dir, run_folder, before, after, log_fh):
-    changed = [
-        p for p in after
-        if p not in before or before[p] != after[p]
-    ]
+    print("\n[INFO] Moving ALL newly generated outputs and folders\n")
+    log_fh.write("\n[INFO] Moving ALL newly generated outputs and folders\n")
 
-    if not changed:
-        msg = "\n[INFO] No new outputs detected — nothing moved.\n"
-        print(msg)
-        log_fh.write(msg)
-        return False
+    # Determine TOP-LEVEL new items only
+    top_level_items = set()
+    for p in new_paths:
+        rel = os.path.relpath(p, base_dir)
+        top = rel.split(os.sep)[0]
+        top_level_items.add(top)
 
-    print("\n[INFO] Moving outputs into run folder\n")
-    log_fh.write("\n[INFO] Moving outputs into run folder\n")
+    patient_root = os.path.dirname(run_folder)
 
-    for src in changed:
-        rel = os.path.relpath(src, base_dir)
-        dst = os.path.join(run_folder, rel)
-        move_and_delete(src, dst, log_fh)
+    for item in sorted(top_level_items):
+        src = os.path.join(base_dir, item)
+        dst = os.path.join(run_folder, item)
 
-    return True
+        # --- SAFETY RULES (CRITICAL) ---
 
-
-def cleanup_generated_folders(base_dir, protected_dirs):
-    for dp, _, _ in os.walk(base_dir, topdown=False):
-        if dp in protected_dirs or dp == base_dir:
+        # 1. Never move the run folder itself
+        if os.path.abspath(src) == os.path.abspath(run_folder):
             continue
+
+        # 2. Never move the patient workspace root
+        if os.path.abspath(src) == os.path.abspath(patient_root):
+            continue
+
+        # 3. Never move pipeline scripts
+        if item.endswith((".py", ".R")):
+            continue
+
+        # --------------------------------
+
         try:
-            if not os.listdir(dp):
-                os.rmdir(dp)
-        except Exception:
-            pass
+            shutil.move(src, dst)   # CUT + MOVE (folders included)
+            msg = f"MOVED: {item}\n"
+            print(msg, end="")
+            log_fh.write(msg)
+        except Exception as e:
+            err = f"[WARN] Could not move {item}: {e}\n"
+            print(err, end="")
+            log_fh.write(err)
 
 
 # ------------------------------------------------------------------
@@ -136,7 +127,7 @@ def cleanup_generated_folders(base_dir, protected_dirs):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("folder_name", help="Patient folder (e.g., Pat1)")
+    parser.add_argument("folder_name", help="Patient folder (e.g., DemoPrabin)")
     parser.add_argument("--samples", nargs="*", default=None)
     parser.add_argument("--python-exe", default="python")
     parser.add_argument("--rscript-exe", default="Rscript")
@@ -147,11 +138,11 @@ def main():
 
     print("Working directory:", base_dir)
 
-    # 🔑 FIX: SNAPSHOT BEFORE RUN FOLDER EXISTS
-    before_snapshot = snapshot_files(base_dir, exclude_prefixes=[base_output_dir])
-
     run_folder = create_run_folder(base_output_dir)
     log_path = os.path.join(run_folder, "log.txt")
+
+    # SNAPSHOT BEFORE RUN
+    before_snapshot = snapshot_state(base_dir)
 
     with open(log_path, "a", encoding="utf-8") as log_fh:
         log_fh.write("#" * 80 + "\n")
@@ -163,6 +154,7 @@ def main():
         print("SampleTree → ObservedShifts → BioShift")
         print("BioShift mode:", BIOSHIFT_MODE)
 
+        # ---------------- PIPELINE ----------------
         run_or_die([args.rscript_exe, "sampletree_simple.R"], "SampleTree", log_fh)
         run_or_die([args.python_exe, "ObservedShifts.py"], "ObservedShifts", log_fh)
 
@@ -183,22 +175,18 @@ def main():
                      "--mode", BIOSHIFT_MODE],
                     f"BioShift {ctx}", log_fh
                 )
+        # ---------------- PIPELINE ----------------
 
-        after_snapshot = snapshot_files(base_dir, exclude_prefixes=[base_output_dir])
-
-        moved = move_new_outputs(
-            base_dir, run_folder,
-            before_snapshot, after_snapshot, log_fh
+        # ARCHIVE OUTPUTS
+        move_only_new_outputs(
+            base_dir,
+            run_folder,
+            log_fh,
+            before_snapshot
         )
 
-        if moved:
-            cleanup_generated_folders(
-                base_dir,
-                protected_dirs={base_dir, run_folder, base_output_dir}
-            )
-
-    print("\n✅ Pipeline complete.")
-    print("All outputs are safely stored in:", run_folder)
+    print("\nPipeline complete.")
+    print("All generated outputs moved to:", run_folder)
 
 
 if __name__ == "__main__":
