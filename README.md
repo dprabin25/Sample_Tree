@@ -29,6 +29,14 @@ Note: We tested in 4.5.0
   
 `optparse, ape, vegan, picante, phyloseq, phangorn, progress, ggplot2, ggtree, treeio, dplyr, readr, stringr, tibble, tools, reshape2, limma`
 
+### 2. Maaslin2 package
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+BiocManager::install("MaAsLin2")
+
+Dependencies for Maaslin2: data.table, dplyr, tidyr, stringr, ggplot2, pbapply, matrixStats, Hmisc, quantreg, lme4, lmerTest, Rcpp, RcppEigen
+
 
 
 ---
