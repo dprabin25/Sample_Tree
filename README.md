@@ -33,10 +33,10 @@ Note: We tested in 4.5.0
 
 Please install the package if required. 
 
-if (!requireNamespace("BiocManager", quietly = TRUE))
+`if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 
-BiocManager::install("MaAsLin2")
+BiocManager::install("MaAsLin2")`
 
 Dependencies for Maaslin2: data.table, dplyr, tidyr, stringr, ggplot2, pbapply, matrixStats, Hmisc, quantreg, lme4, lmerTest, Rcpp, RcppEigen
 
