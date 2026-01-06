@@ -39,8 +39,28 @@ Please install the package if required.
 
 Dependencies for Maaslin2: data.table, dplyr, tidyr, stringr, ggplot2, pbapply, matrixStats, Hmisc, quantreg, lme4, lmerTest, Rcpp, RcppEigen
 
+### 3. API key
+1. Be signed up for OpenAI.
 
+   https://platform.openai.com/
 
+(NOTE: For new users: Sign up, create an account, generate an API key by providing an API Key Name and a Project Name when prompted. Copy the generated key and store it in a safe, secure location — you’ll need it to access the API.)
+
+3. Once logged in, click your profile icon (top-right corner) → Manage Account → Billing.
+   
+2. In the Billing section, set up Prepaid Billing or Auto Recharge
+   Prepaid: Manually add credit (e.g., $5, $10).
+   Auto Recharge: Automatically top up when balance is low.
+   
+ 3. Check Your Usage
+   Open Usage from the left-hand menu to monitor your monthly spend and remaining balance
+   Link for pricing: https://openai.com/api/pricing/
+
+ 4. Go to OpenAI API keys: https://platform.openai.com/api-keys
+
+ 5. Click “Create new secret key” → Copy the key (it looks like sk-...).
+    
+  ⚠ Important: Treat this key like a password — never share it or commit it to public code repositories.
 ---
 
 ## Files Required
