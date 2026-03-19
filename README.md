@@ -116,11 +116,7 @@ Your working directory should contain the following files:
 
    Users can choose the package to work with: `"limma"` or `"MaAslin2"` based on their data type.
 
-   Example:
-   File Method Boot Library Tree
-*.csv Bray 0 limma NA
-*.csv Bray 0 MaAsLin2 NA
-*.csv UniFrac 100 MaAsLin2 *.nwk
+   You may see methods.txt on our repository for an example. 
 
 
 5. **sampletree_control.txt**
