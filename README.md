@@ -6,6 +6,9 @@ The **SampleBioShift** pipeline runs the **SampleTree** workflow and **BioShift*
 
 SampleTree groups samples into clusters based on their similarity, using similarity matrices to identify which samples are most alike. BioShift, on the other hand, focuses on identifying and defining the changes (or shifts) of elements within these sample clusters. Essentially, SampleTree organizes the samples, while BioShift analyzes the shifts that occur within those groups.
 
+### Important note:
+The pipeline does not perform input scaling. It is up to the user to decide whether to use scaled or unscaled data.
+
 ## Dependencies
 
 ### 1a. Anaconda
@@ -110,7 +113,7 @@ Your working directory should contain the following files:
 4. **methods.txt**
    
    Contains four columns: `File`, `Method`, `Boot`, `Library`, `Tree`.  
-   Users can enter the scaled input file name with the `.csv` extension that they want to run with the phylogenetic method.  
+   Users can enter the inputs file name with the `.csv` extension that they want to run with the phylogenetic method.  
    - Note: You need to provide count data to run the Bray-Curtis dissimilarity method.  
    - For other methods (MPD, MPDw, MNTD, MNTDw, UniFrac, UniFracW), you need both count data and a tree file.  
 
@@ -148,7 +151,7 @@ This needs to be updated with your API key and the version of the large language
 `python SampleBioShift.py FolderName`
 
 
-- You can assign any name to FolderName. This folder will contain:
+- You can assign any name to "FolderName". This folder will contain:
 
 The folder will contain
 
