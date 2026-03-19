@@ -60,7 +60,7 @@ Dependencies for Maaslin2: data.table, dplyr, tidyr, stringr, ggplot2, pbapply, 
 
  5. Click “Create new secret key” → Copy the key (it looks like sk-...).
     
-  ⚠ Important: Treat this key like a password — never share it or commit it to public code repositories.
+Important: Treat this key like a password — never share it or commit it to public code repositories.
 ---
 
 ## Files Required
@@ -211,7 +211,7 @@ Contains data interpretation for disease and healthy for each specific combinati
 --------
 ## Reference
 
-[1] Sayaka Miura, Prabin Dawadi, Ryan M Tobin, Jorge Frias-Lopez, Alpdogan Kantarci, Flavia Teles.  Uncovering Periodontal Ecosystem Complexity with Sample Trees. (2025) Under Review
+[1] Prabin Dawadi, Ryan M Tobin, Jorge Frias-Lopez, Alpdogan Kantarci, Flavia Teles, Sayaka Miura.  Uncovering Periodontal Ecosystem Complexity with Sample Trees. (2025) Under Review
 
 --------
 ## Copyright 2025, Authors and University of Mississippi
