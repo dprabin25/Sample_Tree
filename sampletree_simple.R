@@ -499,8 +499,9 @@ run_trend_for_job <- function(otu, clade_info, outdir, tag, method,
     g_dir  <- file.path(trend_root, paste0("group_", g_safe))
     ensure_dir(g_dir)
     
-    in_clade_ids <- intersect(all_samples, ci$samples)
-    grp <- ifelse(rownames(Mat) %in% in_clade_ids, group_label, "other")
+   # Use only targeted Y samples in the clade for differential/trend testing
+	in_clade_ids <- intersect(all_samples, ci$tgt)
+	grp <- ifelse(rownames(Mat) %in% in_clade_ids, group_label, "other")
     names(grp) <- rownames(Mat)
     
     n_g <- sum(grp == group_label)
