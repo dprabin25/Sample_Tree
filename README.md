@@ -118,9 +118,9 @@ Your working directory should contain the following files:
 
    Example:
    File Method Boot Library Tree
-Pro1log10_with_ID.csv Bray 0 limma NA
-Cell_with_ID.csv Bray 0 MaAsLin2 NA
-BacLog10Freq_with_ID.csv UniFrac 100 MaAsLin2 eHOMD_Ribosomal_Protein_Tree_1_pruneReName.nwk
+*.csv Bray 0 limma NA
+*.csv Bray 0 MaAsLin2 NA
+*.csv UniFrac 100 MaAsLin2 *.nwk
 
 
 5. **sampletree_control.txt**
@@ -176,9 +176,9 @@ Outputs for each input file, with the suffix of the method used.
 
 Example:
 
-- BacLog10Freq_with_ID_UniFrac
+- *_UniFrac
 
-- Pro1log10_with_ID_Bray
+- *_Bray
 
 ### Observed_Shifts_by_group:
 
