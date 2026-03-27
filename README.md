@@ -153,9 +153,7 @@ This needs to be updated with your API key and the version of the large language
 `python SampleBioShift.py FolderName`
 
 
-- You can assign any name to "FolderName". This folder will contain:
-
-The folder will contain
+You can assign any name to "FolderName". This folder will contain:
 
 - All output files
 
