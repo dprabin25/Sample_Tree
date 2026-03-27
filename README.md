@@ -146,7 +146,7 @@ This needs to be updated with your API key and the version of the large language
 
 ## Running the Script
 
-1. Go to the working directory containing all the required files from the command terminal.
+1. Go to the working directory containing all the required files (All inputs in csv format along with Methods.txt, ObservedShifts.py, SampleBioShift.py, config.txt, sampletree_control.txt, sampletree_simple.R and target.txt) on the command terminal.
 
 2. Run the script with your chosen folder name:
 
@@ -163,11 +163,11 @@ The folder will contain
 
 - log.txt with details about the run in Run1 inside FolderName.
 
-3. If you use the same FolderName for subsequent runs, it will create sequential run folders: Run1, Run2, Run3, etc.
+3. If you use the same name for "FolderName" for subsequent runs, it will create sequential run folders: Run1, Run2, Run3, etc.
 
 ## Output Structure
 
-The output is saved inside the FolderName you assigned. 
+The output is saved inside the "FolderName" you assigned. 
 
 The folder contains:
 
