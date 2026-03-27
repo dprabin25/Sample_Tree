@@ -1,5 +1,0 @@
-File                     Method   Boot  Library	Tree
-Pro1log10MinMax.csv          Bray     0     limma	NA
-Cell.csv    Bray     0     MaAsLin2	NA
-BacFreq.csv UniFrac  100   MaAsLin2	BacTree.nwk
-
