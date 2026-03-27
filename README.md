@@ -185,7 +185,7 @@ Contains elements increasing or decreasing in different clades from input files.
 
 ### Observed_Shifts:
 
-The output consists of combined results where one clade is selected at a time from each applicable input CSV file (CSV1, CSV2, CSV3, etc.) and then merged.
+The output consists of combined results with combinations from CSV files from "Observed_Shifts_by_group" folder. 
 
 #### Process:
 
