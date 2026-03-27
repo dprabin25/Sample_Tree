@@ -1,0 +1,18 @@
+Element,Observed Shift,Expected Shift,Biological Group
+M20_hu.EGF..12.,-1,,
+M31_hu.MCP.3..28.,-1,,
+M34_hu.IL.12p70..33.,-1,,
+M46_hu.IL.8..63.,-1,,
+M61_hu.Periostin..47.,1,,
+PD_Monocyte,1,,
+M30_hu.IL.10..27.,-1,-1,Anti-inflammatory Cytokines
+M58_hu.RANKL..42.,-1,1,Bone Resorption Mediators
+M48_hu.MCP.1..67.,-1,1,Chemokines
+M1_hu.Granzyme.B..19.,-1,1,Cytotoxic Immune Mediators
+M25_hu.GM.CSF..20.,-1,1,Hematopoietic Growth Factors
+M55_hu.MMP.2..21.,1,1,Matrix Metalloproteinases
+M39_hu.IL.17A..39.,-1,1,Pro-inflammatory Cytokines
+M44_hu.IL.6..57.,-1,1,Pro-inflammatory Cytokines
+M52_hu.TNF.a..75.,-1,1,Pro-inflammatory Cytokines
+M43_hu.IL.2..48.,-1,1,T-cell Activation Cytokines
+M27_hu.IFNa2..22.,-1,0,Type I Interferons

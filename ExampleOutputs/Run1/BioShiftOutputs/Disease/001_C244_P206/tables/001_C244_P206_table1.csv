@@ -1,0 +1,18 @@
+Element,GPT shift 1,GPT shift 2,Biological Group,Group ID based on Biological Group,Notes (if any),Observed Shift
+M1_hu.Granzyme.B..19.,,1,Cytotoxic Immune Mediators,7,Commonly increased in periodontitis,-1.0
+M20_hu.EGF..12.,1,,,,,-1.0
+M25_hu.GM.CSF..20.,1,1,Hematopoietic Growth Factors,6,Commonly increased in periodontitis,-1.0
+M27_hu.IFNa2..22.,,0,Type I Interferons,9,Mixed reports on shifts,-1.0
+M30_hu.IL.10..27.,-1,-1,Anti-inflammatory Cytokines,2,Typically decreased in periodontitis,-1.0
+M31_hu.MCP.3..28.,1,,,,,-1.0
+M34_hu.IL.12p70..33.,1,,,,,-1.0
+M39_hu.IL.17A..39.,1,1,Pro-inflammatory Cytokines,1,Commonly increased in periodontitis,-1.0
+M43_hu.IL.2..48.,1,1,T-cell Activation Cytokines,8,Commonly increased in periodontitis,-1.0
+M44_hu.IL.6..57.,1,1,Pro-inflammatory Cytokines,1,Commonly increased in periodontitis,-1.0
+M46_hu.IL.8..63.,1,,,,,-1.0
+M48_hu.MCP.1..67.,,1,Chemokines,5,Commonly increased in periodontitis,-1.0
+M52_hu.TNF.a..75.,1,1,Pro-inflammatory Cytokines,1,Commonly increased in periodontitis,-1.0
+M55_hu.MMP.2..21.,,1,Matrix Metalloproteinases,4,Commonly increased in periodontitis,1.0
+M58_hu.RANKL..42.,1,1,Bone Resorption Mediators,3,Commonly increased in periodontitis,-1.0
+M61_hu.Periostin..47.,1,,,,,1.0
+PD_Monocyte,1,,,,,1.0

@@ -1,0 +1,460 @@
+################################################################################
+Run started: 2026-03-27T13:34:52.260931
+Run folder: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\ExampleOutputs\Run1
+################################################################################
+
+================================================================================
+[RUN] SampleTree
+Command: Rscript sampletree_simple.R
+================================================================================
+[[1]]
+[1] TRUE
+
+[[2]]
+[1] TRUE
+
+[[3]]
+[1] TRUE
+
+[[4]]
+[1] TRUE
+
+[[5]]
+[1] TRUE
+
+[[6]]
+[1] TRUE
+
+[[7]]
+[1] TRUE
+
+[[8]]
+[1] TRUE
+
+[[9]]
+[1] TRUE
+
+[[10]]
+[1] TRUE
+
+[[11]]
+[1] TRUE
+
+[[12]]
+[1] TRUE
+
+[[13]]
+[1] TRUE
+
+[[14]]
+[1] TRUE
+
+[[15]]
+[1] TRUE
+
+[[16]]
+[1] TRUE
+
+[[17]]
+[1] TRUE
+
+There were 13 warnings (use warnings() to see them)
+Environment ready.
+Thresholds: min_targeted = 3, max_clade_size = 21, max_others = 3, assign_policy = best
+Target samples (Y): 14
+
+=== JOB 1 ===
+Profile_Tree : C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Pro1log10MinMax.csv
+Profile_Diff : C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Pro1log10.csv
+Method       : Bray
+Library      : limma
+Matrix       : Pro1log10
+Boot         : 10
+Outdir       : C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Pro1log10MinMax_Bray
+  -> Running method: Bray
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  âœ“ Wrote clades: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Pro1log10MinMax_Bray/clades/clades_Pro1log10MinMax_Bray.csv
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  (TREND:Pro1log10/limma) Clade node206
+
+=== JOB 2 ===
+Profile_Tree : C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell.csv
+Profile_Diff : C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell.csv
+Method       : Bray
+Library      : MaAsLin2
+Matrix       : Cell
+Boot         : 5
+Outdir       : C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray
+  -> Running method: Bray
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  âœ“ Wrote clades: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/clades/clades_Cell_Bray.csv
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  (TREND:Cell/MaAsLin2) Clade node244
+2026-03-27 13:35:19.586914 WARNING::Input is a matrix, passing through as.data.frame() .
+[1] "Creating output folder"
+[1] "Creating output feature tables folder"
+[1] "Creating output fits folder"
+[1] "Creating output figures folder"
+2026-03-27 13:35:19.62241 INFO::Writing function arguments to log file
+2026-03-27 13:35:19.647304 INFO::Verifying options selected are valid
+2026-03-27 13:35:19.730608 INFO::Determining format of input files
+2026-03-27 13:35:19.732013 INFO::Input format is data samples as columns and metadata samples as rows
+2026-03-27 13:35:19.74119 INFO::Formula for fixed effects: expr ~  Group
+2026-03-27 13:35:19.742526 INFO::Filter data based on min abundance and min prevalence
+2026-03-27 13:35:19.743521 INFO::Total samples in data: 154
+2026-03-27 13:35:19.744514 INFO::Min samples required with min abundance for a feature not to be filtered: 15.400000
+2026-03-27 13:35:19.746858 INFO::Total filtered features: 42
+2026-03-27 13:35:19.754453 INFO::Filtered feature names from abundance and prevalence filtering: B, abT_.CD4., abT_.CD8., gd_T, MAIT, Mast, mDC, Monocyte, NK, pDC, Plasma, Th17, Treg, PD_abT_.CD4., PD_gd_T, PD_MAIT, PD_Mast, PD_Treg, Epi_1, Mel, PD_Epi_1, Epi_1.1, Epi_1.2, LEC, SMC, VEC_1.1, VEC_1.2, VEC_1.3, VEC_1.4, PD_SMC, PD_VEC_1.1, PD_VEC_1.3, Fib_1.1, Fib_1.2, Fib_1.3, Fib_1.4, Fib_1.5, PD_Fib_1.1, PD_Fib_1.3, PD_Fib_1.4, PD_Fib_1.5, Other
+2026-03-27 13:35:19.755993 INFO::Total filtered features with variance filtering: 0
+2026-03-27 13:35:19.757426 INFO::Filtered feature names from variance filtering:
+2026-03-27 13:35:19.758426 INFO::Running selected normalization method: NONE
+2026-03-27 13:35:19.759483 INFO::Bypass z-score application to metadata
+2026-03-27 13:35:19.760439 INFO::Running selected transform method: NONE
+2026-03-27 13:35:19.761475 INFO::Running selected analysis method: LM
+2026-03-27 13:35:19.802752 INFO::Fitting model to feature number 1, Neutrophil
+2026-03-27 13:35:19.806299 INFO::Fitting model to feature number 2, PD_B
+2026-03-27 13:35:19.818149 INFO::Fitting model to feature number 3, PD_abT_.CD8.
+2026-03-27 13:35:19.822354 INFO::Fitting model to feature number 4, PD_mDC
+2026-03-27 13:35:19.835016 INFO::Fitting model to feature number 5, PD_Monocyte
+2026-03-27 13:35:19.840516 INFO::Fitting model to feature number 6, PD_Neutrophil
+2026-03-27 13:35:19.845117 INFO::Fitting model to feature number 7, PD_NK
+2026-03-27 13:35:19.848148 INFO::Fitting model to feature number 8, PD_pDC
+2026-03-27 13:35:19.852583 INFO::Fitting model to feature number 9, PD_Plasma
+2026-03-27 13:35:19.85506 INFO::Fitting model to feature number 10, PD_Th17
+2026-03-27 13:35:19.857801 INFO::Fitting model to feature number 11, Epi_2
+2026-03-27 13:35:19.861853 INFO::Fitting model to feature number 12, Epi_3
+2026-03-27 13:35:19.863468 INFO::Fitting model to feature number 13, PD_Epi_2
+2026-03-27 13:35:19.865946 INFO::Fitting model to feature number 14, PD_Epi_3
+2026-03-27 13:35:19.867689 INFO::Fitting model to feature number 15, PD_Mel
+2026-03-27 13:35:19.880371 INFO::Fitting model to feature number 16, Epi_1.3
+2026-03-27 13:35:19.88245 INFO::Fitting model to feature number 17, PD_LEC
+2026-03-27 13:35:19.884648 INFO::Fitting model to feature number 18, PD_VEC_1.2
+2026-03-27 13:35:19.886658 INFO::Fitting model to feature number 19, PD_VEC_1.4
+2026-03-27 13:35:19.888203 INFO::Fitting model to feature number 20, PD_Fib_1.2
+2026-03-27 13:35:19.908309 INFO::Counting total values for each feature
+2026-03-27 13:35:19.910832 INFO::Writing filtered data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/features/filtered_data.tsv
+2026-03-27 13:35:19.918463 INFO::Writing filtered, normalized data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/features/filtered_data_norm.tsv
+2026-03-27 13:35:19.925834 INFO::Writing filtered, normalized, transformed data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/features/filtered_data_norm_transformed.tsv
+2026-03-27 13:35:19.93382 INFO::Writing residuals to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/fits/residuals.rds
+2026-03-27 13:35:19.936271 INFO::Writing fitted values to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/fits/fitted.rds
+2026-03-27 13:35:19.938489 INFO::Writing all results to file (ordered by increasing q-values): C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/all_results.tsv
+2026-03-27 13:35:19.943418 INFO::Writing the significant results (those which are less than or equal to the threshold of 0.250000 ) to file (ordered by increasing q-values): C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/significant_results.tsv
+2026-03-27 13:35:19.945366 INFO::Writing heatmap of significant results to file: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/heatmap.pdf
+[1] "There is not enough metadata in the associations to create a heatmap plot. Please review the associations in text output file."
+2026-03-27 13:35:19.953095 INFO::Writing association plots (one for each significant association) to output folder: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out
+2026-03-27 13:35:19.955766 INFO::Plotting associations from most to least significant, grouped by metadata
+2026-03-27 13:35:19.958425 INFO::Plotting data for metadata number 1, Group
+2026-03-27 13:35:20.052094 INFO::Creating boxplot for categorical data, Group vs PD_Monocyte
+2026-03-27 13:35:20.35008 INFO::Creating boxplot for categorical data, Group vs PD_Th17
+2026-03-27 13:35:20.55147 INFO::Creating boxplot for categorical data, Group vs PD_Neutrophil
+2026-03-27 13:35:20.745761 INFO::Creating boxplot for categorical data, Group vs PD_mDC
+2026-03-27 13:35:20.945019 INFO::Creating boxplot for categorical data, Group vs PD_pDC
+2026-03-27 13:35:21.142796 INFO::Creating boxplot for categorical data, Group vs PD_Fib_1.2
+2026-03-27 13:35:21.366639 INFO::Creating boxplot for categorical data, Group vs PD_LEC
+2026-03-27 13:35:21.584472 INFO::Creating boxplot for categorical data, Group vs PD_abT_.CD8.
+2026-03-27 13:35:21.764852 INFO::Creating boxplot for categorical data, Group vs PD_VEC_1.2
+
+=== JOB 3 ===
+Profile_Tree : C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount.csv
+Profile_Diff : C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacFreq.csv
+Method       : UniFrac
+Library      : MaAsLin2
+Matrix       : BacFreq
+Boot         : 10
+Outdir       : C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac
+Tree         : C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacTree.nwk
+  Pruning 1 tree tips not present in Profile_Tree.
+  -> Running method: UniFrac
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  Bootstrapping (10)
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  âœ“ Wrote clades: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/clades/clades_BacCount_UniFrac.csv
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  (TREND:BacFreq/MaAsLin2) Clade node207
+2026-03-27 13:35:49.925642 WARNING::Input is a matrix, passing through as.data.frame() .
+[1] "Creating output folder"
+[1] "Creating output feature tables folder"
+[1] "Creating output fits folder"
+[1] "Creating output figures folder"
+2026-03-27 13:35:49.929958 INFO::Writing function arguments to log file
+2026-03-27 13:35:49.957571 INFO::Verifying options selected are valid
+2026-03-27 13:35:49.958955 INFO::Determining format of input files
+2026-03-27 13:35:49.960525 INFO::Input format is data samples as columns and metadata samples as rows
+2026-03-27 13:35:49.97274 INFO::Formula for fixed effects: expr ~  Group
+2026-03-27 13:35:49.97619 INFO::Filter data based on min abundance and min prevalence
+2026-03-27 13:35:49.978496 INFO::Total samples in data: 154
+2026-03-27 13:35:49.980308 INFO::Min samples required with min abundance for a feature not to be filtered: 15.400000
+2026-03-27 13:35:49.983801 INFO::Total filtered features: 49
+2026-03-27 13:35:49.985597 INFO::Filtered feature names from abundance and prevalence filtering: Actinomyces_gerencseriae, Actinomyces_viscosus, Aggregatibacter_segnis, Alloscardovia_omnicolens, Bifidobacterium_dentium, Campylobacter_curvus, Campylobacter_rectus, Campylobacter_showae, Capnocytophaga_sputigena, Cardiobacterium_hominis, Desulfomicrobium_orale, Eikenella_corrodens, Granulicatella_elegans, Haemophilus_aegyptius, Haemophilus_sputorum, Kingella_denitrificans, Lachnoanaerobaculum_saburreum, Megasphaera_micronuciformis, Mogibacterium_timidum, Mycoplasma_orale, Neisseria_bacilliformis, Neisseria_lactamica, Neisseria_meningitidis, Neisseria_mucosa, Oribacterium_sinus, Peptoniphilus_indolicus, Porphyromonas_catoniae, Porphyromonas_endodontalis, Prevotella_buccae, Prevotella_dentalis, Prevotella_melaninogenica, Prevotella_micans, Prevotella_oris, Prevotella_scopos, Prevotella_shahii, Pseudoramibacter_alactolyticus, Rothia_dentocariosa, Schaalia_georgiae, Selenomonas_artemidis, Selenomonas_flueggei, Selenomonas_noxia, Shuttleworthia_satelles, Streptococcus_infantis, Streptococcus_oralis, Treponema_lecithinolyticum, Treponema_maltophilum, Treponema_medium, Treponema_vincentii, Veillonella_dispar
+2026-03-27 13:35:49.988163 INFO::Total filtered features with variance filtering: 0
+2026-03-27 13:35:49.989415 INFO::Filtered feature names from variance filtering:
+2026-03-27 13:35:49.990883 INFO::Running selected normalization method: NONE
+2026-03-27 13:35:49.992039 INFO::Bypass z-score application to metadata
+2026-03-27 13:35:49.993051 INFO::Running selected transform method: NONE
+2026-03-27 13:35:49.994034 INFO::Running selected analysis method: LM
+2026-03-27 13:35:49.995028 INFO::Fitting model to feature number 1, Abiotrophia_defectiva
+2026-03-27 13:35:49.998141 INFO::Fitting model to feature number 2, Actinomyces_naeslundii
+2026-03-27 13:35:50.000775 INFO::Fitting model to feature number 3, Actinomyces_oris
+2026-03-27 13:35:50.00339 INFO::Fitting model to feature number 4, Aggregatibacter_actinomycetemcomitans
+2026-03-27 13:35:50.005907 INFO::Fitting model to feature number 5, Aggregatibacter_aphrophilus
+2026-03-27 13:35:50.008429 INFO::Fitting model to feature number 6, Anaeroglobus_geminatus
+2026-03-27 13:35:50.011203 INFO::Fitting model to feature number 7, Bifidobacterium_longum
+2026-03-27 13:35:50.01372 INFO::Fitting model to feature number 8, Brevundimonas_diminuta
+2026-03-27 13:35:50.01653 INFO::Fitting model to feature number 9, Bulleidia_extructa
+2026-03-27 13:35:50.019056 INFO::Fitting model to feature number 10, Campylobacter_concisus
+2026-03-27 13:35:50.021517 INFO::Fitting model to feature number 11, Capnocytophaga_gingivalis
+2026-03-27 13:35:50.023954 INFO::Fitting model to feature number 12, Capnocytophaga_granulosa
+2026-03-27 13:35:50.026387 INFO::Fitting model to feature number 13, Cardiobacterium_valvarum
+2026-03-27 13:35:50.03131 INFO::Fitting model to feature number 14, Catonella_morbi
+2026-03-27 13:35:50.033959 INFO::Fitting model to feature number 15, Comamonas_testosteroni
+2026-03-27 13:35:50.03692 INFO::Fitting model to feature number 16, Corynebacterium_durum
+2026-03-27 13:35:50.039465 INFO::Fitting model to feature number 17, Cryptobacterium_curtum
+2026-03-27 13:35:50.041997 INFO::Fitting model to feature number 18, Dialister_invisus
+2026-03-27 13:35:50.044443 INFO::Fitting model to feature number 19, Dialister_micraerophilus
+2026-03-27 13:35:50.04687 INFO::Fitting model to feature number 20, Eggerthia_catenaformis
+2026-03-27 13:35:50.050006 INFO::Fitting model to feature number 21, Enterococcus_faecalis
+2026-03-27 13:35:50.052687 INFO::Fitting model to feature number 22, Filifactor_alocis
+2026-03-27 13:35:50.055135 INFO::Fitting model to feature number 23, Fusobacterium_naviforme
+2026-03-27 13:35:50.057625 INFO::Fitting model to feature number 24, Fusobacterium_necrophorum
+2026-03-27 13:35:50.060231 INFO::Fitting model to feature number 25, Fusobacterium_nucleatum
+2026-03-27 13:35:50.06263 INFO::Fitting model to feature number 26, Fusobacterium_periodonticum
+2026-03-27 13:35:50.065441 INFO::Fitting model to feature number 27, Gemella_haemolysans
+2026-03-27 13:35:50.068506 INFO::Fitting model to feature number 28, Gemella_morbillorum
+2026-03-27 13:35:50.070952 INFO::Fitting model to feature number 29, Granulicatella_adiacens
+2026-03-27 13:35:50.073412 INFO::Fitting model to feature number 30, Haemophilus_haemolyticus
+2026-03-27 13:35:50.07596 INFO::Fitting model to feature number 31, Jonquetella_anthropi
+2026-03-27 13:35:50.078485 INFO::Fitting model to feature number 32, Lactobacillus_crispatus
+2026-03-27 13:35:50.082957 INFO::Fitting model to feature number 33, Lactobacillus_gasseri
+2026-03-27 13:35:50.0856 INFO::Fitting model to feature number 34, Lactococcus_lactis
+2026-03-27 13:35:50.088056 INFO::Fitting model to feature number 35, Leptotrichia_wadei
+2026-03-27 13:35:50.090508 INFO::Fitting model to feature number 36, Neisseria_elongata
+2026-03-27 13:35:50.093417 INFO::Fitting model to feature number 37, Neisseria_flavescens
+2026-03-27 13:35:50.096016 INFO::Fitting model to feature number 38, Neisseria_subflava
+2026-03-27 13:35:50.098733 INFO::Fitting model to feature number 39, Parvimonas_micra
+2026-03-27 13:35:50.101592 INFO::Fitting model to feature number 40, Peptostreptococcus_stomatis
+2026-03-27 13:35:50.104318 INFO::Fitting model to feature number 41, Prevotella_denticola
+2026-03-27 13:35:50.106786 INFO::Fitting model to feature number 42, Schaalia_meyeri
+2026-03-27 13:35:50.109223 INFO::Fitting model to feature number 43, Schaalia_odontolytica
+2026-03-27 13:35:50.111821 INFO::Fitting model to feature number 44, Selenomonas_sputigena
+2026-03-27 13:35:50.115949 INFO::Fitting model to feature number 45, Staphylococcus_epidermidis
+2026-03-27 13:35:50.118564 INFO::Fitting model to feature number 46, Staphylococcus_warneri
+2026-03-27 13:35:50.12106 INFO::Fitting model to feature number 47, Streptococcus_anginosus
+2026-03-27 13:35:50.123824 INFO::Fitting model to feature number 48, Streptococcus_australis
+2026-03-27 13:35:50.126376 INFO::Fitting model to feature number 49, Streptococcus_constellatus
+2026-03-27 13:35:50.129007 INFO::Fitting model to feature number 50, Streptococcus_cristatus
+2026-03-27 13:35:50.132181 INFO::Fitting model to feature number 51, Streptococcus_gordonii
+2026-03-27 13:35:50.134823 INFO::Fitting model to feature number 52, Streptococcus_intermedius
+2026-03-27 13:35:50.137546 INFO::Fitting model to feature number 53, Streptococcus_mitis
+2026-03-27 13:35:50.140215 INFO::Fitting model to feature number 54, Streptococcus_mutans
+2026-03-27 13:35:50.142783 INFO::Fitting model to feature number 55, Streptococcus_parasanguinis
+2026-03-27 13:35:50.145275 INFO::Fitting model to feature number 56, Streptococcus_salivarius
+2026-03-27 13:35:50.148402 INFO::Fitting model to feature number 57, Streptococcus_sanguinis
+2026-03-27 13:35:50.151589 INFO::Fitting model to feature number 58, Streptococcus_sinensis
+2026-03-27 13:35:50.154718 INFO::Fitting model to feature number 59, Streptococcus_sobrinus
+2026-03-27 13:35:50.15736 INFO::Fitting model to feature number 60, Streptococcus_vestibularis
+2026-03-27 13:35:50.162108 INFO::Fitting model to feature number 61, Tannerella_forsythia
+2026-03-27 13:35:50.166377 INFO::Fitting model to feature number 62, Treponema_denticola
+2026-03-27 13:35:50.16921 INFO::Fitting model to feature number 63, Veillonella_atypica
+2026-03-27 13:35:50.172155 INFO::Fitting model to feature number 64, Veillonella_parvula
+2026-03-27 13:35:50.181416 INFO::Counting total values for each feature
+2026-03-27 13:35:50.18525 INFO::Writing filtered data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/features/filtered_data.tsv
+2026-03-27 13:35:50.206013 INFO::Writing filtered, normalized data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/features/filtered_data_norm.tsv
+2026-03-27 13:35:50.224013 INFO::Writing filtered, normalized, transformed data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/features/filtered_data_norm_transformed.tsv
+2026-03-27 13:35:50.252644 INFO::Writing residuals to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/fits/residuals.rds
+2026-03-27 13:35:50.255098 INFO::Writing fitted values to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/fits/fitted.rds
+2026-03-27 13:35:50.256389 INFO::Writing all results to file (ordered by increasing q-values): C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/all_results.tsv
+2026-03-27 13:35:50.260369 INFO::Writing the significant results (those which are less than or equal to the threshold of 0.250000 ) to file (ordered by increasing q-values): C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/significant_results.tsv
+2026-03-27 13:35:50.264067 INFO::Writing heatmap of significant results to file: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/heatmap.pdf
+[1] "There are no associations to plot!"
+2026-03-27 13:35:50.270827 INFO::Writing association plots (one for each significant association) to output folder: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out
+2026-03-27 13:35:50.273243 INFO::Plotting associations from most to least significant, grouped by metadata
+2026-03-27 13:35:50.274352 INFO::Plotting data for metadata number 1, Group
+2026-03-27 13:35:50.276033 INFO::Creating boxplot for categorical data, Group vs Fusobacterium_nucleatum
+    - No significant features (MaAsLin2); skipping.
+There were 11 warnings (use warnings() to see them)
+
+âœ“ All jobs complete (SampleTree + clade TREND via limma / MaAsLin2 + boxplots).
+
+================================================================================
+[RUN] ObservedShifts
+Command: python ObservedShifts.py
+================================================================================
+
+ BioShift - Automated Merge + Combination Engine
+=================================================================
+
+Working directory: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID
+Merged outputs  -> C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\Observed_Shifts_by_group
+Final combos    -> C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\Observed_Shifts 
+
+Searching for group_* folders...
+
+Found 3 groups:
+
+  - C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BacCount_UniFrac\trend_outputs\group_BacCount_UniFrac_node207_BacFreq
+  - C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\Cell_Bray\trend_outputs\group_Cell_Bray_node244_Cell
+  - C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\Pro1log10MinMax_Bray\trend_outputs\group_Pro1log10MinMax_Bray_node206_Pro1log10
+
+Merging groups...
+
+No Input_*.csv in: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BacCount_UniFrac\trend_outputs\group_BacCount_UniFrac_node207_BacFreq
+MERGED -> 244_Cell.csv
+MERGED -> 206_Pro1log10.csv
+
+Merging completed.
+---------------------------------------------------------------
+
+Starting Combination Engine
+
+Input types detected:
+  - Cell (1)
+  - Pro1log10 (1)
+
+Highest valid combination size = 2-way
+
+Saved: 001_C244_P206.csv
+
+ALL DONE
+Saved 1 combined CSVs into:
+   -> C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\Observed_Shifts
+=================================================================
+
+================================================================================
+[RUN] BioShift disease
+Command: python BioShift.py --context disease --mode full_with_graphviz
+================================================================================
+
+ Processing 001_C244_P206.csv as disease -> C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Disease\001_C244_P206
+Clean TableAB saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Disease\001_C244_P206\tables\001_C244_P206_tableAB.csv
+Table1 saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Disease\001_C244_P206\tables\001_C244_P206_table1.csv
+Table2 saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Disease\001_C244_P206\tables\001_C244_P206_table2.csv
+Table3 saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Disease\001_C244_P206\tables\001_C244_P206_table3.csv
+Prompt 3 saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Disease\001_C244_P206\prompts\001_C244_P206_Prompt3_output.txt
+No Graphviz files found in C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\graphviz. Put .dot/.txt files there.
+Prompt_Co output saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Disease\001_C244_P206\Prompt_Co_Output\001_C244_P206_PromptCo_output.txt
+
+Pipeline finished for all samples.
+
+================================================================================
+[RUN] BioShift healthy
+Command: python BioShift.py --context healthy --mode full_with_graphviz
+================================================================================
+
+ Processing 001_C244_P206.csv as healthy -> C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Healthy\001_C244_P206
+Clean TableAB saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Healthy\001_C244_P206\tables\001_C244_P206_tableAB.csv
+Table1 saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Healthy\001_C244_P206\tables\001_C244_P206_table1.csv
+Table2 saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Healthy\001_C244_P206\tables\001_C244_P206_table2.csv
+Table3 saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Healthy\001_C244_P206\tables\001_C244_P206_table3.csv
+Prompt 3 saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Healthy\001_C244_P206\prompts\001_C244_P206_Prompt3_output.txt
+No Graphviz files found in C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\graphviz. Put .dot/.txt files there.
+Prompt_Co output saved: C:\SampleTreeGithubTest\Updated_CSVs_With_PatID\BioShiftOutputs\Healthy\001_C244_P206\Prompt_Co_Output\001_C244_P206_PromptCo_output.txt
+
+Pipeline finished for all samples.
+
+[INFO] Moving ALL newly generated outputs and folders
+MOVED: BacCount_UniFrac
+MOVED: BioShiftOutputs
+MOVED: Cell_Bray
+MOVED: Observed_Shifts
+MOVED: Observed_Shifts_by_group
+MOVED: Pro1log10MinMax_Bray
+MOVED: graphviz

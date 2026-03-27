@@ -1,0 +1,74 @@
+2026-03-27 13:35:19.62241 INFO::Writing function arguments to log file
+2026-03-27 13:35:19.629734 DEBUG::Function arguments
+2026-03-27 13:35:19.630976 DEBUG::Output folder: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out
+2026-03-27 13:35:19.631609 DEBUG::Min Abundance: 0.000000
+2026-03-27 13:35:19.632163 DEBUG::Min Prevalence: 0.100000
+2026-03-27 13:35:19.632716 DEBUG::Normalization: NONE
+2026-03-27 13:35:19.633255 DEBUG::Transform: NONE
+2026-03-27 13:35:19.633812 DEBUG::Analysis method: LM
+2026-03-27 13:35:19.640391 DEBUG::Max significance: 0.250000
+2026-03-27 13:35:19.641482 DEBUG::Random effects:
+2026-03-27 13:35:19.643017 DEBUG::Fixed effects: Group
+2026-03-27 13:35:19.64524 DEBUG::Correction method: BH
+2026-03-27 13:35:19.645705 DEBUG::Standardize: FALSE
+2026-03-27 13:35:19.646129 DEBUG::Cores: 1
+2026-03-27 13:35:19.647304 INFO::Verifying options selected are valid
+2026-03-27 13:35:19.730608 INFO::Determining format of input files
+2026-03-27 13:35:19.732013 INFO::Input format is data samples as columns and metadata samples as rows
+2026-03-27 13:35:19.738115 DEBUG::Transformed data so samples are rows
+2026-03-27 13:35:19.739057 DEBUG::A total of 154 samples were found in both the data and metadata
+2026-03-27 13:35:19.739892 DEBUG::Reordering data/metadata to use same sample ordering
+2026-03-27 13:35:19.74119 INFO::Formula for fixed effects: expr ~  Group
+2026-03-27 13:35:19.742526 INFO::Filter data based on min abundance and min prevalence
+2026-03-27 13:35:19.743521 INFO::Total samples in data: 154
+2026-03-27 13:35:19.744514 INFO::Min samples required with min abundance for a feature not to be filtered: 15.400000
+2026-03-27 13:35:19.746858 INFO::Total filtered features: 42
+2026-03-27 13:35:19.754453 INFO::Filtered feature names from abundance and prevalence filtering: B, abT_.CD4., abT_.CD8., gd_T, MAIT, Mast, mDC, Monocyte, NK, pDC, Plasma, Th17, Treg, PD_abT_.CD4., PD_gd_T, PD_MAIT, PD_Mast, PD_Treg, Epi_1, Mel, PD_Epi_1, Epi_1.1, Epi_1.2, LEC, SMC, VEC_1.1, VEC_1.2, VEC_1.3, VEC_1.4, PD_SMC, PD_VEC_1.1, PD_VEC_1.3, Fib_1.1, Fib_1.2, Fib_1.3, Fib_1.4, Fib_1.5, PD_Fib_1.1, PD_Fib_1.3, PD_Fib_1.4, PD_Fib_1.5, Other
+2026-03-27 13:35:19.755993 INFO::Total filtered features with variance filtering: 0
+2026-03-27 13:35:19.757426 INFO::Filtered feature names from variance filtering:
+2026-03-27 13:35:19.758426 INFO::Running selected normalization method: NONE
+2026-03-27 13:35:19.759483 INFO::Bypass z-score application to metadata
+2026-03-27 13:35:19.760439 INFO::Running selected transform method: NONE
+2026-03-27 13:35:19.761475 INFO::Running selected analysis method: LM
+2026-03-27 13:35:19.802752 INFO::Fitting model to feature number 1, Neutrophil
+2026-03-27 13:35:19.806299 INFO::Fitting model to feature number 2, PD_B
+2026-03-27 13:35:19.818149 INFO::Fitting model to feature number 3, PD_abT_.CD8.
+2026-03-27 13:35:19.822354 INFO::Fitting model to feature number 4, PD_mDC
+2026-03-27 13:35:19.835016 INFO::Fitting model to feature number 5, PD_Monocyte
+2026-03-27 13:35:19.840516 INFO::Fitting model to feature number 6, PD_Neutrophil
+2026-03-27 13:35:19.845117 INFO::Fitting model to feature number 7, PD_NK
+2026-03-27 13:35:19.848148 INFO::Fitting model to feature number 8, PD_pDC
+2026-03-27 13:35:19.852583 INFO::Fitting model to feature number 9, PD_Plasma
+2026-03-27 13:35:19.85506 INFO::Fitting model to feature number 10, PD_Th17
+2026-03-27 13:35:19.857801 INFO::Fitting model to feature number 11, Epi_2
+2026-03-27 13:35:19.861853 INFO::Fitting model to feature number 12, Epi_3
+2026-03-27 13:35:19.863468 INFO::Fitting model to feature number 13, PD_Epi_2
+2026-03-27 13:35:19.865946 INFO::Fitting model to feature number 14, PD_Epi_3
+2026-03-27 13:35:19.867689 INFO::Fitting model to feature number 15, PD_Mel
+2026-03-27 13:35:19.880371 INFO::Fitting model to feature number 16, Epi_1.3
+2026-03-27 13:35:19.88245 INFO::Fitting model to feature number 17, PD_LEC
+2026-03-27 13:35:19.884648 INFO::Fitting model to feature number 18, PD_VEC_1.2
+2026-03-27 13:35:19.886658 INFO::Fitting model to feature number 19, PD_VEC_1.4
+2026-03-27 13:35:19.888203 INFO::Fitting model to feature number 20, PD_Fib_1.2
+2026-03-27 13:35:19.908309 INFO::Counting total values for each feature
+2026-03-27 13:35:19.910832 INFO::Writing filtered data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/features/filtered_data.tsv
+2026-03-27 13:35:19.918463 INFO::Writing filtered, normalized data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/features/filtered_data_norm.tsv
+2026-03-27 13:35:19.925834 INFO::Writing filtered, normalized, transformed data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/features/filtered_data_norm_transformed.tsv
+2026-03-27 13:35:19.93382 INFO::Writing residuals to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/fits/residuals.rds
+2026-03-27 13:35:19.936271 INFO::Writing fitted values to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/fits/fitted.rds
+2026-03-27 13:35:19.938489 INFO::Writing all results to file (ordered by increasing q-values): C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/all_results.tsv
+2026-03-27 13:35:19.943418 INFO::Writing the significant results (those which are less than or equal to the threshold of 0.250000 ) to file (ordered by increasing q-values): C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/significant_results.tsv
+2026-03-27 13:35:19.945366 INFO::Writing heatmap of significant results to file: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/heatmap.pdf
+2026-03-27 13:35:19.953095 INFO::Writing association plots (one for each significant association) to output folder: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out
+2026-03-27 13:35:19.955766 INFO::Plotting associations from most to least significant, grouped by metadata
+2026-03-27 13:35:19.958425 INFO::Plotting data for metadata number 1, Group
+2026-03-27 13:35:20.052094 INFO::Creating boxplot for categorical data, Group vs PD_Monocyte
+2026-03-27 13:35:20.35008 INFO::Creating boxplot for categorical data, Group vs PD_Th17
+2026-03-27 13:35:20.55147 INFO::Creating boxplot for categorical data, Group vs PD_Neutrophil
+2026-03-27 13:35:20.745761 INFO::Creating boxplot for categorical data, Group vs PD_mDC
+2026-03-27 13:35:20.945019 INFO::Creating boxplot for categorical data, Group vs PD_pDC
+2026-03-27 13:35:21.142796 INFO::Creating boxplot for categorical data, Group vs PD_Fib_1.2
+2026-03-27 13:35:21.366639 INFO::Creating boxplot for categorical data, Group vs PD_LEC
+2026-03-27 13:35:21.584472 INFO::Creating boxplot for categorical data, Group vs PD_abT_.CD8.
+2026-03-27 13:35:21.764852 INFO::Creating boxplot for categorical data, Group vs PD_VEC_1.2
+2026-03-27 13:35:49.925642 WARNING::Input is a matrix, passing through as.data.frame() .

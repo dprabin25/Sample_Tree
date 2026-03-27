@@ -1,0 +1,109 @@
+2026-03-27 13:35:49.929958 INFO::Writing function arguments to log file
+2026-03-27 13:35:49.931254 DEBUG::Function arguments
+2026-03-27 13:35:49.931992 DEBUG::Output folder: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out
+2026-03-27 13:35:49.932626 DEBUG::Min Abundance: 0.000000
+2026-03-27 13:35:49.933179 DEBUG::Min Prevalence: 0.100000
+2026-03-27 13:35:49.933724 DEBUG::Normalization: NONE
+2026-03-27 13:35:49.934279 DEBUG::Transform: NONE
+2026-03-27 13:35:49.934828 DEBUG::Analysis method: LM
+2026-03-27 13:35:49.935373 DEBUG::Max significance: 0.250000
+2026-03-27 13:35:49.935914 DEBUG::Random effects:
+2026-03-27 13:35:49.936464 DEBUG::Fixed effects: Group
+2026-03-27 13:35:49.955445 DEBUG::Correction method: BH
+2026-03-27 13:35:49.956193 DEBUG::Standardize: FALSE
+2026-03-27 13:35:49.956863 DEBUG::Cores: 1
+2026-03-27 13:35:49.957571 INFO::Verifying options selected are valid
+2026-03-27 13:35:49.958955 INFO::Determining format of input files
+2026-03-27 13:35:49.960525 INFO::Input format is data samples as columns and metadata samples as rows
+2026-03-27 13:35:49.965218 DEBUG::Transformed data so samples are rows
+2026-03-27 13:35:49.969057 DEBUG::A total of 154 samples were found in both the data and metadata
+2026-03-27 13:35:49.970932 DEBUG::Reordering data/metadata to use same sample ordering
+2026-03-27 13:35:49.97274 INFO::Formula for fixed effects: expr ~  Group
+2026-03-27 13:35:49.97619 INFO::Filter data based on min abundance and min prevalence
+2026-03-27 13:35:49.978496 INFO::Total samples in data: 154
+2026-03-27 13:35:49.980308 INFO::Min samples required with min abundance for a feature not to be filtered: 15.400000
+2026-03-27 13:35:49.983801 INFO::Total filtered features: 49
+2026-03-27 13:35:49.985597 INFO::Filtered feature names from abundance and prevalence filtering: Actinomyces_gerencseriae, Actinomyces_viscosus, Aggregatibacter_segnis, Alloscardovia_omnicolens, Bifidobacterium_dentium, Campylobacter_curvus, Campylobacter_rectus, Campylobacter_showae, Capnocytophaga_sputigena, Cardiobacterium_hominis, Desulfomicrobium_orale, Eikenella_corrodens, Granulicatella_elegans, Haemophilus_aegyptius, Haemophilus_sputorum, Kingella_denitrificans, Lachnoanaerobaculum_saburreum, Megasphaera_micronuciformis, Mogibacterium_timidum, Mycoplasma_orale, Neisseria_bacilliformis, Neisseria_lactamica, Neisseria_meningitidis, Neisseria_mucosa, Oribacterium_sinus, Peptoniphilus_indolicus, Porphyromonas_catoniae, Porphyromonas_endodontalis, Prevotella_buccae, Prevotella_dentalis, Prevotella_melaninogenica, Prevotella_micans, Prevotella_oris, Prevotella_scopos, Prevotella_shahii, Pseudoramibacter_alactolyticus, Rothia_dentocariosa, Schaalia_georgiae, Selenomonas_artemidis, Selenomonas_flueggei, Selenomonas_noxia, Shuttleworthia_satelles, Streptococcus_infantis, Streptococcus_oralis, Treponema_lecithinolyticum, Treponema_maltophilum, Treponema_medium, Treponema_vincentii, Veillonella_dispar
+2026-03-27 13:35:49.988163 INFO::Total filtered features with variance filtering: 0
+2026-03-27 13:35:49.989415 INFO::Filtered feature names from variance filtering:
+2026-03-27 13:35:49.990883 INFO::Running selected normalization method: NONE
+2026-03-27 13:35:49.992039 INFO::Bypass z-score application to metadata
+2026-03-27 13:35:49.993051 INFO::Running selected transform method: NONE
+2026-03-27 13:35:49.994034 INFO::Running selected analysis method: LM
+2026-03-27 13:35:49.995028 INFO::Fitting model to feature number 1, Abiotrophia_defectiva
+2026-03-27 13:35:49.998141 INFO::Fitting model to feature number 2, Actinomyces_naeslundii
+2026-03-27 13:35:50.000775 INFO::Fitting model to feature number 3, Actinomyces_oris
+2026-03-27 13:35:50.00339 INFO::Fitting model to feature number 4, Aggregatibacter_actinomycetemcomitans
+2026-03-27 13:35:50.005907 INFO::Fitting model to feature number 5, Aggregatibacter_aphrophilus
+2026-03-27 13:35:50.008429 INFO::Fitting model to feature number 6, Anaeroglobus_geminatus
+2026-03-27 13:35:50.011203 INFO::Fitting model to feature number 7, Bifidobacterium_longum
+2026-03-27 13:35:50.01372 INFO::Fitting model to feature number 8, Brevundimonas_diminuta
+2026-03-27 13:35:50.01653 INFO::Fitting model to feature number 9, Bulleidia_extructa
+2026-03-27 13:35:50.019056 INFO::Fitting model to feature number 10, Campylobacter_concisus
+2026-03-27 13:35:50.021517 INFO::Fitting model to feature number 11, Capnocytophaga_gingivalis
+2026-03-27 13:35:50.023954 INFO::Fitting model to feature number 12, Capnocytophaga_granulosa
+2026-03-27 13:35:50.026387 INFO::Fitting model to feature number 13, Cardiobacterium_valvarum
+2026-03-27 13:35:50.03131 INFO::Fitting model to feature number 14, Catonella_morbi
+2026-03-27 13:35:50.033959 INFO::Fitting model to feature number 15, Comamonas_testosteroni
+2026-03-27 13:35:50.03692 INFO::Fitting model to feature number 16, Corynebacterium_durum
+2026-03-27 13:35:50.039465 INFO::Fitting model to feature number 17, Cryptobacterium_curtum
+2026-03-27 13:35:50.041997 INFO::Fitting model to feature number 18, Dialister_invisus
+2026-03-27 13:35:50.044443 INFO::Fitting model to feature number 19, Dialister_micraerophilus
+2026-03-27 13:35:50.04687 INFO::Fitting model to feature number 20, Eggerthia_catenaformis
+2026-03-27 13:35:50.050006 INFO::Fitting model to feature number 21, Enterococcus_faecalis
+2026-03-27 13:35:50.052687 INFO::Fitting model to feature number 22, Filifactor_alocis
+2026-03-27 13:35:50.055135 INFO::Fitting model to feature number 23, Fusobacterium_naviforme
+2026-03-27 13:35:50.057625 INFO::Fitting model to feature number 24, Fusobacterium_necrophorum
+2026-03-27 13:35:50.060231 INFO::Fitting model to feature number 25, Fusobacterium_nucleatum
+2026-03-27 13:35:50.06263 INFO::Fitting model to feature number 26, Fusobacterium_periodonticum
+2026-03-27 13:35:50.065441 INFO::Fitting model to feature number 27, Gemella_haemolysans
+2026-03-27 13:35:50.068506 INFO::Fitting model to feature number 28, Gemella_morbillorum
+2026-03-27 13:35:50.070952 INFO::Fitting model to feature number 29, Granulicatella_adiacens
+2026-03-27 13:35:50.073412 INFO::Fitting model to feature number 30, Haemophilus_haemolyticus
+2026-03-27 13:35:50.07596 INFO::Fitting model to feature number 31, Jonquetella_anthropi
+2026-03-27 13:35:50.078485 INFO::Fitting model to feature number 32, Lactobacillus_crispatus
+2026-03-27 13:35:50.082957 INFO::Fitting model to feature number 33, Lactobacillus_gasseri
+2026-03-27 13:35:50.0856 INFO::Fitting model to feature number 34, Lactococcus_lactis
+2026-03-27 13:35:50.088056 INFO::Fitting model to feature number 35, Leptotrichia_wadei
+2026-03-27 13:35:50.090508 INFO::Fitting model to feature number 36, Neisseria_elongata
+2026-03-27 13:35:50.093417 INFO::Fitting model to feature number 37, Neisseria_flavescens
+2026-03-27 13:35:50.096016 INFO::Fitting model to feature number 38, Neisseria_subflava
+2026-03-27 13:35:50.098733 INFO::Fitting model to feature number 39, Parvimonas_micra
+2026-03-27 13:35:50.101592 INFO::Fitting model to feature number 40, Peptostreptococcus_stomatis
+2026-03-27 13:35:50.104318 INFO::Fitting model to feature number 41, Prevotella_denticola
+2026-03-27 13:35:50.106786 INFO::Fitting model to feature number 42, Schaalia_meyeri
+2026-03-27 13:35:50.109223 INFO::Fitting model to feature number 43, Schaalia_odontolytica
+2026-03-27 13:35:50.111821 INFO::Fitting model to feature number 44, Selenomonas_sputigena
+2026-03-27 13:35:50.115949 INFO::Fitting model to feature number 45, Staphylococcus_epidermidis
+2026-03-27 13:35:50.118564 INFO::Fitting model to feature number 46, Staphylococcus_warneri
+2026-03-27 13:35:50.12106 INFO::Fitting model to feature number 47, Streptococcus_anginosus
+2026-03-27 13:35:50.123824 INFO::Fitting model to feature number 48, Streptococcus_australis
+2026-03-27 13:35:50.126376 INFO::Fitting model to feature number 49, Streptococcus_constellatus
+2026-03-27 13:35:50.129007 INFO::Fitting model to feature number 50, Streptococcus_cristatus
+2026-03-27 13:35:50.132181 INFO::Fitting model to feature number 51, Streptococcus_gordonii
+2026-03-27 13:35:50.134823 INFO::Fitting model to feature number 52, Streptococcus_intermedius
+2026-03-27 13:35:50.137546 INFO::Fitting model to feature number 53, Streptococcus_mitis
+2026-03-27 13:35:50.140215 INFO::Fitting model to feature number 54, Streptococcus_mutans
+2026-03-27 13:35:50.142783 INFO::Fitting model to feature number 55, Streptococcus_parasanguinis
+2026-03-27 13:35:50.145275 INFO::Fitting model to feature number 56, Streptococcus_salivarius
+2026-03-27 13:35:50.148402 INFO::Fitting model to feature number 57, Streptococcus_sanguinis
+2026-03-27 13:35:50.151589 INFO::Fitting model to feature number 58, Streptococcus_sinensis
+2026-03-27 13:35:50.154718 INFO::Fitting model to feature number 59, Streptococcus_sobrinus
+2026-03-27 13:35:50.15736 INFO::Fitting model to feature number 60, Streptococcus_vestibularis
+2026-03-27 13:35:50.162108 INFO::Fitting model to feature number 61, Tannerella_forsythia
+2026-03-27 13:35:50.166377 INFO::Fitting model to feature number 62, Treponema_denticola
+2026-03-27 13:35:50.16921 INFO::Fitting model to feature number 63, Veillonella_atypica
+2026-03-27 13:35:50.172155 INFO::Fitting model to feature number 64, Veillonella_parvula
+2026-03-27 13:35:50.181416 INFO::Counting total values for each feature
+2026-03-27 13:35:50.18525 INFO::Writing filtered data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/features/filtered_data.tsv
+2026-03-27 13:35:50.206013 INFO::Writing filtered, normalized data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/features/filtered_data_norm.tsv
+2026-03-27 13:35:50.224013 INFO::Writing filtered, normalized, transformed data to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/features/filtered_data_norm_transformed.tsv
+2026-03-27 13:35:50.252644 INFO::Writing residuals to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/fits/residuals.rds
+2026-03-27 13:35:50.255098 INFO::Writing fitted values to file C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/fits/fitted.rds
+2026-03-27 13:35:50.256389 INFO::Writing all results to file (ordered by increasing q-values): C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/all_results.tsv
+2026-03-27 13:35:50.260369 INFO::Writing the significant results (those which are less than or equal to the threshold of 0.250000 ) to file (ordered by increasing q-values): C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/significant_results.tsv
+2026-03-27 13:35:50.264067 INFO::Writing heatmap of significant results to file: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out/heatmap.pdf
+2026-03-27 13:35:50.270827 INFO::Writing association plots (one for each significant association) to output folder: C:/SampleTreeGithubTest/Updated_CSVs_With_PatID/BacCount_UniFrac/trend_outputs/group_BacCount_UniFrac_node207_BacFreq/Maaslin2_out
+2026-03-27 13:35:50.273243 INFO::Plotting associations from most to least significant, grouped by metadata
+2026-03-27 13:35:50.274352 INFO::Plotting data for metadata number 1, Group
+2026-03-27 13:35:50.276033 INFO::Creating boxplot for categorical data, Group vs Fusobacterium_nucleatum

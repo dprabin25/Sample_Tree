@@ -1,0 +1,19 @@
+Based on the provided elements and their associations with healthy gum status or recovery from gum disease, the following groups and pairs have been identified based on joint shifts:
+
+| Element                       | GPT shift 2 | Biological Group                | Group ID based on Biological Group | Notes (if any)               |
+|-------------------------------|-------------|----------------------------------|------------------------------------|-------------------------------|
+| M30_hu.IL.10..27.             | 1           | Anti-inflammatory Cytokines      | 1                                  | Typically increases in recovery |
+| M44_hu.IL.6..57.              | -1          | Pro-inflammatory Cytokines       | 2                                  | Typically decreases in recovery |
+| M52_hu.TNF.a..75.             | -1          | Pro-inflammatory Cytokines       | 2                                  | Typically decreases in recovery |
+| M39_hu.IL.17A..39.            | -1          | Pro-inflammatory Cytokines       | 2                                  | Typically decreases in recovery |
+| M25_hu.GM.CSF..20.            | 1           | Hematopoietic Growth Factors     | 3                                  | Typically increases in recovery |
+| M61_hu.Periostin..47.         | 1           | Tissue Remodeling Factors         | 4                                  | Typically increases in recovery |
+| M58_hu.RANKL..42.             | -1          | Bone Resorption Mediators        | 5                                  | Typically decreases in recovery |
+| PD_Monocyte                   | 1           | Immune Cell Activation            | 6                                  | Typically increases in recovery |
+
+### Notes:
+1. The cytokines IL-10 and GM-CSF are associated with anti-inflammatory responses and are known to increase during recovery, while pro-inflammatory cytokines like IL-6, TNF-α, and IL-17A typically decrease, indicating a shift towards a healthier gum status.
+2. Periostin and RANKL are involved in tissue remodeling and bone resorption, respectively, with periostin increasing and RANKL decreasing during recovery.
+3. Monocytes play a crucial role in immune response and are reported to increase during recovery from periodontal disease.
+
+This summary reflects the relationships and shifts observed in the context of healthy gum status and recovery from gum disease.
