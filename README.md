@@ -6,6 +6,8 @@ The **SampleBioShift** pipeline runs the **SampleTree** workflow and **BioShift*
 
 SampleTree groups samples into clusters based on their similarity, using similarity matrices to identify which samples are most alike. BioShift, on the other hand, focuses on identifying and defining the changes (or shifts) of elements within these sample clusters. Essentially, SampleTree organizes the samples, while BioShift analyzes the shifts that occur within those groups.
 
+Note: Users can also run Sample tree approach skipping the BioShift if they don't update config.txt. 
+
 ### Important note:
 The pipeline does not perform input scaling. It is up to the user to decide whether to use scaled or unscaled data.
 
