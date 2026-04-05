@@ -26,10 +26,6 @@ Note: We tested Bioshift with Python 3.12.1 / 3.12.2
 
 `conda activate bioshift`
 
-- Make sure you have these packages installed:
-  
-`argparse, pandas, shutil, fnmatch, re, subprocess, sys, itertools, datetime`
-
 
 ### 1b. R
 Please install R from https://posit.co/download/rstudio-desktop/
