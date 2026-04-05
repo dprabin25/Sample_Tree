@@ -111,13 +111,18 @@ Example input files
 <img width="706" height="240" alt="image" src="https://github.com/user-attachments/assets/d2bd62a7-cb75-4193-a097-d8e7297b3f57" />
  
 
-2. Pro1log10.csv: Expression data from protein dataset for differential analysis for targeted samples clustered in sample trees.
+2. Pro1log10.csv: Expression data from protein dataset (unscaled) for differential analysis for targeted samples clustered in sample trees.
  
 <img width="702" height="243" alt="image" src="https://github.com/user-attachments/assets/8c2e1f47-3822-4d65-aa47-d05b007d6efd" />
 
 3. Cell.csv : Cell frequency dataset (unscaled)
 
 <img width="673" height="245" alt="image" src="https://github.com/user-attachments/assets/d8aa499d-cbdb-4096-9149-c449b79eb6f5" />
+
+4. BacCount.csv : Bacteria abundance dataset
+
+<img width="809" height="241" alt="image" src="https://github.com/user-attachments/assets/f1527507-bbe1-4587-add1-d2f328d03fc4" />
+
 
 
 ##  File Descriptions
