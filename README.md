@@ -115,17 +115,22 @@ Example input files
  
 <img width="702" height="243" alt="image" src="https://github.com/user-attachments/assets/8c2e1f47-3822-4d65-aa47-d05b007d6efd" />
 
-3. Cell.csv : Cell frequency dataset (unscaled)
+3. Cell.csv : Cell frequency dataset (unscaled) - Required for sample tree clustering and differential analysis
 
 <img width="673" height="245" alt="image" src="https://github.com/user-attachments/assets/d8aa499d-cbdb-4096-9149-c449b79eb6f5" />
 
-4. BacCount.csv : Bacteria abundance dataset (unscaled)
+4. BacCount.csv : Bacteria abundance dataset (unscaled) - Required for sample tree clustering using phylogenetic methods and differential analysis
 
 <img width="809" height="241" alt="image" src="https://github.com/user-attachments/assets/f1527507-bbe1-4587-add1-d2f328d03fc4" />
 
-5. BacFreq.csv : MinMax scaled dataset from BacCount.csv
+5. BacFreq.csv : MinMax scaled dataset from bacterial abundance. Required for differential analysis.
 
 <img width="807" height="241" alt="image" src="https://github.com/user-attachments/assets/3ba1bc82-1a30-43b4-9d26-07bdeed7fa62" />
+
+6. BacTree.nwk : Required for making sample tree using phyolgenetic methods
+
+<img width="592" height="470" alt="image" src="https://github.com/user-attachments/assets/2a900187-a518-42b2-87a7-9c0429ff2b33" />
+
 
 
 
