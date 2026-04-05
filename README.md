@@ -23,7 +23,7 @@ To create the environment, include to install correct Python version and R.
 
 `conda create -n bioshift python=3.12.2 r-base=4.5.0 pandas -y`
 
-conda activate bioshift`
+`conda activate bioshift`
 
 
 - Make sure you have these packages installed for R:
