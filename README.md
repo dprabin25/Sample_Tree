@@ -217,13 +217,28 @@ Example:
 
 - *_Bray
 
+ExampleOutputs have these folders:
+1. BacCount_UniFrac
+   
+3. Cell_Bray
+   
+5. Pro1log10MinMax_Bray
+
+Inside this folder, you will find a subfolder called "clade", where you can see which elements are shifting significantly in the targeted samples that formed clades, as demonstrated in the boxplots and statistical summary.
+
 ### Observed_Shifts_by_group:
 
 Contains elements increasing or decreasing in different clades from input files.
 
+ExampleOutputs shows folder name "Observed_Shifts_by_group" 
+
+
+
 ### Observed_Shifts:
 
-The output consists of combined results with combinations from CSV files from "Observed_Shifts_by_group" folder. 
+The output consists of combined results with combinations from CSV files from "Observed_Shifts_by_group" folder which have input for BioShift.  
+
+ExampleOutputs shows folder name "Observed_Shifts" 
 
 #### Process:
 
@@ -244,6 +259,7 @@ Note: The number of CSV files used in each combination depends on the user's inp
 ### BioShiftOutputs
 
 Contains data interpretation for disease and healthy for each specific combinations of the clades. 
+
 
 --------
 ## Reference
