@@ -264,6 +264,8 @@ Note: The number of CSV files used in each combination depends on the user's inp
 
 Contains data interpretation for disease and healthy for each specific combinations of the clades. 
 
+ExampleOutputs shows folder name "BioShiftOutputs" 
+
 
 --------
 ## Reference
