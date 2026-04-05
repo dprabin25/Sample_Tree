@@ -106,15 +106,18 @@ Your working directory should contain the following files:
 All csv files contains Sample column that have sample IDs and other columns contain frequency, abundance, scaled expression values depending upon type of input. 
 
 Example input files
-1. Pro1log10MinMax.csv : MinMax scaled expression data from protein for making sample tree
+1. Pro1log10MinMax.csv : MinMax scaled expression data from protein dataset for making sample tree
 
 <img width="706" height="240" alt="image" src="https://github.com/user-attachments/assets/d2bd62a7-cb75-4193-a097-d8e7297b3f57" />
  
 
-2. Pro1log10: Expression data for differential analysis for targeted samples clustered in sample trees.
+2. Pro1log10.csv: Expression data from protein dataset for differential analysis for targeted samples clustered in sample trees.
  
 <img width="702" height="243" alt="image" src="https://github.com/user-attachments/assets/8c2e1f47-3822-4d65-aa47-d05b007d6efd" />
 
+3. Cell.csv : Cell frequency dataset (unscaled)
+
+   <img width="673" height="245" alt="image" src="https://github.com/user-attachments/assets/d8aa499d-cbdb-4096-9149-c449b79eb6f5" />
 
 
 ##  File Descriptions
