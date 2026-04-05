@@ -32,19 +32,24 @@ conda activate bioshift
 
 - Make sure you have these packages installed for R:
   
-`optparse, ape, vegan, picante, phyloseq, phangorn, progress, ggplot2, ggtree, treeio, dplyr, readr, stringr, tibble, tools, reshape2, limma`
 
-### 2. Maaslin2 package
+```r
+install.packages(c(
+  "optparse", "ape", "vegan", "picante", "phangorn", "progress",
+  "ggplot2", "dplyr", "readr", "stringr", "tibble", "reshape2",
+  "data.table", "tidyr", "pbapply", "matrixStats", "Hmisc",
+  "quantreg", "lme4", "lmerTest", "Rcpp", "RcppEigen"
+))
 
-Please install the package if required. 
-
-` if (!requireNamespace("BiocManager", quietly = TRUE))
+if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
-  BiocManager::install("MaAsLin2") `
 
-Dependencies for Maaslin2: data.table, dplyr, tidyr, stringr, ggplot2, pbapply, matrixStats, Hmisc, quantreg, lme4, lmerTest, Rcpp, RcppEigen
+BiocManager::install(c(
+  "phyloseq", "ggtree", "treeio", "limma", "MaAsLin2"
+))
+```
 
-### 3. API key
+### 2. API key
 1. Be signed up for OpenAI.
 
    https://platform.openai.com/
@@ -68,7 +73,7 @@ Dependencies for Maaslin2: data.table, dplyr, tidyr, stringr, ggplot2, pbapply, 
 Important: Treat this key like a password — never share it or commit it to public code repositories.
 ---
 
-## Files Required
+### 3. Files Required
 
 Your working directory should contain the following files:
 
@@ -97,7 +102,7 @@ Your working directory should contain the following files:
 ├── graphviz/
 
 
-## File Descriptions
+## 4. File Descriptions
 
 1. **sampletree_simple.R**
    
@@ -112,7 +117,7 @@ Your working directory should contain the following files:
    Data curation and calling large language models for interpretation.  
    For details: [BioShift on GitHub](https://github.com/dprabin25/BioShift).
 
-4. **methods.txt**
+5. **methods.txt**
    
    Contains four columns: `File`, `Method`, `Boot`, `Library`, `Tree`.  
    Users can enter the inputs file name with the `.csv` extension that they want to run with the phylogenetic method.  
@@ -124,7 +129,7 @@ Your working directory should contain the following files:
    You may see methods.txt on our repository for an example. 
 
 
-5. **sampletree_control.txt**
+6. **sampletree_control.txt**
    
 Configure the clade assignment with `min_targeted`, `max_other_samples`, `max_total_samples`, and `assign_policy`.  
 `assign_policy` options:
@@ -133,18 +138,18 @@ Configure the clade assignment with `min_targeted`, `max_other_samples`, `max_to
 - `largest`: Prefers clades with more total tips.
 - `smallest`: Prefers clades with fewer total tips.
 
-6. **target.txt**
+7. **target.txt**
    
 This file should contain `Sample` and `Target` columns.  
 Assign `Y` for the samples of interest.
 
-7. **config.txt**
+8. **config.txt**
    
 This needs to be updated with your API key and the version of the large language model you want to use.
 
 ---
 
-## Running the Script
+9. ### Running the Script
 
 1. Go to the working directory containing all the required files (All inputs in csv format along with Methods.txt, ObservedShifts.py, SampleBioShift.py, config.txt, sampletree_control.txt, sampletree_simple.R and target.txt) on the command terminal.
 
