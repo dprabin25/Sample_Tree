@@ -13,24 +13,15 @@ The pipeline does not perform input scaling. It is up to the user to decide whet
 
 ## Dependencies
 
-### 1a. Anaconda
+### 1. Anaconda and R
 
-Please install Anaconda: https://www.anaconda.com/distribution/
-
-Open the Anaconda Prompt (terminal), then create and activate a conda environment for Bioshift.
-
-Note: We tested Bioshift with Python 3.12.1 / 3.12.2 
+- Open Anaconda terminal and then create conda environment for Bioshift. Please install Anaconda:”. To create the environment, include to install correct Python version and R.
 
 
 `conda create -n bioshift python=3.12.2 r-base=4.5.0 pandas -y`
 
 `conda activate bioshift`
 
-
-### 1b. R
-Please install R from https://posit.co/download/rstudio-desktop/
-
-Note: We tested in 4.5.0
 
 - Make sure you have these packages installed:
   
