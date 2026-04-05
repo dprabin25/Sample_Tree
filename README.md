@@ -23,7 +23,7 @@ The pipeline does not perform input scaling. It is up to the user to decide whet
 `conda activate bioshift`
 
 
-- Make sure you have these packages installed:
+- Make sure you have these packages installed for R:
   
 `optparse, ape, vegan, picante, phyloseq, phangorn, progress, ggplot2, ggtree, treeio, dplyr, readr, stringr, tibble, tools, reshape2, limma`
 
