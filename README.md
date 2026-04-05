@@ -185,7 +185,7 @@ This needs to be updated with your API key and the version of the large language
 ## Running the Script
 
 1. Go to the working directory containing all the required files (All inputs in csv format along with Methods.txt, ObservedShifts.py, SampleBioShift.py, config.txt, sampletree_control.txt, sampletree_simple.R and target.txt) on the command terminal.
-   <img width="150" height="235" alt="image" src="https://github.com/user-attachments/assets/c2f554f3-4e1d-4a45-ab08-5898cfc439fb" />
+<img width="150" height="235" alt="image" src="https://github.com/user-attachments/assets/c2f554f3-4e1d-4a45-ab08-5898cfc439fb" />
 
 
 3. Run the script with your chosen folder name:
