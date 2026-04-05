@@ -117,7 +117,7 @@ Example input files
 
 3. Cell.csv : Cell frequency dataset (unscaled)
 
-   <img width="673" height="245" alt="image" src="https://github.com/user-attachments/assets/d8aa499d-cbdb-4096-9149-c449b79eb6f5" />
+<img width="673" height="245" alt="image" src="https://github.com/user-attachments/assets/d8aa499d-cbdb-4096-9149-c449b79eb6f5" />
 
 
 ##  File Descriptions
