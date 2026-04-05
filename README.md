@@ -102,6 +102,15 @@ Your working directory should contain the following files:
 ├── graphviz/
 
 
+### Input files according to ExampleInputs (that we shared here in the repository)
+All csv files contains Sample column that have sample IDs and other columns contain frequency, abundance, scaled expression values depending upon type of input. 
+
+Example input files
+1. Pro1log10MinMax.csv :
+   <img width="702" height="243" alt="image" src="https://github.com/user-attachments/assets/8c2e1f47-3822-4d65-aa47-d05b007d6efd" />
+
+
+
 ##  File Descriptions
 
 1. **sampletree_simple.R**
