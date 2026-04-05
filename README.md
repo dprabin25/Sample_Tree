@@ -190,6 +190,8 @@ This needs to be updated with your API key and the version of the large language
 
 `python SampleBioShift.py FolderName`
 
+<img width="873" height="57" alt="image" src="https://github.com/user-attachments/assets/accb9983-f6c2-4dca-bd18-dd94741ff54f" />
+
 
 You can assign any name to "FolderName". This folder will contain:
 
@@ -224,7 +226,7 @@ ExampleOutputs have these folders:
    
 5. Pro1log10MinMax_Bray
 
-Inside this folder, you will find a subfolder called "clade", where you can see which elements are shifting significantly in the targeted samples that formed clades, as demonstrated in the boxplots and statistical summary.
+Inside this folder, you will find a subfolder called "clades", where you can see which elements are shifting significantly in the targeted samples that formed clades, as demonstrated in the boxplots and statistical summary.
 
 ### Observed_Shifts_by_group:
 
