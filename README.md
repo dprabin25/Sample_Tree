@@ -1,39 +1,34 @@
 # Sample_Tree
 
 ## Description
-The **SampleBioShift** pipeline runs the **SampleTree** workflow and **BioShift** simultaneously.  
-`SampleBioShift.py` is a small orchestration script that runs the full analysis pipeline for a targeted sample set. 
 
-SampleTree groups samples into clusters based on their similarity, using similarity matrices to identify which samples are most alike. BioShift, on the other hand, focuses on identifying and defining the changes (or shifts) of elements within these sample clusters. Essentially, SampleTree organizes the samples, while BioShift analyzes the shifts that occur within those groups.
+The **SampleBioShift** pipeline runs the **SampleTree** workflow and **BioShift** together.  
+`SampleBioShift.py` is a lightweight orchestration script that runs the full analysis pipeline for a targeted sample set.
 
-Note: Users can also run only Sample tree approach skipping the BioShift if they don't update config.txt. 
+**SampleTree** groups samples into clusters based on similarity, using similarity matrices to identify which samples are most alike. **BioShift** focuses on identifying and defining the changes (shifts) of elements within those sample clusters. In short, SampleTree organizes the samples, while BioShift analyzes the shifts occurring within those groups.
 
-### Important note:
-The pipeline does not perform input scaling. It is up to the user to decide whether to use scaled or unscaled data.
+**Note:** Users can also run only the SampleTree workflow and skip BioShift if they do not update `config.txt`.
+
+### Important Note
+The pipeline does **not** perform input scaling. Users must decide whether to use scaled or unscaled data before running the analysis.
+
+---
 
 ## Dependencies
 
-### 1a. Anaconda
-Please install Anaconda: https://www.anaconda.com/distribution/
-Open Anaconda terminal and then create conda environment for Bioshift. 
-Please install Anaconda: https://www.anaconda.com/distribution/
-Note: We tested in 3.12.1 and 3.12.2 
+### 1. Anaconda and Conda Environment
 
-### 1a. Anaconda
+Please install **Anaconda** first:
 
-Please install Anaconda: https://www.anaconda.com/distribution/
+<https://www.anaconda.com/distribution/>
 
-Open the Anaconda Prompt (terminal), then create and activate a conda environment for Bioshift.
+Open the **Anaconda Prompt** (terminal), then create and activate a conda environment for **BioShift**.
 
-Note: We tested Bioshift with Python 3.12.1 / 3.12.2 and R 4.5.0.
+**Tested versions:** Python **3.12.1 / 3.12.2** and R **4.5.0**
 
 ```bash
 conda create -n bioshift python=3.12.2 r-base=4.5.0 pandas -y
 conda activate bioshift
-
-- Make sure you have these packages installed:
-  
-`argparse, pandas, shutil, fnmatch, re, subprocess, sys, itertools, datetime`
 
 
 ### 1b. R
