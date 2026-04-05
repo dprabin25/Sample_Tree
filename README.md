@@ -19,7 +19,7 @@ Please install Anaconda: https://www.anaconda.com/distribution/
 
 Open the Anaconda Prompt (terminal), then create and activate a conda environment for Bioshift.
 
-Note: We tested Bioshift with Python 3.12.1 / 3.12.2 and R 4.5.0.
+Note: We tested Bioshift with Python 3.12.1 / 3.12.2 
 
 
 `conda create -n bioshift python=3.12.2 r-base=4.5.0 pandas -y`
