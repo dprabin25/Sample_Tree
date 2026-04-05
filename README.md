@@ -15,7 +15,7 @@ The pipeline does not perform input scaling. It is up to the user to decide whet
 
 ### 1. Anaconda and R
 
-- Open Anaconda terminal and then create conda environment for SampleTree.
+- Open Anaconda terminal and then create conda environment for Sample_Tree.
 
 Please install Anaconda : https://www.anaconda.com/distribution/
 
@@ -24,9 +24,9 @@ To create the environment, include to install correct Python version and R.
 - To create the environment, install the correct Python version and R:
 
 ```bash
-conda create -n SampleTree python=3.12.2 r-base=4.5.0 pandas -y
+conda create -n Sample_Tree python=3.12.2 r-base=4.5.0 pandas -y
 
-conda activate SampleTree
+conda activate Sample_Tree
 
 ```
 
