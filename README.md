@@ -14,12 +14,6 @@ The pipeline does not perform input scaling. It is up to the user to decide whet
 ## Dependencies
 
 ### 1a. Anaconda
-Please install Anaconda: https://www.anaconda.com/distribution/
-Open Anaconda terminal and then create conda environment for Bioshift. 
-Please install Anaconda: https://www.anaconda.com/distribution/
-Note: We tested in 3.12.1 and 3.12.2 
-
-### 1a. Anaconda
 
 Please install Anaconda: https://www.anaconda.com/distribution/
 
