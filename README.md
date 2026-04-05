@@ -73,7 +73,7 @@ BiocManager::install(c(
 Important: Treat this key like a password — never share it or commit it to public code repositories.
 ---
 
-### 3. Files Required
+##  Files Required
 
 Your working directory should contain the following files:
 
@@ -102,7 +102,7 @@ Your working directory should contain the following files:
 ├── graphviz/
 
 
-## 4. File Descriptions
+##  File Descriptions
 
 1. **sampletree_simple.R**
    
@@ -149,7 +149,7 @@ This needs to be updated with your API key and the version of the large language
 
 ---
 
-9. ### Running the Script
+## Running the Script
 
 1. Go to the working directory containing all the required files (All inputs in csv format along with Methods.txt, ObservedShifts.py, SampleBioShift.py, config.txt, sampletree_control.txt, sampletree_simple.R and target.txt) on the command terminal.
 
