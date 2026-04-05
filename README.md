@@ -119,9 +119,14 @@ Example input files
 
 <img width="673" height="245" alt="image" src="https://github.com/user-attachments/assets/d8aa499d-cbdb-4096-9149-c449b79eb6f5" />
 
-4. BacCount.csv : Bacteria abundance dataset
+4. BacCount.csv : Bacteria abundance dataset (unscaled)
 
 <img width="809" height="241" alt="image" src="https://github.com/user-attachments/assets/f1527507-bbe1-4587-add1-d2f328d03fc4" />
+
+5. BacFreq.csv : MinMax scaled dataset from BacCount.csv
+
+<img width="807" height="241" alt="image" src="https://github.com/user-attachments/assets/3ba1bc82-1a30-43b4-9d26-07bdeed7fa62" />
+
 
 
 
