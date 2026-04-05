@@ -21,11 +21,10 @@ Open the Anaconda Prompt (terminal), then create and activate a conda environmen
 
 Note: We tested Bioshift with Python 3.12.1 / 3.12.2 and R 4.5.0.
 
- `
-conda create -n bioshift python=3.12.2 r-base=4.5.0 pandas -y
 
-conda activate bioshift 
-`
+ `conda create -n bioshift python=3.12.2 r-base=4.5.0 pandas -y`
+
+`conda activate bioshift` 
 
 Make sure you have these packages installed:
 argparse, pandas, shutil, fnmatch, re, subprocess, sys, itertools, datetime
