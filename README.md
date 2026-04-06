@@ -30,29 +30,19 @@ conda activate Sample_Tree
 
 ```
 
+To fix MASS-type package issues
+```conda install -c conda-forge r-recommended
+
+```
 - Make sure you have these packages installed for R:
 
-First Install Conda R standard recommended packages 
-```conda install -c conda-forge r-recommended
+Install Cran packages
+```Rscript -e "options(repos=c(CRAN='https://cloud.r-project.org')); install.packages(c('optparse','ape','vegan','picante','phangorn','progress','ggplot2','dplyr','readr','stringr','tibble','reshape2','data.table','tidyr','pbapply','matrixStats','Hmisc','quantreg','lme4','lmerTest','Rcpp','RcppEigen','rbibutils','Rdpack','BiocManager'))"
 ```
 
-Install the following packages 
-```r
-install.packages(c(
-  "optparse", "ape", "vegan", "picante", "phangorn", "progress",
-  "ggplot2", "dplyr", "readr", "stringr", "tibble", "reshape2",
-  "data.table", "tidyr", "pbapply", "matrixStats", "Hmisc",
-  "quantreg", "lme4", "lmerTest", "Rcpp"
-))
-
-if (!requireNamespace("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-
-BiocManager::install(c(
-  "phyloseq", "ggtree", "treeio", "limma", "MaAsLin2"
-))
+Install the Bioconductor packages
+```Rscript -e "BiocManager::install(c('phyloseq','ggtree','treeio','limma','Maaslin2'), ask=FALSE, update=FALSE)"
 ```
-
 ### 2. API key
 1. Be signed up for OpenAI.
 
