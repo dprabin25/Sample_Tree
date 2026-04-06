@@ -209,7 +209,7 @@ This needs to be updated with your API key and the version of the large language
 
 `python SampleBioShift.py FolderName`
 
-<img width="873" height="57" alt="image" src="https://github.com/user-attachments/assets/accb9983-f6c2-4dca-bd18-dd94741ff54f" />
+
 
 
 You can assign any name to "FolderName". This folder will contain:
