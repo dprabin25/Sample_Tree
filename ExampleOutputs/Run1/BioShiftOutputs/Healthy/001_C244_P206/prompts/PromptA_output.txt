@@ -1,0 +1,15 @@
+Based on the analysis of the provided list of microbial organisms, immune cells, and cytokines in relation to healthy gum status, the following table summarizes the established associations and their observed directions of change:
+
+| Element        | GPT shift 1 |
+|----------------|--------------|
+| EGF            | 1            |
+| IL10           | 1            |
+| IL6            | 1            |
+| IL8            | 1            |
+| TNFa           | -1           |
+| RANKL          | -1           |
+| GMCSF          | 1            |
+| MCP1           | 1            |
+| VEGF           | 1            |
+
+This table includes only those elements with established associations with healthy gums, indicating whether they are typically reported to increase (1), decrease (-1), or exhibit mixed patterns (0) in healthy gum status.

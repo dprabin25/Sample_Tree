@@ -1,0 +1,16 @@
+Based on the input elements provided, I have conducted an analysis of the literature regarding their joint shifts in the context of gum disease (periodontitis). Below is the summary table of findings, including the identified groups or pairs that are commonly reported to shift together, along with their respective directions of change.
+
+| Element     | GPT shift 2 | Biological Group             | Group ID based on Biological Group | Notes (if any)               |
+|-------------|--------------|-------------------------------|-------------------------------------|------------------------------|
+| IL6         | 1            | Pro-inflammatory Cytokines    | 1                                   | Commonly increases in gum disease. |
+| IL8         | 1            | Pro-inflammatory Cytokines    | 1                                   | Commonly increases in gum disease. |
+| TNFa        | 1            | Pro-inflammatory Cytokines    | 1                                   | Commonly increases in gum disease. |
+| IL10        | -1           | Anti-inflammatory Cytokines    | 2                                   | Typically decreases in gum disease. |
+| IL12p70     | 1            | Pro-inflammatory Cytokines    | 1                                   | Commonly increases in gum disease. |
+| RANKL       | 1            | Osteoclast Activation Factors  | 3                                   | Increases associated with bone resorption in gum disease. |
+| MMP2        | 1            | Matrix Metalloproteinases     | 4                                   | Increases due to tissue remodeling in gum disease. |
+| GMCSF       | 1            | Hematopoietic Growth Factors   | 5                                   | Increases in inflammatory responses in gum disease. |
+| MCP1        | 1            | Chemokines                     | 6                                   | Increases with monocyte recruitment in gum disease. |
+| EGF         | 1            | Growth Factors                 | 7                                   | Increases associated with tissue repair in gum disease. |
+
+This table captures the relationships and shifts of various elements in the context of periodontitis, categorized by their biological groups and indicating the direction of their shifts based on established literature.

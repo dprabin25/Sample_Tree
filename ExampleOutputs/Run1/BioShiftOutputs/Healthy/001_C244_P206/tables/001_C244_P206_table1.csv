@@ -1,0 +1,13 @@
+Element,GPT shift 1,GPT shift 2,Biological Group,Group ID based on Biological Group,Notes (if any),Observed Shift
+EGF,1,1,Growth Factors,GF1,Involved in tissue repair.,-1.0
+FIt3L,,1,Hematopoietic Factors,HF1,Promotes dendritic cell survival.,-1.0
+GMCSF,1,1,Hematopoietic Factors,HF1,Supports monocyte differentiation.,-1.0
+IL10,1,1,Anti-inflammatory Cytokines,AIC1,Promotes resolution of inflammation.,-1.0
+IL6,1,-1,Pro-inflammatory Cytokines,PIC1,"Elevated in periodontitis, decreases in recovery.",-1.0
+IL8,1,-1,Pro-inflammatory Cytokines,PIC1,Decreases with treatment.,-1.0
+MCP1,1,,,,,-1.0
+MMP2,,-1,Matrix Metalloproteinases,MMP1,Decreases with healing.,1.0
+Periostin,,1,Extracellular Matrix Proteins,EMP1,Associated with tissue remodeling.,1.0
+RANKL,-1,-1,Bone Remodeling Factors,BRF1,Decreases with resolution of inflammation.,-1.0
+TNFa,-1,-1,Pro-inflammatory Cytokines,PIC1,"Elevated in disease, decreases with recovery.",-1.0
+VEGF,1,1,Angiogenic Factors,AF1,Involved in tissue regeneration.,-1.0

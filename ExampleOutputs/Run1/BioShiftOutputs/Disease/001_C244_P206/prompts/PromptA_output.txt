@@ -1,0 +1,13 @@
+Here is the summary table based on the associations of the listed elements with gum disease:
+
+| Element       | GPT shift 1 |
+|---------------|--------------|
+| EGF           | 1            |
+| GMCSF         | 1            |
+| IL10          | -1           |
+| IL6           | 1            |
+| IL8           | 1            |
+| MCP1          | 1            |
+| RANKL         | 1            |
+| TNFa          | 1            |
+| VEGF          | 1            |

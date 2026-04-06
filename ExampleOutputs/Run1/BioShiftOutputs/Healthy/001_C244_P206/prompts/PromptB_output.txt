@@ -1,0 +1,17 @@
+Based on the provided list of elements and the criteria for identifying associations with healthy gum status or recovery from gum disease, I have analyzed the elements for potential joint shifts. Below is the summary table 'B' with the relevant findings:
+
+| Element      | GPT shift 2 | Biological Group            | Group ID based on Biological Group | Notes (if any)               |
+|--------------|--------------|------------------------------|-------------------------------------|-------------------------------|
+| EGF          | 1            | Growth Factors               | GF1                                 | Involved in tissue repair.    |
+| FIt3L        | 1            | Hematopoietic Factors       | HF1                                 | Promotes dendritic cell survival. |
+| GMCSF        | 1            | Hematopoietic Factors       | HF1                                 | Supports monocyte differentiation. |
+| IL10         | 1            | Anti-inflammatory Cytokines  | AIC1                                | Promotes resolution of inflammation. |
+| IL6          | -1           | Pro-inflammatory Cytokines   | PIC1                                | Elevated in periodontitis, decreases in recovery. |
+| IL8          | -1           | Pro-inflammatory Cytokines   | PIC1                                | Decreases with treatment.     |
+| TNFa        | -1           | Pro-inflammatory Cytokines   | PIC1                                | Elevated in disease, decreases with recovery. |
+| RANKL        | -1           | Bone Remodeling Factors      | BRF1                                | Decreases with resolution of inflammation. |
+| Periostin    | 1            | Extracellular Matrix Proteins | EMP1                                | Associated with tissue remodeling. |
+| VEGF         | 1            | Angiogenic Factors          | AF1                                 | Involved in tissue regeneration. |
+| MMP2         | -1           | Matrix Metalloproteinases    | MMP1                                | Decreases with healing.       |
+
+Please note that the associations are based on current literature, and the direction of shifts (increase or decrease) is indicated accordingly. Elements that did not show clear associations or shifts were not included in the table.

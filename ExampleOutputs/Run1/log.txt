@@ -1,0 +1,251 @@
+################################################################################
+Run started: 2026-04-06T14:12:48.954106
+Run folder: C:\SampleTreeGithubTest\Online\Sample_Tree\ExampleOutputs\Run1
+################################################################################
+
+================================================================================
+[RUN] SampleTree
+Command: Rscript sampletree_simple.R
+================================================================================
+[[1]]
+[1] TRUE
+
+[[2]]
+[1] TRUE
+
+[[3]]
+[1] TRUE
+
+[[4]]
+[1] TRUE
+
+[[5]]
+[1] TRUE
+
+[[6]]
+[1] TRUE
+
+[[7]]
+[1] TRUE
+
+[[8]]
+[1] TRUE
+
+[[9]]
+[1] TRUE
+
+[[10]]
+[1] TRUE
+
+[[11]]
+[1] TRUE
+
+[[12]]
+[1] TRUE
+
+[[13]]
+[1] TRUE
+
+[[14]]
+[1] TRUE
+
+[[15]]
+[1] TRUE
+
+[[16]]
+[1] TRUE
+
+[[17]]
+[1] TRUE
+
+Environment ready.
+Thresholds: min_targeted = 3, max_clade_size = 21, max_others = 3, assign_policy = best
+Target samples (Y): 14
+
+=== JOB 1 ===
+Profile_Tree : C:/SampleTreeGithubTest/Online/Sample_Tree/Pro1log10MinMax.csv
+Profile_Diff : C:/SampleTreeGithubTest/Online/Sample_Tree/Pro1log10.csv
+Method       : Bray
+Library      : limma
+Matrix       : Pro1log10
+Boot         : 10
+Outdir       : C:/SampleTreeGithubTest/Online/Sample_Tree/Pro1log10MinMax_Bray
+  -> Running method: Bray
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  âœ“ Wrote clades: C:/SampleTreeGithubTest/Online/Sample_Tree/Pro1log10MinMax_Bray/clades/clades_Pro1log10MinMax_Bray.csv
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  (TREND:Pro1log10/limma) Clade node206
+
+=== JOB 2 ===
+Profile_Tree : C:/SampleTreeGithubTest/Online/Sample_Tree/Cell.csv
+Profile_Diff : C:/SampleTreeGithubTest/Online/Sample_Tree/Cell.csv
+Method       : Bray
+Library      : MaAsLin2
+Matrix       : Cell
+Boot         : 5
+Outdir       : C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray
+  -> Running method: Bray
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  âœ“ Wrote clades: C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray/clades/clades_Cell_Bray.csv
+Found more than one class "phylo" in cache; using the first, from namespace 'phyloseq'
+Also defined by 'tidytree'
+  (TREND:Cell/MaAsLin2) Clade node244
+2026-04-06 14:12:55.942021 WARNING::Input is a matrix, passing through as.data.frame() .
+[1] "Creating output folder"
+[1] "Creating output feature tables folder"
+[1] "Creating output fits folder"
+[1] "Creating output figures folder"
+2026-04-06 14:12:55.953617 INFO::Writing function arguments to log file
+2026-04-06 14:12:55.971534 INFO::Verifying options selected are valid
+2026-04-06 14:12:56.000178 INFO::Determining format of input files
+2026-04-06 14:12:56.001852 INFO::Input format is data samples as columns and metadata samples as rows
+2026-04-06 14:12:56.007214 INFO::Formula for fixed effects: expr ~  Group
+2026-04-06 14:12:56.008574 INFO::Filter data based on min abundance and min prevalence
+2026-04-06 14:12:56.009579 INFO::Total samples in data: 154
+2026-04-06 14:12:56.01054 INFO::Min samples required with min abundance for a feature not to be filtered: 15.400000
+2026-04-06 14:12:56.012493 INFO::Total filtered features: 42
+2026-04-06 14:12:56.013954 INFO::Filtered feature names from abundance and prevalence filtering: B, abT_.CD4., abT_.CD8., gd_T, MAIT, Mast, mDC, Monocyte, NK, pDC, Plasma, Th17, Treg, PD_abT_.CD4., PD_gd_T, PD_MAIT, PD_Mast, PD_Treg, Epi_1, Mel, PD_Epi_1, Epi_1.1, Epi_1.2, LEC, SMC, VEC_1.1, VEC_1.2, VEC_1.3, VEC_1.4, PD_SMC, PD_VEC_1.1, PD_VEC_1.3, Fib_1.1, Fib_1.2, Fib_1.3, Fib_1.4, Fib_1.5, PD_Fib_1.1, PD_Fib_1.3, PD_Fib_1.4, PD_Fib_1.5, Other
+2026-04-06 14:12:56.015893 INFO::Total filtered features with variance filtering: 0
+2026-04-06 14:12:56.017102 INFO::Filtered feature names from variance filtering:
+2026-04-06 14:12:56.018167 INFO::Running selected normalization method: NONE
+2026-04-06 14:12:56.019267 INFO::Bypass z-score application to metadata
+2026-04-06 14:12:56.020405 INFO::Running selected transform method: NONE
+2026-04-06 14:12:56.021647 INFO::Running selected analysis method: LM
+2026-04-06 14:12:56.027967 INFO::Fitting model to feature number 1, Neutrophil
+2026-04-06 14:12:56.033756 INFO::Fitting model to feature number 2, PD_B
+2026-04-06 14:12:56.037309 INFO::Fitting model to feature number 3, PD_abT_.CD8.
+2026-04-06 14:12:56.040097 INFO::Fitting model to feature number 4, PD_mDC
+2026-04-06 14:12:56.043296 INFO::Fitting model to feature number 5, PD_Monocyte
+2026-04-06 14:12:56.045819 INFO::Fitting model to feature number 6, PD_Neutrophil
+2026-04-06 14:12:56.048922 INFO::Fitting model to feature number 7, PD_NK
+2026-04-06 14:12:56.051834 INFO::Fitting model to feature number 8, PD_pDC
+2026-04-06 14:12:56.054279 INFO::Fitting model to feature number 9, PD_Plasma
+2026-04-06 14:12:56.056887 INFO::Fitting model to feature number 10, PD_Th17
+2026-04-06 14:12:56.059627 INFO::Fitting model to feature number 11, Epi_2
+2026-04-06 14:12:56.062543 INFO::Fitting model to feature number 12, Epi_3
+2026-04-06 14:12:56.065236 INFO::Fitting model to feature number 13, PD_Epi_2
+2026-04-06 14:12:56.069622 INFO::Fitting model to feature number 14, PD_Epi_3
+2026-04-06 14:12:56.07137 INFO::Fitting model to feature number 15, PD_Mel
+2026-04-06 14:12:56.072973 INFO::Fitting model to feature number 16, Epi_1.3
+2026-04-06 14:12:56.074531 INFO::Fitting model to feature number 17, PD_LEC
+2026-04-06 14:12:56.076106 INFO::Fitting model to feature number 18, PD_VEC_1.2
+2026-04-06 14:12:56.079587 INFO::Fitting model to feature number 19, PD_VEC_1.4
+2026-04-06 14:12:56.082612 INFO::Fitting model to feature number 20, PD_Fib_1.2
+2026-04-06 14:12:56.089864 INFO::Counting total values for each feature
+2026-04-06 14:12:56.092452 INFO::Writing filtered data to file C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/features/filtered_data.tsv
+2026-04-06 14:12:56.098926 INFO::Writing filtered, normalized data to file C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/features/filtered_data_norm.tsv
+2026-04-06 14:12:56.105642 INFO::Writing filtered, normalized, transformed data to file C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/features/filtered_data_norm_transformed.tsv
+2026-04-06 14:12:56.113744 INFO::Writing residuals to file C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/fits/residuals.rds
+2026-04-06 14:12:56.116487 INFO::Writing fitted values to file C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/fits/fitted.rds
+2026-04-06 14:12:56.11852 INFO::Writing all results to file (ordered by increasing q-values): C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/all_results.tsv
+2026-04-06 14:12:56.122235 INFO::Writing the significant results (those which are less than or equal to the threshold of 0.250000 ) to file (ordered by increasing q-values): C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/significant_results.tsv
+2026-04-06 14:12:56.124353 INFO::Writing heatmap of significant results to file: C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out/heatmap.pdf
+[1] "There is not enough metadata in the associations to create a heatmap plot. Please review the associations in text output file."
+2026-04-06 14:12:56.127154 INFO::Writing association plots (one for each significant association) to output folder: C:/SampleTreeGithubTest/Online/Sample_Tree/Cell_Bray/trend_outputs/group_Cell_Bray_node244_Cell/Maaslin2_out
+2026-04-06 14:12:56.129918 INFO::Plotting associations from most to least significant, grouped by metadata
+2026-04-06 14:12:56.131313 INFO::Plotting data for metadata number 1, Group
+2026-04-06 14:12:56.1615 INFO::Creating boxplot for categorical data, Group vs PD_Monocyte
+2026-04-06 14:12:56.677032 INFO::Creating boxplot for categorical data, Group vs PD_Th17
+2026-04-06 14:12:56.789622 INFO::Creating boxplot for categorical data, Group vs PD_Neutrophil
+2026-04-06 14:12:56.908174 INFO::Creating boxplot for categorical data, Group vs PD_mDC
+2026-04-06 14:12:57.022812 INFO::Creating boxplot for categorical data, Group vs PD_pDC
+2026-04-06 14:12:57.141736 INFO::Creating boxplot for categorical data, Group vs PD_Fib_1.2
+2026-04-06 14:12:57.250934 INFO::Creating boxplot for categorical data, Group vs PD_LEC
+2026-04-06 14:12:57.360963 INFO::Creating boxplot for categorical data, Group vs PD_abT_.CD8.
+2026-04-06 14:12:57.469703 INFO::Creating boxplot for categorical data, Group vs PD_VEC_1.2
+Warning messages:
+1: Removed 7 rows containing non-finite outside the scale range
+(`stat_boxplot()`). 
+2: Removed 7 rows containing missing values or values outside the scale range
+(`geom_point()`). 
+3: Skipping job 3: Profile_Diff input file not found: BacFreq.csv 
+
+âœ“ All jobs complete (SampleTree + clade TREND via limma / MaAsLin2 + boxplots).
+
+================================================================================
+[RUN] ObservedShifts
+Command: python ObservedShifts.py
+================================================================================
+
+ BioShift - Automated Merge + Combination Engine
+=================================================================
+
+Working directory: C:\SampleTreeGithubTest\Online\Sample_Tree
+Merged outputs  -> C:\SampleTreeGithubTest\Online\Sample_Tree\Observed_Shifts_by_group
+Final combos    -> C:\SampleTreeGithubTest\Online\Sample_Tree\Observed_Shifts 
+
+Searching for group_* folders...
+
+Found 2 groups:
+
+  - C:\SampleTreeGithubTest\Online\Sample_Tree\Cell_Bray\trend_outputs\group_Cell_Bray_node244_Cell
+  - C:\SampleTreeGithubTest\Online\Sample_Tree\Pro1log10MinMax_Bray\trend_outputs\group_Pro1log10MinMax_Bray_node206_Pro1log10
+
+Merging groups...
+
+MERGED -> 244_Cell.csv
+MERGED -> 206_Pro1log10.csv
+
+Merging completed.
+---------------------------------------------------------------
+
+Starting Combination Engine
+
+Input types detected:
+  - Cell (1)
+  - Pro1log10 (1)
+
+Highest valid combination size = 2-way
+
+Saved: 001_C244_P206.csv
+
+ALL DONE
+Saved 1 combined CSVs into:
+   -> C:\SampleTreeGithubTest\Online\Sample_Tree\Observed_Shifts
+=================================================================
+
+================================================================================
+[RUN] BioShift disease
+Command: python BioShift.py --context disease --mode full_with_graphviz
+================================================================================
+
+ Processing 001_C244_P206.csv as disease -> C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Disease\001_C244_P206
+Clean TableAB saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Disease\001_C244_P206\tables\001_C244_P206_tableAB.csv
+Table1 saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Disease\001_C244_P206\tables\001_C244_P206_table1.csv
+Table2 saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Disease\001_C244_P206\tables\001_C244_P206_table2.csv
+Table3 saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Disease\001_C244_P206\tables\001_C244_P206_table3.csv
+Prompt 3 saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Disease\001_C244_P206\prompts\001_C244_P206_Prompt3_output.txt
+Highlighted graph saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Disease\001_C244_P206\graphviz\001_C244_P206_Graphviz1_highlighted.jpg
+Highlighted graph saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Disease\001_C244_P206\graphviz\001_C244_P206_Graphviz2_highlighted.jpg
+Highlighted graph saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Disease\001_C244_P206\graphviz\001_C244_P206_Graphviz3_highlighted.jpg
+Prompt_Co output saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Disease\001_C244_P206\Prompt_Co_Output\001_C244_P206_PromptCo_output.txt
+
+Pipeline finished for all samples.
+
+================================================================================
+[RUN] BioShift healthy
+Command: python BioShift.py --context healthy --mode full_with_graphviz
+================================================================================
+
+ Processing 001_C244_P206.csv as healthy -> C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Healthy\001_C244_P206
+Clean TableAB saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Healthy\001_C244_P206\tables\001_C244_P206_tableAB.csv
+Table1 saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Healthy\001_C244_P206\tables\001_C244_P206_table1.csv
+Table2 saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Healthy\001_C244_P206\tables\001_C244_P206_table2.csv
+Table3 saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Healthy\001_C244_P206\tables\001_C244_P206_table3.csv
+Prompt 3 saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Healthy\001_C244_P206\prompts\001_C244_P206_Prompt3_output.txt
+Highlighted graph saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Healthy\001_C244_P206\graphviz\001_C244_P206_Graphviz1_highlighted.jpg
+Highlighted graph saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Healthy\001_C244_P206\graphviz\001_C244_P206_Graphviz2_highlighted.jpg
+Highlighted graph saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Healthy\001_C244_P206\graphviz\001_C244_P206_Graphviz3_highlighted.jpg
+Prompt_Co output saved: C:\SampleTreeGithubTest\Online\Sample_Tree\BioShiftOutputs\Healthy\001_C244_P206\Prompt_Co_Output\001_C244_P206_PromptCo_output.txt
+
+Pipeline finished for all samples.
+
+[INFO] Moving ALL newly generated outputs and folders
+MOVED: BioShiftOutputs
+MOVED: Cell_Bray
+MOVED: Observed_Shifts
+MOVED: Observed_Shifts_by_group
+MOVED: Pro1log10MinMax_Bray

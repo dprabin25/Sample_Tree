@@ -1,0 +1,13 @@
+Element,Observed Shift,Expected Shift,Biological Group
+MCP1,-1,,
+VEGF,-1,1,Angiogenic Factors
+IL10,-1,1,Anti-inflammatory Cytokines
+RANKL,-1,-1,Bone Remodeling Factors
+Periostin,1,1,Extracellular Matrix Proteins
+EGF,-1,1,Growth Factors
+FIt3L,-1,1,Hematopoietic Factors
+GMCSF,-1,1,Hematopoietic Factors
+MMP2,1,-1,Matrix Metalloproteinases
+IL6,-1,-1,Pro-inflammatory Cytokines
+IL8,-1,-1,Pro-inflammatory Cytokines
+TNFa,-1,-1,Pro-inflammatory Cytokines

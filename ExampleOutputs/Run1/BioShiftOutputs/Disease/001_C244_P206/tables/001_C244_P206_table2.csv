@@ -1,0 +1,12 @@
+Element,Observed Shift,Expected Shift,Biological Group
+VEGF,-1,,
+IL10,-1,-1,Anti-inflammatory Cytokines
+MCP1,-1,1,Chemokines
+EGF,-1,1,Growth Factors
+GMCSF,-1,1,Hematopoietic Growth Factors
+MMP2,1,1,Matrix Metalloproteinases
+RANKL,-1,1,Osteoclast Activation Factors
+IL12p70,-1,1,Pro-inflammatory Cytokines
+IL6,-1,1,Pro-inflammatory Cytokines
+IL8,-1,1,Pro-inflammatory Cytokines
+TNFa,-1,1,Pro-inflammatory Cytokines

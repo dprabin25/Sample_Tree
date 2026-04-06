@@ -1,0 +1,12 @@
+Element,GPT shift 1,GPT shift 2,Biological Group,Group ID based on Biological Group,Notes (if any)
+EGF,1,1,Growth Factors,7,Increases associated with tissue repair in gum disease.
+GMCSF,1,1,Hematopoietic Growth Factors,5,Increases in inflammatory responses in gum disease.
+IL10,-1,-1,Anti-inflammatory Cytokines,2,Typically decreases in gum disease.
+IL12p70,,1,Pro-inflammatory Cytokines,1,Commonly increases in gum disease.
+IL6,1,1,Pro-inflammatory Cytokines,1,Commonly increases in gum disease.
+IL8,1,1,Pro-inflammatory Cytokines,1,Commonly increases in gum disease.
+MCP1,1,1,Chemokines,6,Increases with monocyte recruitment in gum disease.
+MMP2,,1,Matrix Metalloproteinases,4,Increases due to tissue remodeling in gum disease.
+RANKL,1,1,Osteoclast Activation Factors,3,Increases associated with bone resorption in gum disease.
+TNFa,1,1,Pro-inflammatory Cytokines,1,Commonly increases in gum disease.
+VEGF,1,,,,
