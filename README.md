@@ -47,6 +47,12 @@ Install the Bioconductor packages
 ```
 Rscript -e "BiocManager::install(c('phyloseq','ggtree','treeio','limma','Maaslin2'), ask=FALSE, update=FALSE)"
 ```
+
+Verify load packages
+
+```
+Rscript -e "pkgs <- c('optparse','ape','vegan','picante','phangorn','progress','ggplot2','dplyr','readr','stringr','tibble','reshape2','data.table','tidyr','pbapply','matrixStats','Hmisc','quantreg','lme4','lmerTest','Rcpp','phyloseq','ggtree','treeio','limma','Maaslin2'); print(data.frame(Package=pkgs, Loads=sapply(pkgs, function(p) require(p, character.only=TRUE, quietly=TRUE))))"
+```
 ### 2. API key
 1. Be signed up for OpenAI.
 
