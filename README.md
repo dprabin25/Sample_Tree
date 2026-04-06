@@ -126,24 +126,27 @@ All csv files contains Sample column that have sample IDs and other columns cont
 Example input files
 1. Pro1log10MinMax.csv : MinMax scaled expression data from protein dataset for making sample tree
 
-<img width="706" height="240" alt="image" src="https://github.com/user-attachments/assets/d2bd62a7-cb75-4193-a097-d8e7297b3f57" />
- 
+<img width="522" height="190" alt="image" src="https://github.com/user-attachments/assets/9d6de907-3b44-4a1c-bede-565a55fb2302" />
 
 2. Pro1log10.csv: Expression data from protein dataset (unscaled) for differential analysis for targeted samples clustered in sample trees.
  
-<img width="702" height="243" alt="image" src="https://github.com/user-attachments/assets/8c2e1f47-3822-4d65-aa47-d05b007d6efd" />
+<img width="449" height="191" alt="image" src="https://github.com/user-attachments/assets/2be0cfe1-e04e-40b0-9110-323c8c5fad94" />
+
 
 3. Cell.csv : Cell frequency dataset (unscaled) - Required for sample tree clustering and differential analysis
 
-<img width="673" height="245" alt="image" src="https://github.com/user-attachments/assets/d8aa499d-cbdb-4096-9149-c449b79eb6f5" />
+<img width="414" height="191" alt="image" src="https://github.com/user-attachments/assets/ec0aa0bc-5aff-4af6-bc9f-c53a941bcaa1" />
+
 
 4. BacCount.csv : Bacteria abundance dataset (unscaled) - Required for sample tree clustering using phylogenetic methods and differential analysis
 
-<img width="809" height="241" alt="image" src="https://github.com/user-attachments/assets/f1527507-bbe1-4587-add1-d2f328d03fc4" />
+<img width="567" height="198" alt="image" src="https://github.com/user-attachments/assets/dd0e8b3a-cbb7-4c31-99a0-1d506ed0b3df" />
+
 
 5. BacFreq.csv : MinMax scaled dataset from bacterial abundance. Required for differential analysis.
 
-<img width="807" height="241" alt="image" src="https://github.com/user-attachments/assets/3ba1bc82-1a30-43b4-9d26-07bdeed7fa62" />
+<img width="565" height="190" alt="image" src="https://github.com/user-attachments/assets/cd99ef32-57f3-4c86-9923-fc495f1177ca" />
+
 
 6. BacTree.nwk : Required for making sample tree using phyolgenetic methods
 
