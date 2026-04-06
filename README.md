@@ -31,14 +31,18 @@ conda activate Sample_Tree
 ```
 
 - Make sure you have these packages installed for R:
-  
 
+First Install Conda R standard recommended packages 
+```conda install -c conda-forge r-recommended
+```
+
+Install the following packages 
 ```r
 install.packages(c(
   "optparse", "ape", "vegan", "picante", "phangorn", "progress",
   "ggplot2", "dplyr", "readr", "stringr", "tibble", "reshape2",
   "data.table", "tidyr", "pbapply", "matrixStats", "Hmisc",
-  "quantreg", "lme4", "lmerTest", "Rcpp", "RcppEigen"
+  "quantreg", "lme4", "lmerTest", "Rcpp"
 ))
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
