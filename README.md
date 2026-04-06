@@ -29,6 +29,7 @@ conda create -n Sample_Tree python=3.12.2 r-base=4.3.0 pandas -y
 conda activate Sample_Tree
 
 ```
+#### R packages
 
 To fix MASS-type package issues
 ```
@@ -52,6 +53,19 @@ Verify load packages
 ```
 Rscript -e "pkgs <- c('optparse','ape','vegan','picante','phangorn','progress','ggplot2','dplyr','readr','stringr','tibble','reshape2','data.table','tidyr','pbapply','matrixStats','Hmisc','quantreg','lme4','lmerTest','Rcpp','phyloseq','ggtree','treeio','limma','Maaslin2'); print(data.frame(Package=pkgs, Loads=sapply(pkgs, function(p) require(p, character.only=TRUE, quietly=TRUE))))"
 ```
+
+#### Python packages
+
+Installing pandas and numpy
+```
+conda install -c conda-forge pandas=2.2.2 numpy=1.26.4
+```
+
+Installing opanai package
+```
+conda install conda-forge::openai==2.30.0   
+```
+
 ### 2. API key
 1. Be signed up for OpenAI.
 
