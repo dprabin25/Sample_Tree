@@ -56,9 +56,10 @@ Rscript -e "pkgs <- c('optparse','ape','vegan','picante','phangorn','progress','
 
 #### Python packages
 
-Installing pandas and numpy
+Installing pandas, numpy and graphviz packages
 ```
 conda install -c conda-forge pandas=2.2.2 numpy=1.26.4
+conda install -c conda-forge graphviz python-graphviz
 ```
 
 Installing opanai package
