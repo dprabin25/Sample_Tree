@@ -37,7 +37,9 @@ To fix MASS-type package issues
 - Make sure you have these packages installed for R:
 
 Install Cran packages
-```Rscript -e "options(repos=c(CRAN='https://cloud.r-project.org')); install.packages(c('optparse','ape','vegan','picante','phangorn','progress','ggplot2','dplyr','readr','stringr','tibble','reshape2','data.table','tidyr','pbapply','matrixStats','Hmisc','quantreg','lme4','lmerTest','Rcpp','RcppEigen','rbibutils','Rdpack','BiocManager'))"
+
+```
+Rscript -e "options(repos=c(CRAN='https://cloud.r-project.org')); install.packages(c('optparse','ape','vegan','picante','phangorn','progress','ggplot2','dplyr','readr','stringr','tibble','reshape2','data.table','tidyr','pbapply','matrixStats','Hmisc','quantreg','lme4','lmerTest','Rcpp','RcppEigen','rbibutils','Rdpack','BiocManager'))"
 ```
 
 Install the Bioconductor packages
