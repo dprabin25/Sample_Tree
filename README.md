@@ -33,7 +33,6 @@ conda activate Sample_Tree
 To fix MASS-type package issues
 ```
 conda install -c conda-forge r-recommended
-
 ```
 - Make sure you have these packages installed for R:
 
