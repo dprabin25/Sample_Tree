@@ -31,7 +31,8 @@ conda activate Sample_Tree
 ```
 
 To fix MASS-type package issues
-```conda install -c conda-forge r-recommended
+```
+conda install -c conda-forge r-recommended
 
 ```
 - Make sure you have these packages installed for R:
@@ -43,7 +44,8 @@ Rscript -e "options(repos=c(CRAN='https://cloud.r-project.org')); install.packag
 ```
 
 Install the Bioconductor packages
-```Rscript -e "BiocManager::install(c('phyloseq','ggtree','treeio','limma','Maaslin2'), ask=FALSE, update=FALSE)"
+```
+Rscript -e "BiocManager::install(c('phyloseq','ggtree','treeio','limma','Maaslin2'), ask=FALSE, update=FALSE)"
 ```
 ### 2. API key
 1. Be signed up for OpenAI.
