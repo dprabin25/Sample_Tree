@@ -19,9 +19,7 @@ The pipeline does not perform input scaling. It is up to the user to decide whet
 
 Please install Anaconda : https://www.anaconda.com/distribution/
 
-To create the environment, include to install correct Python version and R.
-
-- To create the environment, install the correct Python version and R:
+- To create the environment, install the correct Python version:
 
 ```bash
 conda create -n Sample_Tree python=3.12.2 r-base=4.3.0 pandas -y
