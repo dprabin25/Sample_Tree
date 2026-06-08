@@ -22,7 +22,7 @@ Please install Anaconda : https://www.anaconda.com/distribution/
 - To create the environment, install the correct Python version:
 
 ```bash
-conda create -n Sample_Tree python=3.12.2 r-base=4.6.0 pandas -y -c conda-forge
+conda create -n Sample_Tree python=3.12.2 r-base=4.5.3 pandas -y -c conda-forge 
 
 conda activate Sample_Tree
 
