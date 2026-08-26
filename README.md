@@ -188,7 +188,7 @@ Example input files
    Assign `Y` for the samples of interest; `Patient` groups a sample's timepoints so clades are detected per patient rather than across one global cohort.
 8. **BioShift/config_bioshift.txt**
    
-   This needs to be updated with your API key and the version of the large language model you want to use. `SampleBioShift.py` validates this key with a live API call before the `BioShift.py` step runs, so a missing or wrong key aborts there without losing the tree/clustering results already produced.
+   This **needs to be updated with your API** key and the version of the large language model you want to use. `SampleBioShift.py` validates this key with a live API call before the `BioShift.py` step runs, so a missing or wrong key aborts there without losing the tree/clustering results already produced.
 9. **BioShift/graphviz/**
    
    Pre-built DOT-format pathway diagrams. `BioShift.py` colors any node matching a significant element green (increase) or blue (decrease) and renders a highlighted image per diagram per patient-group.
