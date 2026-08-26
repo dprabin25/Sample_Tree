@@ -127,7 +127,7 @@ All csv files contains Sample column that have sample IDs and other columns cont
 
 Example input files
 
-1. Pro1log10.csv: Expression data from protein dataset (log10) for differential analysis for targeted samples clustered in sample trees.
+1. Pro1log10.csv: Expression data from protein dataset (log10) for sample tree clustering and differential analysis for targeted samples clustered in sample trees.
  
 <img width="449" height="191" alt="image" src="https://github.com/user-attachments/assets/2be0cfe1-e04e-40b0-9110-323c8c5fad94" />
 
@@ -152,48 +152,46 @@ Example input files
 
 ##  File Descriptions
 
-1. **sampletree_simple.R**
-   
-   For clustering samples based on phylogenetic and/or non-phylogenetic methods.
+##  File Descriptions
 
-2. **ObservedShifts.py**
+1. **SampleBioShift.py**
    
-   Merges outputs from **BioShift.py**.
-
-3. **BioShift.py**
+   The orchestrator — run this one. Controls the whole pipeline in one call: runs `tree_pipeline.R` against whatever `methods.txt` currently holds, builds `Observed_shifts/` internally, then calls `BioShift/BioShift.py` for the disease and healthy passes.
+2. **tree_pipeline.R**
+   
+   For clustering samples based on phylogenetic and/or non-phylogenetic methods, and detecting clades of targeted (`Y`) samples.
+3. **differential_analysis.R**
+   
+   Sourced automatically by `tree_pipeline.R` when `Differential analysis = Yes` in `methods.txt`. Runs limma or MaAsLin2 on each detected clade and writes the `Element` / `Observed Shift` table `SampleBioShift.py` reads to build `Observed_shifts/`.
+4. **BioShift.py**
    
    Data curation and calling large language models for interpretation.  
    For details: [BioShift on GitHub](https://github.com/dprabin25/BioShift).
-
 5. **methods.txt**
    
-   Contains four columns: `File`, `Method`, `Boot`, `Library`, `Tree`.  
-   Users can enter the inputs file name with the `.csv` extension that they want to run with the phylogenetic method.  
+   Single config file `tree_pipeline.R` reads — edit it by hand before each run to select one dataset/combo at a time. Fields: `Filename`, `Input_Type` (log10 | Count | Frequency), `Distance_Metric` (Bray | Euclidean | UniFrac | UniFracW | MPD | MPDw | MNTD | MNTDw), `PhyloTree`, `Normalization`, `Support/bootstrap`, `SD`, `Differential analysis` (Yes/No), `Input df`, `Profile_Library`.  
    - Note: You need to provide count data to run the Bray-Curtis dissimilarity method.  
    - For other methods (MPD, MPDw, MNTD, MNTDw, UniFrac, UniFracW), you need both count data and a tree file.  
-
    Users can choose the package to work with: `"limma"` or `"MaAslin2"` based on their data type.
-
-   You may see methods.txt on our repository for an example. 
-
-
+   You may see methods.txt on our repository for an example.
 6. **sampletree_control.txt**
    
-Configure the clade assignment with `min_targeted`, `max_other_samples`, `max_total_samples`, and `assign_policy`.  
-`assign_policy` options:
-- `best`: (default) Ranks clades by most targeted → fewer others → smaller total tips.
-- `first`: Selects the first qualifying clade encountered.
-- `largest`: Prefers clades with more total tips.
-- `smallest`: Prefers clades with fewer total tips.
-
+   Configure the clade assignment with `min_targeted`, `max_clade_size`, `max_others`, and `assign_policy`.  
+   `assign_policy` options:
+   - `best`: (default) Ranks clades by most targeted → fewer others → smaller total tips.
+   - `first`: Selects the first qualifying clade encountered.
+   - `largest`: Prefers clades with more total tips.
+   - `smallest`: Prefers clades with fewer total tips.
 7. **target.txt**
    
-This file should contain `Sample` and `Target` columns.  
-Assign `Y` for the samples of interest.
-
-8. **config.txt**
+   This file should contain `Sample`, `Target`, and `Patient` columns.  
+   Assign `Y` for the samples of interest; `Patient` groups a sample's timepoints so clades are detected per patient rather than across one global cohort.
+8. **BioShift/config_bioshift.txt**
    
-This needs to be updated with your API key and the version of the large language model you want to use.
+   This needs to be updated with your API key and the version of the large language model you want to use. `SampleBioShift.py` validates this key with a live API call before the `BioShift.py` step runs, so a missing or wrong key aborts there without losing the tree/clustering results already produced.
+9. **BioShift/graphviz/**
+   
+   Pre-built DOT-format pathway diagrams. `BioShift.py` colors any node matching a significant element green (increase) or blue (decrease) and renders a highlighted image per diagram per patient-group.
 
 ---
 
