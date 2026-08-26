@@ -88,13 +88,13 @@ Your working directory (SampleBioShift/) should contain the following:
 
 ├── Inputs/
 
-└── File1.csv              ## input CSV file
+   └── File1.csv              ## input CSV file
 
-└── File2.csv               ## input CSV file
+   └── File2.csv               ## input CSV file
 
-└──File3.csv               ## input CSV file
+   └──File3.csv               ## input CSV file
 
-└──FileX.csv               ## input CSV file (as many as your data types require)
+   └──FileX.csv               ## input CSV file (as many as your data types require)
 
 .
 .
@@ -116,11 +116,11 @@ Your working directory (SampleBioShift/) should contain the following:
 
 ├── BioShift/
 
-└── BioShift.py             ## LLM interpretation + graphviz highlighting
+   └── BioShift.py             ## LLM interpretation + graphviz highlighting
     
-└── config_bioshift.txt     ## OpenAI API key + model settings
+   └── config_bioshift.txt     ## OpenAI API key + model settings
     
-└── graphviz/               ## pre-built DOT pathway diagrams
+   └── graphviz/               ## pre-built DOT pathway diagrams
 
 
 
