@@ -88,20 +88,35 @@ Your working directory (SampleBioShift/) should contain the following:
 
 SampleBioShift/
 ├── Inputs/
+
 │   ├── File1.csv              ## input CSV file
+
 │   ├── File2.csv               ## input CSV file
+
 │   ├── File3.csv               ## input CSV file
+
 │   ├── FileX.csv               ## input CSV file (as many as your data types require)
+
 │   └── FileX.nwk               ## reference tree (only needed for tree-aware distance metrics -- UniFrac, MPD, MNTD, etc.)
+
 ├── SampleBioShift.py          ## <-- run this. Controls everything: tree_pipeline.R -> build_observed_shifts() -> BioShift.py
+
 ├── tree_pipeline.R            ## sample-tree clustering + clade detection
+
 ├── differential_analysis.R    ## limma/MaAsLin2 per-cluster trend analysis (sourced by tree_pipeline.R)
+
 ├── target.txt                 ## Sample / Target (Y-N) / Patient labels
+
 ├── sampletree_control.txt     ## clade thresholds (min_targeted, max_clade_size, max_others, assign_policy)
+
 ├── methods.txt                ## single config file tree_pipeline.R reads -- edit it in place before each run (one data type/combo per run; see fields below)
+
 └── BioShift/
+
     ├── BioShift.py             ## LLM interpretation + graphviz highlighting
+    
     ├── config_bioshift.txt     ## OpenAI API key + model settings
+    
     └── graphviz/               ## pre-built DOT pathway diagrams
 
 
