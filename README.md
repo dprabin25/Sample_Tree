@@ -86,7 +86,6 @@ Your working directory should contain the following files:
 ##  Files Required
 Your working directory (SampleBioShift/) should contain the following:
 
-SampleBioShift/
 ├── Inputs/
 
 └── File1.csv              ## input CSV file
