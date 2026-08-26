@@ -116,11 +116,12 @@ Your working directory (SampleBioShift/) should contain the following:
 
 ├── BioShift/
 
-    └── BioShift.py             ## LLM interpretation + graphviz highlighting
+└── BioShift.py             ## LLM interpretation + graphviz highlighting
     
-    └── config_bioshift.txt     ## OpenAI API key + model settings
+└── config_bioshift.txt     ## OpenAI API key + model settings
     
-    └── graphviz/               ## pre-built DOT pathway diagrams
+└── graphviz/               ## pre-built DOT pathway diagrams
+
 
 
 ### Input files according to ExampleInputs (that we shared here in the repository)
