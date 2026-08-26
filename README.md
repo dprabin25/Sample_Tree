@@ -13,37 +13,27 @@ The pipeline does not perform input scaling. It is up to the user to decide whet
 
 ## Dependencies
 
-### 1. Anaconda and R
+### 1. Environment
 
-- Open Anaconda terminal and then create conda environment for Sample_Tree.
-
-Please install Anaconda : https://www.anaconda.com/distribution/
-
-- To create the environment, install the correct Python version:
+- Install Anaconda: https://www.anaconda.com/distribution/
 
 ```bash
-conda create -n Sample_Tree python=3.12.2 r-base=4.5.3 pandas -y -c conda-forge 
+conda create -n Sample_Tree python=3.12.2 r-base=4.5.3 pandas -y -c conda-forge
 
 conda activate Sample_Tree
+
+conda install -c conda-forge r-recommended
 
 ```
 #### R packages
 
-To fix MASS-type package issues
 ```
-conda install -c conda-forge r-recommended
-```
-- Make sure you have these packages installed for R:
-
-Install Cran packages
-
-```
-Rscript -e "options(repos=c(CRAN='https://cloud.r-project.org')); install.packages(c('optparse','ape','vegan','picante','phangorn','progress','ggplot2','dplyr','readr','stringr','tibble','reshape2','data.table','tidyr','pbapply','matrixStats','Hmisc','quantreg','lme4','lmerTest','Rcpp','RcppEigen','rbibutils','Rdpack','BiocManager'))"
+Rscript -e "options(repos=c(CRAN='https://cloud.r-project.org')); install.packages(c('ape','vegan','picante','dplyr','stringr','progress','ggplot2','ggnewscale','gtools','reshape2','ggrepel','uwot','BiocManager'))"
 ```
 
 Install the Bioconductor packages
 ```
-Rscript -e "BiocManager::install(c('phyloseq','ggtree','treeio','limma','Maaslin2'), ask=FALSE, update=FALSE)"
+Rscript -e "BiocManager::install(c('phyloseq','ggtree','limma','Maaslin2'), ask=FALSE, update=FALSE)"
 ```
 
 Verify load packages
@@ -93,60 +83,49 @@ Important: Treat this key like a password — never share it or commit it to pub
 
 Your working directory should contain the following files:
 
-├── File1.csv ## input CSV file
+##  Files Required
+Your working directory (SampleBioShift/) should contain the following:
 
-├── File2.csv ## input CSV file
-
-├── File3.csv ## input CSV file
-
-├── FileX.csv ## input CSV file (select based on your data types)
-
-├── sampletree_simple.R
-
-├── BioShift.py
-
-├── ObservedShifts.py
-
-├── SampleBioShift.py
-
-├── target.txt
-
-├── config.txt
-
-├── methods.txt
-
-├── graphviz/
+SampleBioShift/
+├── Inputs/
+│   ├── File1.csv              ## input CSV file
+│   ├── File2.csv               ## input CSV file
+│   ├── File3.csv               ## input CSV file
+│   ├── FileX.csv               ## input CSV file (as many as your data types require)
+│   └── FileX.nwk               ## reference tree (only needed for tree-aware distance metrics -- UniFrac, MPD, MNTD, etc.)
+├── SampleBioShift.py          ## <-- run this. Controls everything: tree_pipeline.R -> build_observed_shifts() -> BioShift.py
+├── tree_pipeline.R            ## sample-tree clustering + clade detection
+├── differential_analysis.R    ## limma/MaAsLin2 per-cluster trend analysis (sourced by tree_pipeline.R)
+├── target.txt                 ## Sample / Target (Y-N) / Patient labels
+├── sampletree_control.txt     ## clade thresholds (min_targeted, max_clade_size, max_others, assign_policy)
+├── methods.txt                ## single config file tree_pipeline.R reads -- edit it in place before each run (one data type/combo per run; see fields below)
+└── BioShift/
+    ├── BioShift.py             ## LLM interpretation + graphviz highlighting
+    ├── config_bioshift.txt     ## OpenAI API key + model settings
+    └── graphviz/               ## pre-built DOT pathway diagrams
 
 
 ### Input files according to ExampleInputs (that we shared here in the repository)
 All csv files contains Sample column that have sample IDs and other columns contain frequency, abundance, scaled expression values depending upon type of input. 
 
 Example input files
-1. Pro1log10MinMax.csv : MinMax scaled expression data from protein dataset for making sample tree
 
-<img width="522" height="190" alt="image" src="https://github.com/user-attachments/assets/9d6de907-3b44-4a1c-bede-565a55fb2302" />
-
-2. Pro1log10.csv: Expression data from protein dataset (unscaled) for differential analysis for targeted samples clustered in sample trees.
+1. Pro1log10.csv: Expression data from protein dataset (log10) for differential analysis for targeted samples clustered in sample trees.
  
 <img width="449" height="191" alt="image" src="https://github.com/user-attachments/assets/2be0cfe1-e04e-40b0-9110-323c8c5fad94" />
 
 
-3. Cell.csv : Cell frequency dataset (unscaled) - Required for sample tree clustering and differential analysis
+2. Cell.csv : Cell frequency dataset  - Required for sample tree clustering and differential analysis
 
 <img width="414" height="191" alt="image" src="https://github.com/user-attachments/assets/ec0aa0bc-5aff-4af6-bc9f-c53a941bcaa1" />
 
 
-4. BacCount.csv : Bacteria abundance dataset (unscaled) - Required for sample tree clustering using phylogenetic methods and differential analysis
+3. BacCount.csv : Bacteria abundance dataset (Count) - Required for sample tree clustering using phylogenetic methods and differential analysis
 
 <img width="567" height="198" alt="image" src="https://github.com/user-attachments/assets/dd0e8b3a-cbb7-4c31-99a0-1d506ed0b3df" />
 
 
-5. BacFreq.csv : MinMax scaled dataset from bacterial abundance. Required for differential analysis.
-
-<img width="565" height="190" alt="image" src="https://github.com/user-attachments/assets/cd99ef32-57f3-4c86-9923-fc495f1177ca" />
-
-
-6. BacTree.nwk : Required for making sample tree using phyolgenetic methods
+4. BacTree.nwk : Required for making sample tree using phyolgenetic methods
 
 <img width="592" height="470" alt="image" src="https://github.com/user-attachments/assets/2a900187-a518-42b2-87a7-9c0429ff2b33" />
 
