@@ -110,10 +110,11 @@ SampleBioShift/
 ├── sampletree_control.txt
 ├── methods.txt
 ├── Inputs/
-│   ├── Cell.csv
-│   ├── Pro1log10.csv
-│   ├── BacCount.csv
-│   └── BacTree.nwk
+│   ├── Input1*.csv
+.
+│   ├── InputX.csv
+│   ├── InputY.csv
+│   └── InputYTree.nwk
 └── BioShift_Req/
     ├── BioShift.py
     ├── config_bioshift.txt
