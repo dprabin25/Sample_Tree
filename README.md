@@ -18,6 +18,8 @@ SampleTree groups samples by similarity and looks for **clades of targeted (`Y`)
 
 Because steps 1–2 never touch OpenAI, a run always reaches at least mode 2's output even if mode 3 was intended but the API key turns out to be missing or wrong — nothing already computed is lost.
 
+Independently of run mode, `methods.txt` can hold **one file or several**: a single block runs that one representation through whichever mode above is active, while stacking multiple `# FILE 1` / `# FILE 2` / ... blocks runs each representation in turn in the same call and — if `Differential analysis = Yes` and each finds a clade — combines their results into `Observed_shifts/` (see `methods.txt` below).
+
 ### Important note
 
 The pipeline does not perform input scaling. It is up to the user to decide whether to use scaled or unscaled data (`Normalization` in `methods.txt` handles this per representation).
@@ -120,14 +122,15 @@ SampleBioShift/
 
 There is no separate `differential_analysis.R` — differential analysis is built directly into `tree_pipeline.R` (see below).
 
-### Input files (Inputs/)
+### Example input files (Inputs/)
 
-All CSV files contain a `Sample` column with sample IDs; other columns hold frequency, abundance, or scaled expression values depending on the data type. Any number of representations can be used — `SampleBioShift.py` reads whichever `Filename`s are listed in `methods.txt` at run time, so adding, removing, or renaming a representation only ever requires editing `methods.txt`, never the Python or R code.
+The method is built around **your own data**, not these specific files — `SampleBioShift.py` reads whichever `Filename`s are listed in `methods.txt` at run time, so adding, removing, or renaming a representation only ever requires editing `methods.txt`, never the Python or R code. The files below, shipped in this repo's `Inputs/`, are examples showing the shape your own CSVs should take: a `Sample` column with sample IDs, and other columns holding frequency, abundance, or scaled expression values depending on the data type. Anyone can point this pipeline at their own files by matching this format.
 
-1. **Cell.csv** — cell frequency data. Used for sample-tree clustering and differential analysis.
-2. **Pro1log10.csv** — protein/cytokine expression data (log10). Used for sample-tree clustering and differential analysis.
-3. **BacCount.csv** — bacterial abundance data (count). Used for sample-tree clustering (including phylogenetic methods) and differential analysis.
-4. **BacTree.nwk** — reference phylogenetic tree, required only when a representation's `Distance_Metric` is a phylogenetic one (UniFrac, UniFracW, MPD, MPDw, MNTD, MNTDw).
+1. **Cell.csv** — example cell frequency data. Used for sample-tree clustering and differential analysis.
+2. **Pro1log10.csv** — example protein/cytokine expression data (log10). Used for sample-tree clustering and differential analysis.
+3. **Micro.csv** — example bacterial relative-abundance data (frequency-type), an alternate representation of the same kind of microbiome data as `BacCount.csv`.
+4. **BacCount.csv** — example bacterial abundance data (count-type). Used for sample-tree clustering (including phylogenetic methods) and differential analysis.
+5. **BacTree.nwk** — example reference phylogenetic tree, required only when a representation's `Distance_Metric` is a phylogenetic one (UniFrac, UniFracW, MPD, MPDw, MNTD, MNTDw).
 
 ---
 
@@ -199,7 +202,7 @@ All CSV files contain a `Sample` column with sample IDs; other columns hold freq
 
 3. Re-running with the same `FolderName` creates the next sequential run folder — `Run1`, `Run2`, `Run3`, etc. — without touching earlier runs.
 
-Optional flags: `--samples` (restrict BioShift to specific sample IDs), `--python-exe` / `--rscript-exe` (override the Python/R executables if `python`/`Rscript` aren't on your PATH).
+Optional flags: `--python-exe` / `--rscript-exe` (override the Python/R executables if `python`/`Rscript` aren't on your PATH).
 
 ## Output Structure
 
