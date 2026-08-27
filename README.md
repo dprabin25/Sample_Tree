@@ -217,7 +217,7 @@ E.g.
 
 E.g. 
 
-<img width="892" height="157" alt="image" src="https://github.com/user-attachments/assets/ffb0ada6-d848-4e0e-9bc6-1ee3394ba746" />
+<img width="726" height="132" alt="image" src="https://github.com/user-attachments/assets/68567567-07fd-416c-bce9-b6bcb0836c94" />
 
 
 3. Run the script with your chosen folder name:
@@ -228,7 +228,8 @@ E.g.
 
 E.g.
 
-<img width="463" height="31" alt="image" src="https://github.com/user-attachments/assets/16db97cf-b2e1-46ad-9ad0-813a668ef35c" />
+<img width="788" height="28" alt="image" src="https://github.com/user-attachments/assets/fd5f4305-acfe-45da-bb39-51a85a318e46" />
+
 
 
 
