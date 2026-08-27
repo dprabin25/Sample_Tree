@@ -220,6 +220,12 @@ E.g.
 
 2. Run the script with your chosen folder name:
 
+E.g.
+
+<img width="463" height="31" alt="image" src="https://github.com/user-attachments/assets/16db97cf-b2e1-46ad-9ad0-813a668ef35c" />
+
+
+
    ```
    python SampleBioShift.py FolderName
    ```
