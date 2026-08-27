@@ -132,6 +132,7 @@ The method is built around **your own data**, not these specific files — `Samp
 1. **Cell.csv** — example cell frequency data. Used for sample-tree clustering and differential analysis.
 
 E.g.
+
  <img width="525" height="345" alt="image" src="https://github.com/user-attachments/assets/7233e7cd-8e96-47e1-8b04-6792f78f1664" />
 
 3. **Pro1log10.csv** — example protein/cytokine expression data (log10). Used for sample-tree clustering and differential analysis.
@@ -183,16 +184,27 @@ E.g.
    - `largest`: prefers clades with more total tips.
    - `smallest`: prefers clades with fewer total tips.
 
+E.g. 
+
+<img width="938" height="105" alt="image" src="https://github.com/user-attachments/assets/83281168-d528-496e-8f64-698be552df9f" />
+
+
+
 6. **target.txt**
 
    Two columns: `Sample`, `Target`. Assign `Y` to every sample of interest — together these form the one global targeted cohort that clade detection is run against, with no notion of which patient a sample came from. A `Patient` column is not required and, if present, is purely informational; it plays no role in clade detection.
+   
    E.g.
+   
    <img width="234" height="419" alt="image" src="https://github.com/user-attachments/assets/03315b4c-9b5f-43f8-bfb5-a7e42ecdae08" />
 
 
 8. **BioShift_Req/config_bioshift.txt**
 
    Needs to be updated with your API key and the large language model version you want to use. `SampleBioShift.py` validates this key with a live API call right before the `BioShift.py` step, so a missing or wrong key aborts there without losing the tree/clustering/differential-analysis results already produced in steps 1–2.
+
+   E.g.
+   
    <img width="471" height="205" alt="image" src="https://github.com/user-attachments/assets/37448f42-eec3-430e-bbf4-dc0d61a79c61" />
 
 
@@ -275,12 +287,16 @@ E.g. differential-analysis
 
 **`BioShift/Observed_shifts/`** — built only from each representation's **Control** results (non-phylo: the `SD0/` run; phylo: the one run there is, since phylo jobs don't have a Control/Test split). For non-phylo jobs, a `SD<value>` Test run is written for reference but is not fed into BioShift. This is the combined input BioShift reads. `build_observed_shifts()` merges each clade's `Input_*.csv` (identical value everywhere → kept; disagreement → 0), then combines across representations. If every representation found exactly one clade, this is a single `Combined_Observed_Shifts.csv`. If a representation's targeted cohort split into more than one clade, each of that representation's clades pairs separately with the other representations' clade(s), producing `Combined_01_...`, `Combined_02_...`, etc. — each numbered file is a genuinely distinct biological grouping, not noise to collapse into one.
 
-e.g. <img width="199" height="235" alt="image" src="https://github.com/user-attachments/assets/7f38fd10-f38a-49a2-ab12-8d32b90a8064" />
+E.g. 
+
+<img width="199" height="235" alt="image" src="https://github.com/user-attachments/assets/7f38fd10-f38a-49a2-ab12-8d32b90a8064" />
 1= increase, -1 = decrease
 
 
 **`BioShift/BioShiftOutputs/`** — LLM interpretation of each combined file, split into `Disease/` and `Healthy/` passes, one subfolder per combined-file stem.
+
 E.g. 
+
 <img width="1287" height="95" alt="image" src="https://github.com/user-attachments/assets/96f22c08-b132-4938-89e7-1cbb11188b35" />
 
 
