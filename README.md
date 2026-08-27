@@ -237,7 +237,7 @@ You can assign any name to `FolderName`. Its `RunN/` subfolder will contain ever
 
 3. Re-running with the same `FolderName` creates the next sequential run folder — `Run1`, `Run2`, `Run3`, etc. — without touching earlier runs.
 
-Optional flags: `--python-exe` / `--rscript-exe` (override the Python/R executables if `python`/`Rscript` aren't on your PATH).
+
 
 ## Output Structure
 
