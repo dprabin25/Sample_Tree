@@ -171,7 +171,7 @@ E.g.
    - `SD` — `0` = no injected noise (control run) | `>0` = Gaussian/Dirichlet/Poisson noise magnitude
    - `Differential analysis` — `Yes` | `No`. **This is a real gate, not decorative.** `Yes`: clade detection runs, `support_tree_highlighted.jpeg` is drawn, and TREND (limma/MaAsLin2) runs on every kept clade. `No`: the pipeline stops right after the plain `support_tree.nwk/pdf/png` — no clade detection, no highlighted tree, no TREND output for that block, and `build_observed_shifts()` skips it entirely (there is nothing in `Outputs/` for it to read).
    - `Profile_Library` — `limma` | `MaAsLin2`. **This is a real gate.** Set explicitly, it controls which library `run_trend_for_job()` uses. Left blank, it falls back to the `Input_Type`-derived default (`log10` → limma, `Count`/`Frequency` → MaAsLin2). An unrecognized value stops the run with an error.
-   - `Input df` — kept in the file for readability/documentation only; not read by `tree_pipeline.R` (the differential-analysis input is always the raw/unnormalized `Filename`).
+   - `Input df` — the differential-analysis is for the clade detected runs in this input (Clustered samples vs Other Samples).
 
    See the invalid-combination notes at the bottom of `methods.txt` itself for combinations the pipeline will refuse (e.g. `CLR + Bray`, `MinMax + Count`, a phylo metric with `PhyloTree = None`).
 
