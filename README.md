@@ -2,7 +2,7 @@
 
 ## Description
 
-SampleBioShift finds where your targeted samples cluster, tests which features differ significantly in those clusters, and gives the biological interpretation — in one command.
+**SampleBioShift** finds where your targeted samples cluster, tests which features differ significantly in those clusters, and gives the biological interpretation — in one command.
 
 It works on any sample data: each CSV in Inputs/ is a set of features (columns) measured across your samples (rows) — cell types, proteins, microbial taxa, or anything else you're tracking. It pairs two tools:
 
@@ -164,7 +164,7 @@ The method is built around **your own data**, not these specific files — `Samp
    - `Support/bootstrap` — bootstrap replicate count
    - `SD` — `0` = no injected noise (control run) | `>0` = Gaussian/Dirichlet/Poisson noise magnitude
    - `Differential analysis` — `Yes` | `No`. **This is a real gate, not decorative.** `Yes`: clade detection runs, `support_tree_highlighted.jpeg` is drawn, and TREND (limma/MaAsLin2) runs on every kept clade. `No`: the pipeline stops right after the plain `support_tree.nwk/pdf/png` — no clade detection, no highlighted tree, no TREND output for that block, and `build_observed_shifts()` skips it entirely (there is nothing in `Outputs/` for it to read).
-   - `Input df`, `Profile_Library` — kept in the file for readability/documentation but not read by `tree_pipeline.R`: the differential-analysis library is chosen automatically from `Input_Type` (`log10` → limma, `Count`/`Frequency` → MaAsLin2), so `Profile_Library` should just describe what will actually run.
+   -  The differential-analysis library is chosen automatically from `Input_Type` (`log10` → limma, `Count`/`Frequency` → MaAsLin2), so `Profile_Library` should just describe what will actually run.
 
    See the invalid-combination notes at the bottom of `methods.txt` itself for combinations the pipeline will refuse (e.g. `CLR + Bray`, `MinMax + Count`, a phylo metric with `PhyloTree = None`).
 
