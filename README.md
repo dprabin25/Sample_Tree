@@ -110,11 +110,10 @@ SampleBioShift/
 ├── sampletree_control.txt
 ├── methods.txt
 ├── Inputs/
-│   ├── Input1*.csv
-│   ...............
-│   ├── InputX.csv
-│   ├── InputY.csv
-│   └── InputYTree.nwk
+│   ├── Cell.csv
+│   ├── Pro1log10.csv
+│   ├── BacCount.csv
+│   └── BacTree.nwk
 └── BioShift_Req/
     ├── BioShift.py
     ├── config_bioshift.txt
@@ -217,17 +216,25 @@ Everything from a run lands under `FolderName/RunN/`:
 FolderName/RunN/
 ├── log.txt
 ├── Outputs/
-│   └── <file_base>/<Normalization>/<Distance_Metric>/
-│       ├── SD0/            (Control run — no injected noise, always present)
-│       │   ├── support_tree.nwk / .pdf / .png
-│       │   ├── support_tree_highlighted.jpeg      (only if Differential analysis = Yes and a clade was found)
-│       │   ├── clades/                             (which samples make up each detected clade)
-│       │   └── trend_outputs/group_<...>_node<N>/   (only if Differential analysis = Yes)
-│       │       ├── Input_<file_base>_<library>.csv
-│       │       ├── sig_features_<file_base>_<library>.csv
-│       │       └── box plots
-│       └── SD<value>/      (Test run — only when methods.txt's SD > 0; same structure as SD0,
-│                             a noise-robustness check run in parallel)
+│   ├── <file_base>/<Normalization>/<Distance_Metric>/       (non-phylo: Bray | Euclidean)
+│   │   ├── SD0/            (Control run — no injected noise, always present)
+│   │   │   ├── support_tree.nwk / .pdf / .png
+│   │   │   ├── support_tree_highlighted.jpeg      (only if Differential analysis = Yes and a clade was found)
+│   │   │   ├── clades/                             (which samples make up each detected clade)
+│   │   │   └── trend_outputs/group_<...>_node<N>/   (only if Differential analysis = Yes)
+│   │   │       ├── Input_<file_base>_<library>.csv
+│   │   │       ├── sig_features_<file_base>_<library>.csv
+│   │   │       └── box plots
+│   │   └── SD<value>/      (Test run — only when methods.txt's SD > 0; same structure as SD0,
+│   │                         a noise-robustness check run in parallel)
+│   └── <file_base>/<Distance_Metric>/                        (phylo: UniFrac | UniFracW | MPD | MPDw | MNTD | MNTDw)
+│       ├── support_tree.nwk / .pdf / .png
+│       ├── support_tree_highlighted.jpeg          (only if Differential analysis = Yes and a clade was found)
+│       ├── clades/
+│       └── trend_outputs/group_<...>_node<N>/       (only if Differential analysis = Yes)
+│           ├── Input_<file_base>_<library>.csv
+│           ├── sig_features_<file_base>_<library>.csv
+│           └── box plots
 └── BioShift/
     ├── Observed_shifts/
     │   └── Combined_Observed_Shifts.csv         (or Combined_01_..., Combined_02_..., ...)
@@ -242,9 +249,13 @@ FolderName/RunN/
             └── (same structure)
 ```
 
-**`Outputs/`** — one subfolder per representation × normalization × distance metric configured in `methods.txt`, each holding a `SD0/` Control run (always) and, only if that block's `SD > 0`, a parallel `SD<value>/` Test run as a noise-robustness check. `support_tree_highlighted.jpeg` uses a colorblind-safe legend: **blue = Target (Y)**, **vermillion = Contamination** (non-target samples admitted into a clade), **grey = Other**; node labels show support/bootstrap values. `trend_outputs/` holds one `group_*` folder per clade found, with the raw differential-analysis output for that clade.
+**`Outputs/`** — one subfolder per representation configured in `methods.txt`, shaped differently depending on `Distance_Metric`:
+- **Non-phylo** (`Bray`, `Euclidean`) — nested under `<Normalization>/<Distance_Metric>/`, with a `SD0/` Control run (always) and, only if that block's `SD > 0`, a parallel `SD<value>/` Test run as a noise-robustness check. Support comes from SD-noise replicates.
+- **Phylo** (`UniFrac`, `UniFracW`, `MPD`, `MPDw`, `MNTD`, `MNTDw`) — output goes straight to `Outputs/<file_base>/<Distance_Metric>/`, with no `Normalization` or `SD0` nesting: there's no SD sweep for these (`SD` in `methods.txt` is ignored), support instead comes from raw-count bootstrap replicates.
 
-**`BioShift/Observed_shifts/`** — built only from each representation's **`SD0` (Control)** results; the `SD<value>` Test run is written for reference but is not fed into BioShift. This is the combined input BioShift reads. `build_observed_shifts()` merges each clade's `Input_*.csv` (identical value everywhere → kept; disagreement → 0), then combines across representations. If every representation found exactly one clade, this is a single `Combined_Observed_Shifts.csv`. If a representation's targeted cohort split into more than one clade, each of that representation's clades pairs separately with the other representations' clade(s), producing `Combined_01_...`, `Combined_02_...`, etc. — each numbered file is a genuinely distinct biological grouping, not noise to collapse into one.
+Either way, `support_tree_highlighted.jpeg` uses a colorblind-safe legend: **blue = Target (Y)**, **vermillion = Contamination** (non-target samples admitted into a clade), **grey = Other**; node labels show support/bootstrap values. `trend_outputs/` holds one `group_*` folder per clade found, with the raw differential-analysis output for that clade.
+
+**`BioShift/Observed_shifts/`** — built only from each representation's **Control** results (non-phylo: the `SD0/` run; phylo: the one run there is, since phylo jobs don't have a Control/Test split). For non-phylo jobs, a `SD<value>` Test run is written for reference but is not fed into BioShift. This is the combined input BioShift reads. `build_observed_shifts()` merges each clade's `Input_*.csv` (identical value everywhere → kept; disagreement → 0), then combines across representations. If every representation found exactly one clade, this is a single `Combined_Observed_Shifts.csv`. If a representation's targeted cohort split into more than one clade, each of that representation's clades pairs separately with the other representations' clade(s), producing `Combined_01_...`, `Combined_02_...`, etc. — each numbered file is a genuinely distinct biological grouping, not noise to collapse into one.
 
 **`BioShift/BioShiftOutputs/`** — LLM interpretation of each combined file, split into `Disease/` and `Healthy/` passes, one subfolder per combined-file stem.
 
