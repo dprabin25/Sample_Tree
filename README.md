@@ -2,11 +2,14 @@
 
 ## Description
 
-**SampleBioShift** runs the **SampleTree** workflow and **BioShift** together, from one command.
+**SampleBioShift finds where your targeted samples cluster, then tests which features differ significantly in those clusters — in one command.**
+
+It works on any sample data you give it: each CSV column in `Inputs/` is a feature (cell type, protein, microbial taxon, or anything else you're measuring), and each row is a sample. It pairs two tools:
+
+- **SampleTree** builds a similarity tree from your samples and detects **clades of targeted (`Y`) samples** within it. Every sample flagged `Y` in `target.txt` belongs to one shared targeted cohort, and clade detection runs across that whole cohort at once — whichever samples actually cluster together, cluster together, full stop.
+- **BioShift** interprets the features found significant within each clade and uses an LLM to explain what those shifts mean biologically.
 
 `SampleBioShift.py` is the orchestrator — the only script you run. It calls `tree_pipeline.R` once per representation in `methods.txt`, builds the combined `Observed_shifts/` input BioShift needs, then calls `BioShift_Req/BioShift.py` for the disease and healthy interpretation passes.
-
-SampleTree groups samples by similarity and looks for **clades of targeted (`Y`) samples** in the resulting tree. There is no per-patient grouping: `target.txt` defines one global targeted cohort (every sample flagged `Y`), and clade detection runs across that whole cohort at once — mirroring the real-world case where you don't know in advance which patient a target sample came from. BioShift then interprets which elements shift within the clades that were found.
 
 ### Run modes
 
