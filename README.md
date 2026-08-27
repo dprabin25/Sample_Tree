@@ -2,14 +2,14 @@
 
 ## Description
 
-**SampleBioShift finds where your targeted samples cluster, then tests which features differ significantly in those clusters — in one command.**
+SampleBioShift finds where your targeted samples cluster, tests which features differ significantly in those clusters, and gives the biological interpretation — in one command.
 
-It works on any sample data you give it: each CSV column in `Inputs/` is a feature (cell type, protein, microbial taxon, or anything else you're measuring), and each row is a sample. It pairs two tools:
+It works on any sample data: each CSV in Inputs/ is a set of features (columns) measured across your samples (rows) — cell types, proteins, microbial taxa, or anything else you're tracking. It pairs two tools:
 
-- **SampleTree** builds a similarity tree from your samples and detects **clades of targeted (`Y`) samples** within it. Every sample flagged `Y` in `target.txt` belongs to one shared targeted cohort, and clade detection runs across that whole cohort at once — whichever samples actually cluster together, cluster together, full stop.
-- **BioShift** interprets the features found significant within each clade and uses an LLM to explain what those shifts mean biologically.
+SampleTree builds a similarity tree from your samples and detects clades of targeted (Y) samples within it. Every sample flagged Y in target.txt belongs to one shared targeted cohort, and clade detection runs across that whole cohort at once — whether those samples cluster together or not.
+BioShift interprets the features found significant within each clade and uses an LLM to explain what those shifts mean biologically.
 
-`SampleBioShift.py` is the orchestrator — the only script you run. It calls `tree_pipeline.R` once per representation in `methods.txt`, builds the combined `Observed_shifts/` input BioShift needs, then calls `BioShift_Req/BioShift.py` for the disease and healthy interpretation passes.
+SampleBioShift.py is the orchestrator — the only script you run. It calls tree_pipeline.R once per representation in methods.txt, builds the combined Observed_shifts/ input BioShift needs, then calls BioShift_Req/BioShift.py for the disease and healthy interpretation passes.
 
 ### Run modes
 
@@ -25,7 +25,7 @@ Independently of run mode, `methods.txt` can hold **one file or several**: a sin
 
 ### Important note
 
-The pipeline does not perform input scaling. It is up to the user to decide whether to use scaled or unscaled data (`Normalization` in `methods.txt` handles this per representation).
+The user needs to decide which normalization methods to choose depending upon their data type (See `Normalization` in `methods.txt`).
 
 ## Dependencies
 
