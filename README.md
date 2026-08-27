@@ -220,15 +220,14 @@ E.g.
 
 2. Run the script with your chosen folder name:
 
+   ```
+   python SampleBioShift.py FolderName
+   ```
+
 E.g.
 
 <img width="463" height="31" alt="image" src="https://github.com/user-attachments/assets/16db97cf-b2e1-46ad-9ad0-813a668ef35c" />
 
-
-
-   ```
-   python SampleBioShift.py FolderName
-   ```
 
    You can assign any name to `FolderName`. Its `RunN/` subfolder will contain every output from that run, plus `log.txt` with the full run log.
 
