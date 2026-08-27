@@ -133,7 +133,12 @@ The method is built around **your own data**, not these specific files — `Samp
 2. **Pro1log10.csv** — example protein/cytokine expression data (log10). Used for sample-tree clustering and differential analysis.
 3. **Micro.csv** — example bacterial relative-abundance data (frequency-type), an alternate representation of the same kind of microbiome data as `BacCount.csv`.
 4. **BacCount.csv** — example bacterial abundance data (count-type). Used for sample-tree clustering (including phylogenetic methods) and differential analysis.
-5. **BacTree.nwk** — example reference phylogenetic tree, required only when a representation's `Distance_Metric` is a phylogenetic one (UniFrac, UniFracW, MPD, MPDw, MNTD, MNTDw).
+
+e.g. <img width="525" height="345" alt="image" src="https://github.com/user-attachments/assets/7233e7cd-8e96-47e1-8b04-6792f78f1664" />
+
+
+6. **BacTree.nwk** — example reference phylogenetic tree, required only when a representation's `Distance_Metric` is a phylogenetic one (UniFrac, UniFracW, MPD, MPDw, MNTD, MNTDw).
+
 
 ---
 
@@ -181,12 +186,17 @@ The method is built around **your own data**, not these specific files — `Samp
 6. **target.txt**
 
    Two columns: `Sample`, `Target`. Assign `Y` to every sample of interest — together these form the one global targeted cohort that clade detection is run against, with no notion of which patient a sample came from. A `Patient` column is not required and, if present, is purely informational; it plays no role in clade detection.
+   E.g.
+   <img width="234" height="419" alt="image" src="https://github.com/user-attachments/assets/03315b4c-9b5f-43f8-bfb5-a7e42ecdae08" />
 
-7. **BioShift_Req/config_bioshift.txt**
+
+8. **BioShift_Req/config_bioshift.txt**
 
    Needs to be updated with your API key and the large language model version you want to use. `SampleBioShift.py` validates this key with a live API call right before the `BioShift.py` step, so a missing or wrong key aborts there without losing the tree/clustering/differential-analysis results already produced in steps 1–2.
+   <img width="471" height="205" alt="image" src="https://github.com/user-attachments/assets/37448f42-eec3-430e-bbf4-dc0d61a79c61" />
 
-8. **BioShift_Req/graphviz/**
+
+10. **BioShift_Req/graphviz/**
 
    Pre-built DOT-format pathway diagrams. `BioShift.py` colors any node matching a significant element and renders a highlighted image per diagram per combined-clade result.
 
@@ -255,13 +265,24 @@ FolderName/RunN/
 
 Either way, `support_tree_highlighted.jpeg` uses a colorblind-safe legend: **blue = Target (Y)**, **vermillion = Contamination** (non-target samples admitted into a clade), **grey = Other**; node labels show support/bootstrap values. `trend_outputs/` holds one `group_*` folder per clade found, with the raw differential-analysis output for that clade.
 
-E.g. 
-<img width="1216" height="485" alt="image" src="https://github.com/user-attachments/assets/ebe5f6f0-fc77-42ec-9f70-fcf9c5d6de26" />
+E.g. Clade 
+<img width="1173" height="564" alt="image" src="https://github.com/user-attachments/assets/eefadf46-57d3-4688-a368-1adf835a6b25" />
+
+E.g. differential-analysis
+<img width="443" height="251" alt="image" src="https://github.com/user-attachments/assets/489b694d-4f06-4e5f-b655-d9232023ba83" />
+
 
 
 **`BioShift/Observed_shifts/`** — built only from each representation's **Control** results (non-phylo: the `SD0/` run; phylo: the one run there is, since phylo jobs don't have a Control/Test split). For non-phylo jobs, a `SD<value>` Test run is written for reference but is not fed into BioShift. This is the combined input BioShift reads. `build_observed_shifts()` merges each clade's `Input_*.csv` (identical value everywhere → kept; disagreement → 0), then combines across representations. If every representation found exactly one clade, this is a single `Combined_Observed_Shifts.csv`. If a representation's targeted cohort split into more than one clade, each of that representation's clades pairs separately with the other representations' clade(s), producing `Combined_01_...`, `Combined_02_...`, etc. — each numbered file is a genuinely distinct biological grouping, not noise to collapse into one.
 
+e.g. <img width="199" height="235" alt="image" src="https://github.com/user-attachments/assets/7f38fd10-f38a-49a2-ab12-8d32b90a8064" />
+1= increase, -1 = decrease
+
+
 **`BioShift/BioShiftOutputs/`** — LLM interpretation of each combined file, split into `Disease/` and `Healthy/` passes, one subfolder per combined-file stem.
+E.g. 
+<img width="1287" height="95" alt="image" src="https://github.com/user-attachments/assets/96f22c08-b132-4938-89e7-1cbb11188b35" />
+
 
 ---
 
