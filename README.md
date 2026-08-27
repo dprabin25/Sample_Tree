@@ -2,14 +2,14 @@
 
 ## Description
 
-**SampleBioShift** finds where your targeted samples cluster, tests which features differ significantly in those clusters, and gives the biological interpretation — in one command.
+**SampleBioShift finds where your targeted samples cluster, tests which features differ significantly in those clusters, and gives the biological interpretation — in one command.**
 
-It works on any sample data: each CSV in Inputs/ is a set of features (columns) measured across your samples (rows) — cell types, proteins, microbial taxa, or anything else you're tracking. It pairs two tools:
+It works on any sample data: each CSV in `Inputs/` is a set of features (columns) measured across your samples (rows) — cell types, proteins, microbial taxa, or anything else you're tracking. It pairs two tools:
 
-SampleTree builds a similarity tree from your samples and detects clades of targeted (Y) samples within it. Every sample flagged Y in target.txt belongs to one shared targeted cohort, and clade detection runs across that whole cohort at once — whether those samples cluster together or not.
-BioShift interprets the features found significant within each clade and uses an LLM to explain what those shifts mean biologically.
+- **SampleTree** builds a similarity tree from your samples and detects **clades of targeted (`Y`) samples** within it. Every sample flagged `Y` in `target.txt` belongs to one shared targeted cohort, and clade detection runs across that whole cohort at once — whether those samples cluster together or not.
+- **BioShift** interprets the features found significant within each clade and uses an LLM to explain what those shifts mean biologically.
 
-SampleBioShift.py is the orchestrator — the only script you run. It calls tree_pipeline.R once per representation in methods.txt, builds the combined Observed_shifts/ input BioShift needs, then calls BioShift_Req/BioShift.py for the disease and healthy interpretation passes.
+`SampleBioShift.py` is the orchestrator — the only script you run. It calls `tree_pipeline.R` once per representation in `methods.txt`, builds the combined `Observed_shifts/` input BioShift needs, then calls `BioShift_Req/BioShift.py` for the disease and healthy interpretation passes.
 
 ### Run modes
 
@@ -25,7 +25,7 @@ Independently of run mode, `methods.txt` can hold **one file or several**: a sin
 
 ### Important note
 
-The user needs to decide which normalization methods to choose depending upon their data type (See `Normalization` in `methods.txt`).
+The pipeline does not perform input scaling. It is up to the user to decide whether to use scaled or unscaled data (`Normalization` in `methods.txt` handles this per representation).
 
 ## Dependencies
 
@@ -164,7 +164,8 @@ The method is built around **your own data**, not these specific files — `Samp
    - `Support/bootstrap` — bootstrap replicate count
    - `SD` — `0` = no injected noise (control run) | `>0` = Gaussian/Dirichlet/Poisson noise magnitude
    - `Differential analysis` — `Yes` | `No`. **This is a real gate, not decorative.** `Yes`: clade detection runs, `support_tree_highlighted.jpeg` is drawn, and TREND (limma/MaAsLin2) runs on every kept clade. `No`: the pipeline stops right after the plain `support_tree.nwk/pdf/png` — no clade detection, no highlighted tree, no TREND output for that block, and `build_observed_shifts()` skips it entirely (there is nothing in `Outputs/` for it to read).
-   -  The differential-analysis library is chosen automatically from `Input_Type` (`log10` → limma, `Count`/`Frequency` → MaAsLin2), so `Profile_Library` should just describe what will actually run.
+   - `Profile_Library` — `limma` | `MaAsLin2`. **This is a real gate.** Set explicitly, it controls which library `run_trend_for_job()` uses. Left blank, it falls back to the `Input_Type`-derived default (`log10` → limma, `Count`/`Frequency` → MaAsLin2). An unrecognized value stops the run with an error.
+   - `Input df` — kept in the file for readability/documentation only; not read by `tree_pipeline.R` (the differential-analysis input is always the raw/unnormalized `Filename`).
 
    See the invalid-combination notes at the bottom of `methods.txt` itself for combinations the pipeline will refuse (e.g. `CLR + Bray`, `MinMax + Count`, a phylo metric with `PhyloTree = None`).
 
