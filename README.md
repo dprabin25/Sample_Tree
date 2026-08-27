@@ -100,7 +100,7 @@ Important: treat this key like a password — never share it or commit it to pub
 Your working directory (`SampleBioShift/`) should contain the following:
 
 ```
-SampleBioShift/
+SampleTree/
 ├── SampleBioShift.py
 ├── tree_pipeline.R
 ├── target.txt
