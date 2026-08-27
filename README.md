@@ -215,7 +215,12 @@ E.g.
 
 1. Go to the working directory containing all the required files (`Inputs/`, `methods.txt`, `SampleBioShift.py`, `tree_pipeline.R`, `target.txt`, `sampletree_control.txt`, `BioShift_Req/`) on the Anaconda terminal.
 
-2. Run the script with your chosen folder name:
+E.g. 
+
+<img width="892" height="157" alt="image" src="https://github.com/user-attachments/assets/ffb0ada6-d848-4e0e-9bc6-1ee3394ba746" />
+
+
+3. Run the script with your chosen folder name:
 
    ```
    python SampleBioShift.py FolderName
