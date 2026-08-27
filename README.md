@@ -107,10 +107,11 @@ SampleBioShift/
 ├── sampletree_control.txt
 ├── methods.txt
 ├── Inputs/
-│   ├── Cell.csv
-│   ├── Pro1log10.csv
-│   ├── BacCount.csv
-│   └── BacTree.nwk
+│   ├── File1.csv
+│   ├── File2.csv
+│.........................
+│   ├── FileX.csv
+│   └── FileX.nwk
 └── BioShift_Req/
     ├── BioShift.py
     ├── config_bioshift.txt
@@ -120,7 +121,6 @@ SampleBioShift/
         └── Graphviz3.txt
 ```
 
-There is no separate `differential_analysis.R` — differential analysis is built directly into `tree_pipeline.R` (see below).
 
 ### Example input files (Inputs/)
 
