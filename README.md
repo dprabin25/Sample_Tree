@@ -151,7 +151,7 @@ E.g.
 
 2. **tree_pipeline.R**
 
-   Clusters samples (phylogenetic and/or non-phylogenetic methods), detects clades of targeted (`Y`) samples against the global `target.txt` cohort, and — when `Differential analysis = Yes` — runs the differential analysis (limma or MaAsLin2, via the built-in `run_trend_for_job()`) on every clade it finds. There is no separate `differential_analysis.R` file anymore; this is all one script.
+   Clusters samples (phylogenetic and/or non-phylogenetic methods), detects clades of targeted (`Y`) samples against the global `target.txt` cohort, and — when `Differential analysis = Yes` — runs the differential analysis (limma or MaAsLin2, via the built-in `run_trend_for_job()`) on every clade it finds. 
 
 3. **BioShift_Req/BioShift.py**
 
