@@ -111,7 +111,7 @@ SampleBioShift/
 ├── methods.txt
 ├── Inputs/
 │   ├── Input1*.csv
-   .
+│   ...............
 │   ├── InputX.csv
 │   ├── InputY.csv
 │   └── InputYTree.nwk
