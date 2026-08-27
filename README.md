@@ -6,22 +6,11 @@
 
 It works on any sample data: each CSV in `Inputs/` is a set of features (columns) measured across your samples (rows) — cell types, proteins, microbial taxa, or anything else you're tracking. It works in two layers:
 
-- Clustering: builds a similarity tree from your samples and detects **clades of targeted (`Y`) samples** within it. Every sample flagged `Y` in `target.txt` belongs to one shared targeted cohort, and clade detection runs across that whole cohort at once — whether those samples cluster together or not.
-- Interpreting : interprets the features found significant within each clade and uses an large language model to explain (BioShift) what those shifts mean biologically.
+- Clustering: builds a similarity tree from your samples and detects **clusters of targeted samples** within it. together or not.
+- Interpreting : interprets the significant features in targeted cluster samples against other samples by using an large language model dedicated tool (BioShift) to explain what those shifts mean biologically.
 
 `SampleBioShift.py` is the orchestrator — the only script you run. It calls `tree_pipeline.R` once per representation in `methods.txt`, builds the combined `Observed_shifts/` input BioShift needs, then calls `BioShift_Req/BioShift.py` for the disease and healthy interpretation passes.
 
-### Run modes
-
-`python SampleBioShift.py FolderName` always executes the same three steps, but how far each run actually gets depends on `methods.txt` and `BioShift_Req/config_bioshift.txt` — no separate mode flag is needed:
-
-1. **SampleTree only** — set `Differential analysis = No` on every block in `methods.txt`. `tree_pipeline.R` stops right after the plain `support_tree.nwk/pdf/png`: no clade detection, no highlighted tree, no differential analysis. Use this to just see how samples cluster before deciding anything else.
-2. **SampleTree → df** — set `Differential analysis = Yes` (the default), but leave `BioShift_Req/config_bioshift.txt`'s `KEY` unset or invalid. Clade detection, `support_tree_highlighted.jpeg`, and the differential analysis (TREND: limma/MaAsLin2) all run, and `Observed_shifts/` gets built — `SampleBioShift.py` then aborts cleanly at the API-key check, before touching OpenAI. Use this to get the full clustering + differential-analysis result without spending API credits.
-3. **SampleTree → df → BioShift** — `Differential analysis = Yes` and a valid `KEY` in `config_bioshift.txt`. The full pipeline runs end to end, including the LLM interpretation passes in `BioShift/BioShiftOutputs/`.
-
-Because steps 1–2 never touch OpenAI, a run always reaches at least mode 2's output even if mode 3 was intended but the API key turns out to be missing or wrong — nothing already computed is lost.
-
-Independently of run mode, `methods.txt` can hold **one file or several**: a single block runs that one representation through whichever mode above is active, while stacking multiple `# FILE 1` / `# FILE 2` / ... blocks runs each representation in turn in the same call and — if `Differential analysis = Yes` and each finds a clade — combines their results into `Observed_shifts/` (see `methods.txt` below).
 
 
 ## Dependencies
@@ -210,6 +199,20 @@ E.g.
    Pre-built DOT-format pathway diagrams. `BioShift.py` colors any node matching a significant element and renders a highlighted image per diagram per combined-clade result.
 
 ---
+
+
+### Run modes
+
+`python SampleBioShift.py FolderName` always executes the same three steps, but how far each run actually gets depends on `methods.txt` and `BioShift_Req/config_bioshift.txt` — no separate mode flag is needed:
+
+1. **SampleTree only** — set `Differential analysis = No` on every block in `methods.txt`. `tree_pipeline.R` stops right after the plain `support_tree.nwk/pdf/png`: no clade detection, no highlighted tree, no differential analysis. Use this to just see how samples cluster before deciding anything else.
+2. **SampleTree → df** — set `Differential analysis = Yes` (the default), but leave `BioShift_Req/config_bioshift.txt`'s `KEY` unset or invalid. Clade detection, `support_tree_highlighted.jpeg`, and the differential analysis (TREND: limma/MaAsLin2) all run, and `Observed_shifts/` gets built — `SampleBioShift.py` then aborts cleanly at the API-key check, before touching OpenAI. Use this to get the full clustering + differential-analysis result without spending API credits.
+3. **SampleTree → df → BioShift** — `Differential analysis = Yes` and a valid `KEY` in `config_bioshift.txt`. The full pipeline runs end to end, including the LLM interpretation passes in `BioShift/BioShiftOutputs/`.
+
+Because steps 1–2 never touch OpenAI, a run always reaches at least mode 2's output even if mode 3 was intended but the API key turns out to be missing or wrong — nothing already computed is lost.
+
+Independently of run mode, `methods.txt` can hold **one file or several**: a single block runs that one representation through whichever mode above is active, while stacking multiple `# FILE 1` / `# FILE 2` / ... blocks runs each representation in turn in the same call and — if `Differential analysis = Yes` and each finds a clade — combines their results into `Observed_shifts/` (see `methods.txt`).
+
 
 ## Running the Script
 
