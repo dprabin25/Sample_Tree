@@ -229,7 +229,8 @@ E.g.
 <img width="463" height="31" alt="image" src="https://github.com/user-attachments/assets/16db97cf-b2e1-46ad-9ad0-813a668ef35c" />
 
 
-   You can assign any name to `FolderName`. Its `RunN/` subfolder will contain every output from that run, plus `log.txt` with the full run log.
+
+You can assign any name to `FolderName`. Its `RunN/` subfolder will contain every output from that run, plus `log.txt` with the full run log.
 
 3. Re-running with the same `FolderName` creates the next sequential run folder — `Run1`, `Run2`, `Run3`, etc. — without touching earlier runs.
 
@@ -289,6 +290,7 @@ E.g. Cluster
 E.g. differential-analysis
 
 <img width="443" height="251" alt="image" src="https://github.com/user-attachments/assets/489b694d-4f06-4e5f-b655-d9232023ba83" />
+
 
 
 
