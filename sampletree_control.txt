@@ -1,4 +1,0 @@
-min_targeted   = 5    ## Minimum Y targets required in a clade to flag it
-max_clade_size = 50   ## Maximum total samples allowed in a clade
-max_others     = 4    ## Maximum non-target (N) samples allowed in a flagged clade
-assign_policy  = best ## Choose one: best (most targeted -> fewer others -> smaller) | first | largest | smallest
