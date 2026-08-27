@@ -282,10 +282,12 @@ FolderName/RunN/
 
 Either way, `support_tree_highlighted.jpeg` uses a colorblind-safe legend: **blue = Target (Y)**, **vermillion = Contamination** (non-target samples admitted into a clade), **grey = Other**; node labels show support/bootstrap values. `trend_outputs/` holds one `group_*` folder per clade found, with the raw differential-analysis output for that clade.
 
-E.g. Clade 
+E.g. Cluster 
+
 <img width="1173" height="564" alt="image" src="https://github.com/user-attachments/assets/eefadf46-57d3-4688-a368-1adf835a6b25" />
 
 E.g. differential-analysis
+
 <img width="443" height="251" alt="image" src="https://github.com/user-attachments/assets/489b694d-4f06-4e5f-b655-d9232023ba83" />
 
 
