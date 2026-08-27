@@ -255,6 +255,10 @@ FolderName/RunN/
 
 Either way, `support_tree_highlighted.jpeg` uses a colorblind-safe legend: **blue = Target (Y)**, **vermillion = Contamination** (non-target samples admitted into a clade), **grey = Other**; node labels show support/bootstrap values. `trend_outputs/` holds one `group_*` folder per clade found, with the raw differential-analysis output for that clade.
 
+E.g. 
+<img width="1216" height="485" alt="image" src="https://github.com/user-attachments/assets/ebe5f6f0-fc77-42ec-9f70-fcf9c5d6de26" />
+
+
 **`BioShift/Observed_shifts/`** — built only from each representation's **Control** results (non-phylo: the `SD0/` run; phylo: the one run there is, since phylo jobs don't have a Control/Test split). For non-phylo jobs, a `SD<value>` Test run is written for reference but is not fed into BioShift. This is the combined input BioShift reads. `build_observed_shifts()` merges each clade's `Input_*.csv` (identical value everywhere → kept; disagreement → 0), then combines across representations. If every representation found exactly one clade, this is a single `Combined_Observed_Shifts.csv`. If a representation's targeted cohort split into more than one clade, each of that representation's clades pairs separately with the other representations' clade(s), producing `Combined_01_...`, `Combined_02_...`, etc. — each numbered file is a genuinely distinct biological grouping, not noise to collapse into one.
 
 **`BioShift/BioShiftOutputs/`** — LLM interpretation of each combined file, split into `Disease/` and `Healthy/` passes, one subfolder per combined-file stem.
