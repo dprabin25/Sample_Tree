@@ -23,9 +23,6 @@ Because steps 1–2 never touch OpenAI, a run always reaches at least mode 2's o
 
 Independently of run mode, `methods.txt` can hold **one file or several**: a single block runs that one representation through whichever mode above is active, while stacking multiple `# FILE 1` / `# FILE 2` / ... blocks runs each representation in turn in the same call and — if `Differential analysis = Yes` and each finds a clade — combines their results into `Observed_shifts/` (see `methods.txt` below).
 
-### Important note
-
-The pipeline does not perform input scaling. It is up to the user to decide whether to use scaled or unscaled data (`Normalization` in `methods.txt` handles this per representation).
 
 ## Dependencies
 
