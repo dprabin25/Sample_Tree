@@ -1,45 +1,21 @@
 # -*- coding: utf-8 -*-
-# @author: prabindawadi
 """
-SampleBioShift.py  -- the ONE script that controls everything in this
-folder. Lives at the root (sibling of tree_pipeline.R), not inside
-BioShift_Req/, since it's the orchestrator, not part of the LLM-interpretation
-package.
+@author: prabindawadi
+SampleBioShift.py -- the one script that runs everything: `python
+SampleBioShift.py FolderName`.
 
-Pipeline, one call to `python SampleBioShift.py FolderName`:
-  1. tree_pipeline.R, one run per block in methods.txt (single block or
-     "# FILE N" batch -- see split_methods_blocks()). methods.txt has no
-     CLI config-path argument, it's always read from "methods.txt" next
-     to tree_pipeline.R, so this script writes each block into that file
-     in turn and restores the original content when done.
-  2. build_observed_shifts() (below -- inlined here, no longer a separate
-     script). tree_pipeline.R's own run_trend_for_job() writes clade-based
-     TREND results natively to
-       Outputs/<file_base>/<Norm>/<Dist>/SD0/trend_outputs/group_*/Input_*.csv
-     whenever target.txt's Y-targeted samples form a real clade (per
-     min_targeted/max_others in sampletree_control.txt; tolerated N
-     contamination is folded into that same clade, everyone else is
-     "other" -- there's no per-patient grouping anymore, just the one
-     global targeted cohort). This function merges each clade's Input_*.csv,
-     then combines across representations (whatever Filename
-     blocks methods.txt currently has, e.g. Cell/Pro1log10/BacCount --
-     derived from methods.txt itself via rep_specs_from_blocks(), never a
-     hardcoded mapping) the same way the original package's
-     ObservedShifts.py did, and writes the result into
-     BioShift_Req/Observed_shifts/.
-  3. BioShift.py (disease + healthy passes), which reads whatever's in
-     BioShift_Req/Observed_shifts/.
+  1. tree_pipeline.R, once per block in methods.txt (single block or
+     "# FILE N" batch -- see split_methods_blocks()).
+  2. build_observed_shifts() -- merges tree_pipeline.R's clade-based TREND
+     output across representations into BioShift_Req/Observed_shifts/.
+  3. BioShift.py (disease + healthy passes), reading Observed_shifts/.
 
-Steps 1-2 run UNCONDITIONALLY every time -- they're the real clustering /
-differential-analysis pipeline and don't touch OpenAI at all. Only step 3
-needs a working API key, so validate_api_key() is checked right before
-step 3, not at the top of main() -- a bad key still lets you get the real
-tree/cluster results out of a run, it just skips the LLM interpretation.
+Steps 1-2 always run and never touch OpenAI. Step 3 needs a working API
+key, checked right before it runs -- a bad key still leaves the tree/
+cluster/differential-analysis results from steps 1-2 intact.
 
-Note: target.txt's Target column must have real "Y" values for the
-samples you actually want to interrogate -- if every row is "N", no
-clade will ever be found and step 2 will report "no clades found in any
-representation" every time.
+Note: target.txt needs real "Y" values for the samples you're
+targeting -- if every row is "N", no clade will ever be found.
 """
 
 import os
@@ -56,53 +32,26 @@ from collections import defaultdict
 from datetime import datetime
 
 BIOSHIFT_MODE = "full_with_graphviz"
-# Name of the ROOT-level subfolder holding BioShift.py/config_bioshift.txt/
-# graphviz/ (renamed from "BioShift" to "BioShift_Req" to avoid reading as
-# a collision with the root-level "Outputs" folder). Single source of
-# truth for the source-side name -- change here only.
-BIOSHIFT_DIR_NAME = "BioShift_Req"
-# Name used for that same folder ONCE ARCHIVED into <FolderName>/RunN/ --
-# kept as plain "BioShift" there, since inside a run folder there's no
-# "Outputs" to collide with.
-BIOSHIFT_ARCHIVE_NAME = "BioShift"
+BIOSHIFT_DIR_NAME = "BioShift_Req"      # source-side folder (BioShift.py, config, graphviz/)
+BIOSHIFT_ARCHIVE_NAME = "BioShift"      # name used once archived into <FolderName>/RunN/
 
-# Distance metrics that require a phylogenetic tree (PhyloTree=<file>.nwk).
-# Must match tree_pipeline.R's own `phylo_metrics` vector exactly -- these
-# jobs write to a DIFFERENT Outputs/ path shape (no Normalization/SD0
-# nesting; see rep_trend_root() below), so build_observed_shifts() has to
-# know which ones they are to find their trend_outputs/ at all.
+# Distance metrics requiring a phylogenetic tree -- must match
+# tree_pipeline.R's `phylo_metrics` vector. These write to a different
+# Outputs/ path shape (no Normalization/SD0 nesting).
 PHYLO_METRICS = {"unifrac", "unifracw", "mpd", "mpdw", "mntd", "mntdw"}
 
 
 # ------------------------------------------------------------------
-# Step 2: build_observed_shifts (inlined -- was its own build_observed_shifts.py;
-# folded in here so there's exactly one script that controls everything)
-#
-# Reads tree_pipeline.R's own NATIVE clade-based TREND output --
-# Outputs/<file_base>/<Norm>/<Dist>/SD0/trend_outputs/group_<tag>_<method>_
-# node<N>_<label>/Input_<label>_<library>.csv -- written by
-# run_trend_for_job() whenever target.txt's Y-targeted samples form a real
-# clade (min_targeted/max_others from sampletree_control.txt). There is no
-# per-patient concept here anymore: target.txt's Y column defines ONE
-# global targeted cohort, and each representation (Cell/Cytokines/
-# Microbes) either finds a clade for it or doesn't -- so this collects
-# whatever clade(s) each representation found and combines them across
-# representations the same way the original package's ObservedShifts.py
-# did (merge Input_*.csv within a clade, then every combination across
-# representation types, since there's no patient-level alignment to key
-# off anymore).
+# build_observed_shifts: reads tree_pipeline.R's native clade-based
+# TREND output and combines it across representations into
+# BioShift_Req/Observed_shifts/.
 # ------------------------------------------------------------------
 
 _FIELD_LINE_RE = re.compile(r"^\s*([^=\n#]+?)\s*=\s*(.*)$")
 
 
 def parse_methods_fields(block_text):
-    """Parses one methods.txt block's `Key = value` lines into a dict,
-    stripping trailing '## comment' / '# comment' text. This is the ONLY
-    place representation identity (Filename/Normalization/Distance_Metric)
-    comes from -- no hand-maintained Python dict to keep in sync. Rename a
-    Filename in methods.txt (Micro.csv -> BacCount.csv, add a 4th block,
-    whatever) and this picks it up automatically next run."""
+    """Parses one methods.txt block's `Key = value` lines into a dict."""
     fields = {}
     for ln in block_text.splitlines():
         s = ln.strip()
@@ -119,13 +68,8 @@ def parse_methods_fields(block_text):
 
 def rep_specs_from_blocks(blocks):
     """One (file_base, Normalization, Distance_Metric) per methods.txt
-    block that actually ran differential analysis. file_base IS the
-    representation's name (derived straight from its Filename, e.g.
-    "Cell.csv" -> "Cell") -- these are exactly the jobs that can have
-    written Outputs/<file_base>/<Norm>/<Dist>/SD0/trend_outputs/. Blocks
-    with Differential analysis = No are skipped: tree_pipeline.R stops
-    after the plain sample tree for those and never writes trend_outputs/
-    at all, so there is nothing here for build_observed_shifts to read."""
+    block with Differential analysis != No -- these are the jobs that
+    can have written trend_outputs/ for build_observed_shifts to read."""
     specs = []
     for block in blocks:
         fields = parse_methods_fields(block)
@@ -144,14 +88,9 @@ def rep_specs_from_blocks(blocks):
 
 
 def _build_rep_tags(rep_names):
-    """Short, unambiguous tags for combined-file names, derived from the
-    representation names themselves. NOT rep[0].upper(): two file_bases
-    can share a first letter (e.g. "Cell" and "Cytokines" style names),
-    which would silently collide into the same tag ("C201" could mean
-    either). First three letters is usually enough; if two reps still
-    collide on that, fall back to lengthening just the colliding ones
-    until they're distinct.
-    """
+    """Short, unambiguous tags for combined-file names. Not
+    rep[0].upper(): two names can share a first letter and collide.
+    First three letters, lengthened only on collision."""
     rep_names = list(rep_names)
     n = 3
     tags = {rep: rep[:n] for rep in rep_names}
@@ -162,10 +101,9 @@ def _build_rep_tags(rep_names):
 
 
 def merge_input_csvs(group_dir):
-    """Merges every Input_*.csv (excluding any prior Input_MERGED_*.csv)
-    inside one clade's group_ folder into a single Element/Observed-Shift
-    table -- same conflict rule throughout this pipeline: identical value
-    everywhere -> keep it, disagreement -> 0."""
+    """Merges every Input_*.csv in one clade's group_ folder into a
+    single Element/Observed-Shift table: identical value everywhere ->
+    keep it, disagreement -> 0."""
     files = [f for f in glob.glob(os.path.join(group_dir, "Input_*.csv"))
              if not os.path.basename(f).startswith("Input_MERGED_")]
     dfs = []
@@ -197,18 +135,11 @@ def build_observed_shifts(base_dir, bioshift_dir, rep_specs):
 
     rep_tag = _build_rep_tags([r[0] for r in rep_specs])
 
-    # ---- collect each representation's clade(s), if any -- kept IN
-    # MEMORY only. Observed_shifts/ should end up holding just the final
-    # combined file(s) that actually feed BioShift.py, not these
-    # per-representation intermediates. ----
+    # Collect each representation's clade(s) in memory -- only the final
+    # combined file(s) get written to Observed_shifts/.
     type_to_dfs = {}   # {rep: [(node, df), ...]}
     for rep, norm, dist in rep_specs:
         file_base = rep
-        # tree_pipeline.R writes phylo-distance jobs (UniFrac/UniFracW/MPD/
-        # MPDw/MNTD/MNTDw) straight to Outputs/<file_base>/<dist>/ -- no
-        # Normalization/SD0 nesting, since there's no SD sweep for those
-        # (support comes from raw-count bootstrap instead). Non-phylo jobs
-        # keep the full Outputs/<file_base>/<norm>/<dist>/SD0/ nesting.
         if dist.strip().lower() in PHYLO_METRICS:
             trend_root = os.path.join(base_dir, "Outputs", file_base, dist, "trend_outputs")
         else:
@@ -241,14 +172,11 @@ def build_observed_shifts(base_dir, bioshift_dir, rep_specs):
               "meeting min_targeted/max_others.)")
         return
 
-    # ---- combine across representation types. When every representation
-    # found exactly one clade (the common case), this is one 3-way merge
-    # -> exactly one combined file. When a representation found more than
-    # one clade (the Y-targeted cohort split into distinct sub-clusters
-    # for that data type), each of ITS clades pairs separately with the
-    # single clade from the other representations -- e.g. 2 Cell clades x
-    # 1 Cytokines clade x 1 Microbes clade -> combo1, combo2, each a
-    # genuinely different biological grouping, not noise to collapse. ----
+    # Combine across representation types. If every representation found
+    # exactly one clade, this is a single 3-way merge. If a representation
+    # found more than one clade, each of ITS clades pairs separately with
+    # the other representations' single clade(s), so multiple combos come
+    # out as distinct biological groupings, not noise to collapse.
     n_types = len(reps_with_clades)
     k = 3 if n_types >= 3 else (2 if n_types == 2 else 1)
 
@@ -275,9 +203,7 @@ def build_observed_shifts(base_dir, bioshift_dir, rep_specs):
         for df in dfs[1:]:
             merged = merged.merge(df, on="Element", how="outer")
         merged["Observed Shift"] = merged.drop(columns=["Element"]).apply(resolve, axis=1)
-        # Single combo overall -> plain name, no pointless "001_" prefix.
-        # Multiple combos (a representation split into sub-clusters) ->
-        # numbered so each stays distinguishable.
+        # One combo overall -> plain name; multiple combos -> numbered.
         out_name = ("Combined_Observed_Shifts.csv" if len(combos) == 1
                     else f"Combined_{combo_counter:02d}_" + "_".join(tags) + ".csv")
         merged[["Element", "Observed Shift"]].to_csv(os.path.join(out_dir, out_name), index=False)
@@ -287,8 +213,7 @@ def build_observed_shifts(base_dir, bioshift_dir, rep_specs):
 
 
 # ------------------------------------------------------------------
-# API key validation -- checked right before step 3 (BioShift.py), not
-# at the top of main(), so a missing/wrong key never blocks steps 1-2.
+# API key validation -- checked right before step 3, never blocks 1-2.
 # ------------------------------------------------------------------
 
 def validate_api_key(bioshift_dir):
@@ -370,15 +295,8 @@ _FILENAME_FIELD_RE = re.compile(r"^\s*Filename\s*=\s*(.+?)\s*(?:#.*)?$", re.IGNO
 
 
 def split_methods_blocks(text):
-    """Splits methods.txt content into one or more blocks on lines like
-    "# FILE 1", "# FILE 2", ... Supports BOTH formats:
-      - single combo (no "# FILE" markers at all) -> returns [whole text],
-        unchanged from the original one-job-per-run behavior.
-      - multiple "# FILE N" blocks -> tree_pipeline.R runs once per block,
-        automatically, in one SampleBioShift.py call (this is what makes
-        "run multiple, then merged for the inputs" work again, matching
-        the old package's multi-row methods.txt, just written as stacked
-        blocks in the same single methods.txt instead of separate rows)."""
+    """Splits methods.txt into blocks on "# FILE 1", "# FILE 2", ... lines.
+    No markers -> returns [text] (single-job run, as before)."""
     lines = text.splitlines(keepends=True)
     marker_idxs = [i for i, ln in enumerate(lines) if _FILE_MARKER_RE.match(ln)]
     if not marker_idxs:
@@ -411,16 +329,9 @@ def create_run_folder(base_output_dir):
 
 
 # ------------------------------------------------------------------
-# ARCHIVING -- always sweep the three known, exclusively-output
-# locations into this run's folder. (Previously this diffed a
-# before/after filesystem snapshot to find "new" paths, but that broke
-# the moment a prior run's output was left un-archived at the root: the
-# next run overwrites the SAME paths in place, so they're never "new"
-# relative to before_snapshot and silently never get moved. Since
-# Outputs/, BioShift_Req/Observed_shifts/, and BioShift_Req/BioShiftOutputs/
-# never hold anything except this pipeline's own output -- no permanent
-# assets live in any of them -- it's simplest and most robust to just
-# always move all three, every run, full stop.)
+# ARCHIVING -- always sweep these three output-only locations into
+# the run folder (they never hold anything else, so this is safe
+# unconditionally, every run).
 # ------------------------------------------------------------------
 
 ARCHIVE_LOCATIONS = [
@@ -488,10 +399,7 @@ def main():
         try:
             _run_pipeline_steps(base_dir, bioshift_dir, methods_path_args=args, log_fh=log_fh)
         finally:
-            # ARCHIVE OUTPUTS -- always, even if a step above failed (e.g. a
-            # placeholder/invalid API key aborting step 3) or exited early.
-            # Whatever got generated still belongs in this run's folder,
-            # not left at the root.
+            # Always archive, even if a step above failed or exited early.
             archive_run_outputs(base_dir, run_folder, log_fh)
 
     print("\nPipeline complete (see log for whether every step succeeded).")
@@ -500,16 +408,8 @@ def main():
 
 def _run_pipeline_steps(base_dir, bioshift_dir, methods_path_args, log_fh):
         args = methods_path_args
-        # ---------------- STEP 1: tree_pipeline.R ----------------
-        # methods.txt can hold ONE combo (single Filename/Normalization/...
-        # block, no markers -- runs once, as before) OR several stacked
-        # "# FILE 1" / "# FILE 2" / ... blocks -- tree_pipeline.R has no
-        # native batch support (no CLI config-path arg, always reads
-        # "methods.txt"), so each block gets copied over methods.txt in
-        # turn and tree_pipeline.R runs once per block, automatically, in
-        # this one call. The original multi-block methods.txt is restored
-        # afterward so your saved file isn't left holding just the last
-        # block.
+
+        # ---- STEP 1: tree_pipeline.R, once per methods.txt block ----
         methods_path = os.path.join(base_dir, "methods.txt")
         with open(methods_path, encoding="utf-8") as f:
             original_methods_text = f.read()
@@ -526,16 +426,13 @@ def _run_pipeline_steps(base_dir, bioshift_dir, methods_path_args, log_fh):
             with open(methods_path, "w", encoding="utf-8") as f:
                 f.write(original_methods_text)
 
-        # ---------------- STEP 2: build_observed_shifts (inlined, no subprocess) ----------------
-        # rep_specs comes straight from the SAME methods.txt blocks Step 1
-        # just ran -- not a separate hardcoded mapping -- so it can never
-        # drift out of sync with what tree_pipeline.R actually produced.
+        # ---- STEP 2: build_observed_shifts ----
         print("\n" + "=" * 80 + "\n[RUN] build_observed_shifts\n" + "=" * 80 + "\n")
         log_fh.write("\n" + "=" * 80 + "\n[RUN] build_observed_shifts\n" + "=" * 80 + "\n")
         rep_specs = rep_specs_from_blocks(blocks)
         build_observed_shifts(base_dir, bioshift_dir, rep_specs)
 
-        # ---------------- STEP 3: BioShift.py (LLM) -- gated on the API key ----------------
+        # ---- STEP 3: BioShift.py (LLM), gated on the API key ----
         validate_api_key(bioshift_dir)
 
         for ctx in ["disease", "healthy"]:
