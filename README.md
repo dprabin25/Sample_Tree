@@ -2,7 +2,7 @@
 
 ## Description
 
-**SampleTree finds where your targeted samples cluster, tests which features differ significantly in those clusters, and gives the biological interpretation — in one command.**
+**SampleTree finds where your targeted samples cluster, tests which features differ significantly in the cluster vs other non-targeted samples, and gives the biological interpretation — in one command.**
 
 It works on any sample data: each CSV in `Inputs/` is a set of features (columns) measured across your samples (rows) — cell types, proteins, microbial taxa, or anything else you're tracking. It works in two layers:
 
