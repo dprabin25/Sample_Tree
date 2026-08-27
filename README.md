@@ -130,13 +130,13 @@ There is no separate `differential_analysis.R` — differential analysis is buil
 The method is built around **your own data**, not these specific files — `SampleBioShift.py` reads whichever `Filename`s are listed in `methods.txt` at run time, so adding, removing, or renaming a representation only ever requires editing `methods.txt`, never the Python or R code. The files below, shipped in this repo's `Inputs/`, are examples showing the shape your own CSVs should take: a `Sample` column with sample IDs, and other columns holding frequency, abundance, or scaled expression values depending on the data type. Anyone can point this pipeline at their own files by matching this format.
 
 1. **Cell.csv** — example cell frequency data. Used for sample-tree clustering and differential analysis.
-2. **Pro1log10.csv** — example protein/cytokine expression data (log10). Used for sample-tree clustering and differential analysis.
-3. **Micro.csv** — example bacterial relative-abundance data (frequency-type), an alternate representation of the same kind of microbiome data as `BacCount.csv`.
-4. **BacCount.csv** — example bacterial abundance data (count-type). Used for sample-tree clustering (including phylogenetic methods) and differential analysis.
 
-e.g. <img width="525" height="345" alt="image" src="https://github.com/user-attachments/assets/7233e7cd-8e96-47e1-8b04-6792f78f1664" />
+E.g.
+ <img width="525" height="345" alt="image" src="https://github.com/user-attachments/assets/7233e7cd-8e96-47e1-8b04-6792f78f1664" />
 
-
+3. **Pro1log10.csv** — example protein/cytokine expression data (log10). Used for sample-tree clustering and differential analysis.
+4. **Micro.csv** — example bacterial relative-abundance data (frequency-type), an alternate representation of the same kind of microbiome data as `BacCount.csv`.
+5. **BacCount.csv** — example bacterial abundance data (count-type). Used for sample-tree clustering (including phylogenetic methods) and differential analysis.
 6. **BacTree.nwk** — example reference phylogenetic tree, required only when a representation's `Distance_Metric` is a phylogenetic one (UniFrac, UniFracW, MPD, MPDw, MNTD, MNTDw).
 
 
