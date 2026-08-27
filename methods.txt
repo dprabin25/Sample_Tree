@@ -1,0 +1,82 @@
+# FILE 1
+
+Filename        = Cell.csv       ## Your input CSV file
+Input_Type      = Frequency            ## Choose one: log10 | Count | Frequency
+Distance_Metric = Bray           ## Choose one: Non-phylo: Bray | Euclidean  |  Phylo: UniFrac | UniFracW | MPD | MPDw | MNTD | MNTDw
+PhyloTree       = None               ## Choose *.nwk or None (required only for phylo distance metrics)
+Normalization   = None              ## Choose one based on Input_Type:
+                                      ##   log10     -> MinMax | Zscore (Euclidean only)
+                                      ##   Count     -> TSS | Hellinger | CLR (Euclidean only) | Rarefaction
+                                      ##   Frequency -> None (Bray) | Hellinger (Bray) | Zscore (Euclidean only)
+Support/bootstrap = 100
+SD              = 0.005              ## Choose one: 0 = Control | >0 = Noise (e.g. 0.01)
+Differential analysis = Yes # Chose Yes| No
+Input df = Cell.csv                 # If yes for differential analysis (df)
+Profile_Library = MaAsLin2   # Chose MaAsLin2 (for count/frequency) or limma (for log10)
+
+
+# FILE 2
+
+Filename        = Pro1log10.csv       ## Your input CSV file
+Input_Type      = log10            ## Choose one: log10 | Count | Frequency
+Distance_Metric = Bray           ## Choose one: Non-phylo: Bray | Euclidean  |  Phylo: UniFrac | UniFracW | MPD | MPDw | MNTD | MNTDw
+PhyloTree       = None               ## Choose *.nwk or None (required only for phylo distance metrics)
+Normalization   = MinMax              ## Choose one based on Input_Type:
+                                      ##   log10     -> MinMax | Zscore (Euclidean only)
+                                      ##   Count     -> TSS | Hellinger | CLR (Euclidean only) | Rarefaction
+                                      ##   Frequency -> None (Bray) | Hellinger (Bray) | Zscore (Euclidean only)
+Support/bootstrap = 100
+SD              = 0.005              ## Choose one: 0 = Control | >0 = Noise (e.g. 0.01)
+Differential analysis = Yes # Chose Yes| No
+Input df = Pro1log10.csv            # If yes for differential analysis (df)
+Profile_Library = MaAsLin2   # Chose MaAsLin2 (for count/frequency) or limma (for log10)
+
+
+# FILE 3
+
+Filename        = BacCount.csv       ## Your input CSV file
+Input_Type      = Count            ## Choose one: log10 | Count | Frequency
+Distance_Metric = Bray           ## Choose one: Non-phylo: Bray | Euclidean  |  Phylo: UniFrac | UniFracW | MPD | MPDw | MNTD | MNTDw
+PhyloTree       = None               ## Choose *.nwk or None (required only for phylo distance metrics)
+Normalization   = TSS              ## Choose one based on Input_Type:
+                                      ##   log10     -> MinMax | Zscore (Euclidean only)
+                                      ##   Count     -> TSS | Hellinger | CLR (Euclidean only) | Rarefaction
+                                      ##   Frequency -> None (Bray) | Hellinger (Bray) | Zscore (Euclidean only)
+Support/bootstrap = 100
+SD              = 0.005              ## Choose one: 0 = Control | >0 = Noise (e.g. 0.01) ## Choose NA for Phylo methods
+Differential analysis = Yes # Chose Yes| No
+Input df = BacCount.csv                # If yes for differential analysis (df)
+Profile_Library = MaAsLin2   # Chose MaAsLin2 (for count/frequency) or limma (for log10)
+
+
+
+
+
+## ─────────────────────────────────────────────────────────────────────────────
+## INVALID COMBINATIONS — pipeline will stop with an error if these are used
+## ─────────────────────────────────────────────────────────────────────────────
+##
+##  CLR   + Bray       → CLR produces negative values; Bray-Curtis requires ≥ 0
+##                        Fix: use CLR + Euclidean  OR  TSS/Hellinger + Bray
+##
+##  Zscore + Bray       → Zscore produces negative values; same issue as CLR
+##                        Fix: use Zscore + Euclidean  OR  TSS/Hellinger + Bray
+##
+##  MinMax + Count      → MinMax is per-sample scaling designed for log10 data
+##                        Fix: use TSS | Hellinger | CLR | Rarefaction for Count
+##
+##  MinMax + Frequency  → Same issue; MinMax is for log10 only
+##                        Fix: use None | Hellinger | Zscore for Frequency
+##
+##  TSS    + Euclidean  → TSS does not centre data; Euclidean distances inflate
+##                        Fix: use CLR + Euclidean for count data
+##
+##  Phylo distance (UniFrac/MPD/MNTD/…) + PhyloTree = None
+##                      → Phylo metrics require a reference tree
+##                        Fix: set PhyloTree = yourfile.nwk
+##
+##  PhyloTree = <anything that is not None or *.nwk>
+##                      → Will be treated as None with a warning
+##                        Fix: set PhyloTree = None or PhyloTree = BacTree.nwk
+##
+## ─────────────────────────────────────────────────────────────────────────────
