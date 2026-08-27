@@ -297,7 +297,8 @@ E.g. differential-analysis
 E.g. 
 
 <img width="199" height="235" alt="image" src="https://github.com/user-attachments/assets/7f38fd10-f38a-49a2-ab12-8d32b90a8064" />
-1= increase, -1 = decrease
+
+_1= increase, -1 = decrease_
 
 
 **`BioShift/BioShiftOutputs/`** — LLM interpretation of each combined file, split into `Disease/` and `Healthy/` passes, one subfolder per combined-file stem.
