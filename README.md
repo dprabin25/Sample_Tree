@@ -6,7 +6,7 @@
 
 It works on any sample data: each CSV in `Inputs/` is a set of features (columns) measured across your samples (rows) — cell types, proteins, microbial taxa, or anything else you're tracking. It works in two layers:
 
-- Clustering: builds a similarity tree from your samples and detects **clusters of targeted samples** within it. together or not.
+- Clustering: builds a similarity tree from your samples and detects **cluster/s of targeted samples** within it. together or not.
 - Interpreting : interprets the significant features in targeted cluster samples against other samples by using an large language model dedicated tool (BioShift) to explain what those shifts mean biologically.
 
 `SampleBioShift.py` is the orchestrator — the only script you run. It calls `tree_pipeline.R` once per representation in `methods.txt`, builds the combined `Observed_shifts/` input BioShift needs, then calls `BioShift_Req/BioShift.py` for the disease and healthy interpretation passes.
