@@ -113,7 +113,7 @@ SampleTree/
 
 ### Example input files (Inputs/)
 
-The method is built around **your own data**, not these specific files — `SampleBioShift.py` reads whichever `Filename`s are listed in `methods.txt` at run time, so adding, removing, or renaming a representation only ever requires editing `methods.txt`, never the Python or R code. The files below, shipped in this repo's `Inputs/`, are examples showing the shape your own CSVs should take: a `Sample` column with sample IDs, and other columns holding frequency, abundance, or scaled expression values depending on the data type. Anyone can point this pipeline at their own files by matching this format.
+The method is built around **your own data**, not these specific files — `SampleBioShift.py` reads whichever `Filename`s are listed in `methods.txt` at run time, so adding, removing, or renaming a representation only ever requires editing `methods.txt`, never the Python or R code. The files below, shipped in this repo's `Inputs/`, are examples showing the shape your own CSVs should take: a `Sample` column with sample IDs, and other columns holding frequency, abundance, or scaled expression values depending on the data type.  The first column of every input CSV is interpreted as the sample identifier column. For consistency, name it Sample. Sample identifiers (IDs) in each input CSV must be unique. Anyone can point this pipeline at their own files by matching this format.
 
 1. **Cell.csv** — example cell frequency data. Used for sample-tree clustering and differential analysis.
 
@@ -178,7 +178,7 @@ E.g.
 
 6. **target.txt**
 
-   Two columns: `Sample`, `Target`. Assign `Y` to every sample of interest — together these form the one global targeted cohort that clade detection is run against, with no notion of which patient a sample came from. A `Patient` column is not required and, if present, is purely informational; it plays no role in clade detection.
+   Two columns: `Sample`, `Target`. Assign `Y` to every sample of interest — together these form the one global targeted cohort that clade detection is run against, with no notion of which patient a sample came from.  Sample IDs in target.txt should be unique. Every sample listed in target.txt should exist in the corresponding analysis input file. Users should verify sample overlap before running the pipeline.  A `Patient` column is not required and, if present, is purely informational; it plays no role in clade detection.
    
    E.g.
    
@@ -199,6 +199,34 @@ E.g.
    Pre-built DOT-format pathway diagrams. `BioShift.py` colors any node matching a significant element and renders a highlighted image per diagram per combined-clade result.
 
 ---
+
+## Minimal example of workflow
+Inputs\MyMicrobiome.csv
+
+Sample,Bacteroides_fragilis,Faecalibacterium_prausnitzii
+S1,10.2,5.1
+S2,8.5,9.3
+S3,3.2,12.0
+
+methods.txt:
+
+Filename = MyMicrobiome.csv
+Input_Type = Frequency
+Distance_Metric = Bray
+PhyloTree = None
+Normalization = None
+Differential analysis = Yes
+Input df = MyMicrobiome.csv
+Profile_Library = MaAsLin2
+
+target.txt:
+
+Sample    Target
+S1        Y
+S2        N
+S3        N
+
+
 
 
 ### Run modes
