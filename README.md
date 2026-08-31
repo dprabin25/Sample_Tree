@@ -213,10 +213,10 @@ S3                3                          12
 #### `methods.txt`
 ```
 Filename = MyMicrobiome.csv
-Input_Type = Frequency
+Input_Type = Count
 Distance_Metric = Bray
 PhyloTree = None
-Normalization = None
+Normalization = TSS
 Differential analysis = Yes
 Input df = MyMicrobiome.csv
 Profile_Library = MaAsLin2
