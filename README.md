@@ -200,16 +200,18 @@ E.g.
 
 ---
 
-## Minimal example of workflow
-Inputs\MyMicrobiome.csv
+### Minimal example of workflow
 
+#### `Inputs/MyMicrobiome.csv`
+```csv
 Sample,Bacteroides_fragilis,Faecalibacterium_prausnitzii
 S1,10.2,5.1
 S2,8.5,9.3
 S3,3.2,12.0
+```
 
-methods.txt:
-
+#### `methods.txt`
+```
 Filename = MyMicrobiome.csv
 Input_Type = Frequency
 Distance_Metric = Bray
@@ -218,15 +220,15 @@ Normalization = None
 Differential analysis = Yes
 Input df = MyMicrobiome.csv
 Profile_Library = MaAsLin2
+```
 
-target.txt:
-
-Sample    Target
-S1        Y
-S2        N
-S3        N
-
-
+#### `target.txt`
+```
+Sample	Target
+S1	Y
+S2	N
+S3	N
+```
 
 
 ### Run modes
