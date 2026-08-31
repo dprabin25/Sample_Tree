@@ -1,20 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 @author: prabindawadi
-SampleBioShift.py -- the one script that runs everything: `python
-SampleBioShift.py FolderName`.
-  0. Pre-flight validation of the input dataset(s) and target.txt --
-     see run_preflight_validation() -- runs once, before anything else.
-  1. tree_pipeline.R, once per block in methods.txt (single block or
-     "# FILE N" batch -- see split_methods_blocks()).
-  2. build_observed_shifts() -- merges tree_pipeline.R's clade-based TREND
-     output across representations into BioShift_Req/Observed_shifts/.
-  3. BioShift.py (disease + healthy passes), reading Observed_shifts/.
-Steps 1-2 always run and never touch OpenAI. Step 3 needs a working API
-key, checked right before it runs -- a bad key still leaves the tree/
-cluster/differential-analysis results from steps 1-2 intact.
-Note: target.txt needs real "Y" values for the samples you're
-targeting -- if every row is "N", no clade will ever be found.
 """
 import os
 import re
