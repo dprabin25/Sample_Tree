@@ -205,9 +205,9 @@ E.g.
 #### `Inputs/MyMicrobiome.csv`
 ```csv
 Sample,Bacteroides_fragilis,Faecalibacterium_prausnitzii
-S1,10.2,5.1
-S2,8.5,9.3
-S3,3.2,12.0
+S1 10 2 5
+S2 8, 5 9
+S3,3 12 0
 ```
 
 #### `methods.txt`
