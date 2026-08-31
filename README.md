@@ -231,7 +231,7 @@ S3	N
 ```
 
 
-### Run modes
+## Run modes
 
 `python SampleBioShift.py FolderName` always executes the same three steps, but how far each run actually gets depends on `methods.txt` and `BioShift_Req/config_bioshift.txt` — no separate mode flag is needed:
 
