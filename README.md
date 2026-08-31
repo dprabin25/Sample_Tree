@@ -270,6 +270,21 @@ You can assign any name to `FolderName`. Its `RunN/` subfolder will contain ever
 
 3. Re-running with the same `FolderName` creates the next sequential run folder — `Run1`, `Run2`, `Run3`, etc. — without touching earlier runs.
 
+E.g.
+
+  ```
+   python SampleBioShift.py MyRun
+   ```
+
+creates:
+
+MyRun\Run1
+
+Running again with the same name creates:
+
+MyRun\Run2
+
+
 
 
 ## Output Structure
