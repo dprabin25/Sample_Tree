@@ -200,7 +200,7 @@ E.g.
 
 ---
 
-### Minimal example of workflow
+### Minimal example of input main workflow files
 
 #### `Inputs/MyMicrobiome.csv`
 ```csv
