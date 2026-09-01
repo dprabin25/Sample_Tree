@@ -142,7 +142,7 @@ E.g.
 3. **BioShift_Req/BioShift.py**
 
    Data curation and calling large language models for interpretation.
-   For details: [BioShift on GitHub](https://github.com/dprabin25/BioShift).
+   [Note: For Retrieval-Augmented Generation (RAG) interpretation: [BioShift on GitHub](https://github.com/dprabin25/BioShift) could be used].
 
 4. **methods.txt**
 
